@@ -1,0 +1,115 @@
+\documentclass{article}
+
+%\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{graphics}
+
+\author{Аланакян}
+\title{Лекции по общей физике, электричество}
+
+\begin{document}
+    \maketitle
+    \pagebreak
+    
+    \section*{Заряды.}
+    
+	Одноименные зараяды отталкиваются, разноименные - притягиваются.
+	    
+    \paragraph{Закон сохранения заряда.} Если система изолирована, какие бы процессы в ней не происходили, алгебраическая сумма зарядов остается постоянной.
+    
+    \paragraph{Закон Кулона.} Получен Кулоном благодаря эксперименту с крутильными весами.
+    $$ \overrightarrow{F} = \frac{q_1q_2}{r^2} \frac{\overrightarrow{r}}{r} $$
+    
+    \paragraph{Напряженность электрического поля.} Напряженностью электрического поля называется сила, действующая на единичный точечный заряд.
+   
+    $$ \overrightarrow{E} = \frac{q}{r^2} \frac{\overrightarrow{r}}{r} $$
+   
+    \paragraph{Принцип суперпозиции.} Напряженности от различных зарядов складываются.
+   
+    \subsection*{Электрический диполь.} Электрическим диполем называется два одинаковых по абсолютной величине, но разноименных заряда, жестко соединенных между собой. Расстояние $\overrightarrow{l}$ между зарядами называеся плечом диполя. Плечо направлено от отрицательного заряда к положительному. Величина $\overrightarrow{p} = q\overrightarrow{l}$ называется дипольным моментом.
+    
+    \begin{center}
+   
+    \begin{picture}(100, 100) %
+    \put(30, 50){\vector(1,0){40}} %
+    \put(25, 50){\circle{10}} %
+    \put(75, 50){\circle{10}} %
+    \put(18, 63){$-q$} %
+    \put(68, 63){$+q$} %
+    \put(45, 30){$\overrightarrow{l}$} %
+    \end{picture}
+    
+    \end{center}
+	Напряженность электрического поля диполя:
+    $$ \overrightarrow{E} = q \left( \frac{\overrightarrow{r}}{r^3} - \frac{\overrightarrow{r} + \overrightarrow{l}}{\vert \overrightarrow{r} + \overrightarrow{l}\vert^3} \right)$$
+  
+    $$ \overrightarrow{E} = \frac{3(\overrightarrow{p}\overrightarrow{r})\overrightarrow{r}}{r^3} - \frac{\overrightarrow{p}}{r^3} $$
+    Поле вдоль диполя:
+    $$ E_{\parallel} = q \frac{d}{dr}\left[\frac{1}{r^2} - \frac{1}{\left(r + l \right)^2} \right] = \frac{2\overrightarrow{p}}{r^3} $$
+    Поле перпендикулярное диполю:
+    $$ E_{\perp} = - \frac{\overrightarrow{p}}{r^3} $$
+
+    \begin{center}
+   
+    \begin{picture}(150, 150) %
+    \put(30, 50){\vector(1, 0){40}} %
+    \put(25, 50){\circle{10}} %
+    \put(75, 50){\circle{10}} %
+    \put(18, 63){$-q$} %
+    \put(68, 63){$+q$} %
+    \put(45, 30){$\overrightarrow{l}$} %
+    \put(100, 125){\circle{1}} %
+    \put(102, 127){$A$} %
+    \put(50, 75){\circle{10}} %
+    \put(28, 53){\line(1, 1){18}} %
+    \put(72, 53){\line(-1, 1){19}} %
+    \put(54, 79){\vector(1, 1){46}} %
+    \put(70, 115){$\overrightarrow{r}$} %
+    \put(35, 85){$\pm q$} %
+    \end{picture}
+    
+    \end{center}
+        
+    Возьмем произвольную точку $A$. Найдем поле в ней. Опускаем перендиклуяр на прямую, соединяющую диполь и точку $A$. В основании перпендикуляра поместим заряды $+q$ и $-q$, получим два диполя, эквивалентных первому, направденные праллельно и перпендикулярно прямой, соединяющей диполь и точку.
+  
+    $$ E_A = \frac{2\overrightarrow{p_1} - \overrightarrow{p_2}}{r^3} = \frac{3\overrightarrow{p_1} - \overrightarrow{p}}{r^3} = \frac{3(\overrightarrow{p}\overrightarrow{r})\overrightarrow{r}}{r^3} - \frac{\overrightarrow{p}}{r^3} $$
+  
+    \paragraph{Силовые линии.} Силовые линии - касательные к вектору $\overrightarrow{E}$.
+  
+    \paragraph{Однородное поле.} Силы, действующие на диполь: 
+    $$ \overrightarrow{F_1} = q\overrightarrow{E} $$
+    $$ \overrightarrow{F_2} = -\overrightarrow{F_1} = -q\overrightarrow{E} $$
+    $$ \overrightarrow{M} = [\overrightarrow{p}\overrightarrow{E}] $$
+  
+    \paragraph{Неоднородное поле.}
+    $$ \overrightarrow{F} = q\overrightarrow{E}(\overrightarrow{r}) - q\overrightarrow{E}(\overrightarrow{r} + \overrightarrow{l}) $$
+  
+    $$ \overrightarrow{E}= q \left(l_x \frac{\partial\overrightarrow{E}}{\partial x} + l_y \frac{\partial\overrightarrow{E}}{\partial y} + l_z \frac{\partial\overrightarrow{E}}{\partial z} \right)  = \left(\overrightarrow{p}\triangledown\right)\overrightarrow{E} $$ 
+
+    \subsection*{Теорема Гаусса.}
+    Поток вектора:
+    $$ d\Phi = \overrightarrow{A} d\overrightarrow{S} $$
+  
+    $$ \Phi = \int \overrightarrow{A}d\overrightarrow{S} $$
+  
+    $$ \Phi = \oint \overrightarrow{E}d\overrightarrow{S} $$
+  
+    \subsubsection*{Теорема Гаусса в интегральной форме.} Поток вектора напряженности в электрического поля в ограниенном объеме равен $ 4\pi q $.
+  
+    $$ q = \int \rho dV $$
+  
+    $$ \oint \frac{q}{r^3} \overrightarrow{r} d\overrightarrow{S} = q\int d\Omega $$
+  
+    \subsubsection*{Теорема Гаусса в дифференциальной форме.}
+
+    \subparagraph{Дивергенция.}
+    $$ div \overrightarrow{A} = \lim \limits_{V \rightarrow 0} \oint \frac{\overrightarrow{A}d\overrightarrow{S}}{V} $$
+    $$ \boxed{div \overrightarrow{E} = 4\pi \rho} $$
+  
+\end{document}
