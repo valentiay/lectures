@@ -9,11 +9,121 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage{graphics}
+\usepackage{amsthm}
 
-\author{Александр Валентинов}
-\title{Base}
+\newtheorem*{df}{Определение}
+\newtheorem{teo}{Теорема}
+\newtheorem{lem}{Лемма}
+\newtheorem{prp}{Предложение}
+\newtheorem{hyp}{Предположение}
+\newtheorem{ass}{Утверждение}
+\newtheorem*{cor}{Следствие}
+\newtheorem*{ntc}{Замечание}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+
+\author{Редкозубов Вадим Витальевич}
+\title{Кратные интегралы и теория поля}
 
 \begin{document}
-  Base
-\end{document}
+  \section*{Теоремы о неявной обратной функции}
+  
+  \subsection*{Линейные отображения}
+  
+  \begin{df}
+  Функция $ L: R^n \rightarrow R^m $ называется линейным отображением, если $ \forall \alpha, \beta \in R,~~ \forall x, y \in R^n: ~~ L(\alpha x + \beta y) = \alpha L(x) + \beta L(y) $
+  \end{df}
+    
+  \begin{lem}
+  Если $ L \in \mathcal{L}(R^n, R^m) $, то $ \exists C  \in R : \forall x \in R^n :|| L|| < C||x|| $.
+  \end{lem}
+  
+  \begin{proof}
+  Имеем $|| L(x)||^2 = \sum \limits_{i=1}^m (L_i, x)^2 $, где $ L_i = (a_{i1}, \ldots a_{in}) $. По неравенству Коши-Буняковского: $(L_i, x)^2 \leqslant ||L_i||^2 \cdot|| x||^2 $ и, значит $|| L||^2 \leqslant ||x||^2 \sum\limits_{i=1}^m|| L_i||^2 =|| x||^2 \sum\limits_{i = 1}^m \sum \limits_{j=1}^n a_{ij}^2 $ так, что $|| L(x)|| \leqslant C|| x|| $ выполняется для $ C = \sqrt{\sum\limits_{i = 1}^m \sum \limits_{j=1}^n a_{ij}^2} $.
+  \end{proof}
+  
+  \begin{df}
+   Число $|| L|| = \inf \{C \in R \text{, таких, что } \forall x \in R^n:|| L(x)|| < C|| x||^2  \} $  называется нормой линейного отображения $ L $.
+  \end{df}
+    
+  \begin{ntc}~
+  \begin{enumerate}
+  \item Определение корректно.
+  \item Поскольку условие  $ ( \forall x \in R^n :|| L(x)|| \leqslant|| L|| + \varepsilon||x||$ выполняется при всех $\varepsilon > 0$, то $\inf$ достигается, т.е. $\forall  x \in R^n : ~~|| L(x)|| \leqslant|| L|| \cdot|| x|| $
+  \item $||L(x) - L(y)|| <=||L||||x-y|| \forall x,y from R^n $ Применяя последнее неравенство к разности векторов и пользуясь линейностью $L$ получим
+  $$ || L(x) - L(y)|| \leq||L||\cdot||x - y||~~~ \forall x, y \in R^n $$ 
+  в частности, заключаем, что любое линейное оторажение непрерывно.
+  \end{enumerate}
+  \end{ntc}
+  
+  \begin{lem} 
+  Ф-ция $||~||: L(R^n, R^m) \rightarrow R $ удовлетворяет свойствам.
+  \begin{enumerate}
+  \item $||L||\geqslant 0 ,~~||L||= 0 \Leftrightarrow L = \Theta \text{ - нулевое отображение} $
+  \item $ \forall \alpha \in R||\alpha L||= |\alpha| \cdot||L||$
+  \item $||L_1 + L_2||\leqslant||L_1||+||L_2||$\
+  \item Если $ L_1 \in L(R^n, R^m), ~~ L_2 \in L(R^m, R^k) $, то  определено произведение (композиция) $ L_2L_1 \in L(R^n, R^k), ~~~||L_1L_2||\leqslant||L_1||\cdot||L_2||$
+  \end{enumerate}
+  \end{lem}
+  
+  \begin{df} 
+  Последовательность $L_k L \in (R^n, R^m)$ сходится к $L \in L(R^n, R^m)$, если $||L_k - L||\rightarrow 0 $.
+  \end{df}
+    
+  \begin{lem} 
+  Пусть линейные оторажение $L_k$ и $L$ имеют матрицы $ A_k = (a_{ij}^{(k)} $ и $A$ соответственно. Последовательность $L_k \rightarrow L$, тогда и только тогда, когда  $a_{ij}^{(k)} \rightarrow a_{ij} $.
+  \end{lem}
+  \begin{proof}  
+  Заменяя $L_k$ на $L_k - L$ - линейное отображение с матрицей $A_k - A$, сведем к случаю $ L = \Theta $, что равносильно $ a_{ij} = 0 ~~ \forall i, j $. 
+  
+  Элемент $a_{ij}^{(k)} $ - $i$-й элемент $ L_k(e^j) $. Поэтому $ a_{ij}^{(k)} \leqslant L_k(e^j) \leqslant||L_k||\rightarrow 0 $. Обратно, если все $A_{ij}^{(k)} \rightarrow 0$ при $k \rightarrow \infty $, то $||L_k||\rightarrow 0 $ в силу оценки.
+  \end{proof}
+  
+  Напомним, что $f: E \subset R^n \rightarrow R^m$ задается набором координатных функций: $f_i : E \rightarrow R,~~ f = (f_1,\ldots f_m) $.
+  
+  \subsection*{Дифференцируемые отображения}
+  \begin{df} 
+  Пусть $E \subset R^n$, $a$ - внутренняя точка $E$. Отобрадение $f: E \rightarrow R^m $ называется дифференцируемым в $a$, если существует линейное отображение $L_a : R^n \rightarrow R^m $ такое, что 
+  \begin{equation}
+  \label{diff}
+  f(a + h) - f(a) = L_a(h) + \alpha(h)||h||,
+  \end{equation}
+где $\alpha (x) \rightarrow 0 $ при $h \rightarrow 0$.  
+В случае существования отображение $L_a$ определено однозначно.  Оно называется дифференциалом $f$ в точке $a$ $D_{f_a} $.
+
+Матрица дифференциала $D_{f_a} $ называется матрицей Якоби отображения $f$ в $a$ и обозначается $ \frac{\partial f}{\partial x}(a) $.
+  \end{df}
+
+  \begin{teo} Отобрадение $f$ дифференцируесм в точке $a$ тогда, и только тогда, когда все координатные функции $f_i$ дифференцируемы.
+  \end{teo}
+  \begin{proof}
+  Пусть $L_a = (L_1, \ldots L_m)$, равенство (\ref{diff}) эквивалентно системе:
+  $$ f(a + h) - f(a) = L_i(h) + \alpha_i(h)||h||$$
+   
+  $L_a$ линейно тогда, и только тогда, когда все $L_i$ линейны. $\alpha(h) \rightarrow 0 \Leftrightarrow \alpha_i(h)  \rightarrow 0 $.
+  \end{proof}
+  
+  \begin{cor} 
+  Если отображение $f: E \rightarrow R^n$ дифф. в точке $a$, то $ij$-й элемент матрицы Якоби $f$ в этой точке равен $ \frac{\partial f_i}{\partial x_j}(a) $.
+  \end{cor}
+  
+  \begin{teo}{(О композиции)}
+  \label{composition}
+  Если отображение $f: E \rightarrow F \subset R^n $ дифференцируемо в точке $a$, а отображение $g: F \rightarrow R^k $ дифференцируемо в точке $b = f(a)$ , то композиция $g \circ f E \rightarrow R^k $ дифференцируема в точке $a$ и $ D(g \circ f)_a = D_{g_b} \circ D_{f_a} $.
+  \end{teo}   
+  \begin{proof}
+  Доказательство очевидно.
+  \end{proof}
+  
+  \begin{teo}{(О среднем)} Пусть $U$ - открытое множество в $R^n$, отрезок $\Delta_{a, b} \subset U$. Если отображение  $f$ дифференцируемо на $U$ и $D_{f_x} \leqslant M$ для всех $ x \in U $, то $||f(b) - f(a)||\leqslant M||b - a||$.
+  \end{teo}
+  \begin{proof}
+  Рассмотрим вектор-функцию $t \rightarrow \gamma(t) = f(a + (b - a)t) $. Эта функция дифференцируема по теореме {\ref{composition}} в каждой точке $ t \in [0, 1] $, $\gamma(1) = f(b)$, $\gamma(0) = f(a)$ и по правилу дифференцирования композиции $\gamma(t) = D_{f_{a + t(b - a)}} (b - a)$. 
+   По теореме Лагранжа для вектор функций $\exists \Theta \in (0, 1) :||\gamma(1) - \gamma(0)||\leqslant||\gamma(\Theta) $. Положим $ c = a + \Theta(b-a)$. Тогда по пункту 4 леммы 2 $ ||\gamma'(\theta)|| \leqslant ||Df_c||||b-a|| $ Следовательно, $||f(b) - f(a)|| \leqslant ||\gamma'(\theta)|| \leqslant M||b - a|| $
+  \end{proof}
+  
+\end{document} 
 
