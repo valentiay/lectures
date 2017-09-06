@@ -9,85 +9,95 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage{graphics}
-\usepackage{enumitem}
 
-\author{Иван Генрихович Эрлих}
-\title{Основы вероятностей и теория меры}
+\author{Муницина Валерия Александровна}
+\title{Аналитическая механика}
 
 \begin{document}
   \maketitle
+  \section*{Кинематика точки}
+  \paragraph*{Материальная точка} - точка, размером которой можно пренебречь.
   
-  \paragraph{Семинарист:} Савелов Максим Павлович
+  Мы будем полагать, что время меняетсяр равномерно и непрерывно.
+  \begin{picture}(100, 100)
+  \put(0,0){\vector(1,1){10}} %
+  \end{picture}
+  \subsection*{Векторное описание движения}.
+  Зависимость координат от времени назовем законом движения.
+  $$ \overrightarrow{r} = \overrightarrow{r}(t) \in C^2 $$
+  $$ \gamma = \{ \overrightarrow{r}(t),~ t \in (0,~ +\infty) \} $$
+  $$ \overrightarrow{v} = \frac{d\overrightarrow{r}}{dt} $$
+  $$ \overrightarrow{w} = \frac{d\overrightarrow{v}}{dt} = \frac{d^2\overrightarrow{r}}{dt^2} $$
+  \subsection*{Декартовы координаты}
+  $$ \overrightarrow{r}(t) = x(t)\overrightarrow{e_x} + y(t)\overrightarrow{e_y} + z(t)\overrightarrow{e_z} $$
+  $$ \overrightarrow{v}(t) = x'(t)\overrightarrow{e_x} + y'(t)\overrightarrow{e_y} + z'(t)\overrightarrow{e_z} $$
+  \subsection*{Движение по окружности}
+  $$ x = R cos \varphi $$
+  $$ y = R sin \varphi $$
+  $$ x' = -R sin \varphi \varphi' $$
+  $$ y' = -R cos \varphi \varphi' $$
+  $$ x'' = -R cos \varphi \varphi'^2 - R sin \varphi \varphi'' $$
+  $$ y'' = -R sin \varphi \varphi'^2 + R cos \varphi \varphi'' $$
+  $$ \overrightarrow{v} = 2\varphi'(-sin \varphi \overrightarrow{e_x} + cos \varphi \overrightarrow{e_y} = R \varphi' \overrightarrow{r} $$
+  $$ w = R \varphi''( - sin \varphi \overrightarrow{e_x} + cos \varphi \overrightarrow{e_y}) + R \varphi'^2(-cos \varphi \overrightarrow{e_x} - sin \varphi{\overrightarrow{e_y}}) = R \varphi'' \overleftarrow{\tau} + R \varphi'^2 \overrightarrow{n} $$
   
-  \section*{Предмет теории вероятностей}
-  Предметом теории вероятностей могут являтся события, которые
+  $$ \overrightarrow{v} = R\varphi' \overrightarrow{\tau} $$
+  $$ \overrightarrow{w} = R \varphi'' \overrightarrow{\tau} + R \varphi'^2 \overrightarrow{n} $$
   
-  \subsection*{Задача о динозавре}
-  Какова вероятность встретить динозавра на улице? 
-  \begin{flushright}
-  Записки невесты программиста (Алекс Экслер)
-  \end{flushright}
-    
-  \subsection*{Физика на ПМИ}
-  Вы первые два курса активно занимаетесь чем? Вы пишете код и занимаетесь фундаментальной математикой. Но изначально математика была фундаментом для естественных наук. Но теперь есть программирование. Идея физики на ПМИ в том, чтобы показать, как можно применить математический аппарат к жизни. В теорвере примерно то же самое. Вам формулируют жизненную задачу. Вы должны построить математическую модель эксперимента.
-  
-  \subsection*{Математическая модель эксперимента}
-  Надо понять, будут ли применяться к этому эксперименту те методы, котрые применяются в теории вероятности. Рассмотрим две постановки задачи.
-  
-  \begin{itemize} 
-  \item Какова вероятность, что монета упадет "орлом" вверх.
-  \item Какова вероятность, что Вася Иванов получит по курсу ОВиТМ отл(9).
-  \end{itemize}
-  
-  Эксперимент для первой постановки легко повторить. Второй эксперимент нельзя провести много раз: невозможно проверить адекватность ответов.
-  
-  Вместо этого сформулируем задачу так:
-  \begin{itemize}
-  \item Какова вероятность того, что студент со средним баллом 8,7 получит оценку отл(9).
-  \end{itemize}
-  
-  \paragraph*{Требования на события:}
-  \begin{enumerate}
-  \item Возможность проводить неограничпнно большое число наблюдений.
-  \item Статистическую устойчивось эксперимента.
-  \end{enumerate}
-  
-  \paragraph{Статистическая устойчивость.} Пусть у нас есть несколько экспериментов: $ A_1, A_2 \ldots A_n $. Событие статистически устойчиво, если частоты некоторого события $ \mu(A_1), \mu(A_2) \ldots \mu(A_n) $ должны быть близки. 
-  
-  \paragraph*{Математическая модель эксперимента:}
-  \begin{enumerate}
-  \item Пространство элементарных исходов - $ \Omega = \{\omega\} $. Кажодое $\omega$ обозначает один из элементарных исходов. 
-  \item Вероятность элементарных исходов - $ P = p(\omega) $. Задача состоит в том, чтобы задать вероятность.
-  \end{enumerate}
-  
-  \paragraph*{Пример 1.} 2 раза бросаем монетку. Получаем 4 элементарных исхода: 
-  \begin{enumerate}
-  \item $ \omega_1 = (\text{о}, \text{о}),~ p(\omega_1) = \frac{1}{4} $
-  \item $ \omega_2 = (\text{р}, \text{о}),~ p(\omega_2) = \frac{1}{4} $
-  \item $ \omega_3 = (\text{о}, \text{р}),~ p(\omega_3) = \frac{1}{4} $
-  \item $ \omega_4 = (\text{р}, \text{р}),~ p(\omega_4) = \frac{1}{4} $
-  \end{enumerate}
-  
-  \paragraph*{Пример 2.} 2 раза бросаем монетку. Получаем 3 элементарных исхода: 
-  \begin{enumerate}
-  \item $ \omega_1 = \{\text{о}, \text{о}\},~ p(\omega_1) = \frac{1}{4} $
-  \item $ \omega_2 = \{\text{о}, \text{р}\},~ p(\omega_2) = \frac{1}{2} $
-  \item $ \omega_3 = \{\text{р}, \text{р}\},~ p(\omega_3) = \frac{1}{4} $
-  \end{enumerate}
+  \subsection*{Естественное описание движения}
+  Кривая задана параметрически естественным параметром $s$. $ ds = |dr\overrightarrow{dr}| \neq 0 $
+  Определение: 
+  $$ \overrightarrow{\tau} = \frac{d\overrightarrow{r}}{ds} = \overrightarrow{r}' \text{Касательный вектор} $$
+  $$ \overrightarrow{n} = \frac{\overrightarrow{r}'}{|\overrightarrow{\tau}'|} \text{ - вектор главной нормали }$$
+  $$ \overrightarrow{b} = [\overrightarrow{t}; \overrightarrow{n}] \text{ - вектор бинормали }$$
 
-  \subsubsection*{Стандартные математические модели:}
-  \begin{enumerate}
-  \item Классическая.  $(\Omega, P), |\Omega| = n < \infty,~ P(\omega_i) = const,~ i = 1 \ldots n $.
-  	\begin{enumerate}[label*=\arabic*.]
-  	\item Урновая схема: выбор с порядком без возвращения. Шаров в урне: $N$. $\omega = (i_1, \ldots i_k)$, где $i_j$ - номер шара $ i_j \neq i_m,~ j \neq m $. $ | \Omega |  = N \cdot \ldots \cdot (N - k + 1) $.
-  	\item Урновая схема: выбор с порядком с возвращением. Шаров в урне: $N$. $\omega = (i_1, \ldots i_k)$, где $i_j$ - номер шара $ i_j \neq i_m,~ j \neq m $. $ | \Omega |  = N^k $.
-  	\item Урновая схема: выбор без порядка без возвращения. Шаров в урне: $N$. $\omega = (i_1, \ldots i_k)$, где $i_j$ - номер шара, номера могут совпадать. $ | \Omega |  = C_n^k = \frac{N!}{k!(N - k)!} $.
-  	\item Урновая схема: выбор без порядка c возвращением. Шаров в урне: $N$. $\omega = (i_1, \ldots i_k)$, где $i_j$ - номер шара, номера могут совпадать. $ | \Omega |  = C_{n + k - 1}^k $.
-  	\end{enumerate}
-  \end{enumerate}
+  \paragraph{Утверждение} $ \{\overrightarrow{\tau}, \overrightarrow{n}, \overrightarrow{b} $ - тройка ортогональных единичных векторов.
   
-  \subsubsection*{Вероятность}
-  $$ P(A) = \frac{|A|}{|\Omega|} $$
+  $$ |\overrightarrow{\tau}| = \frac{|d\overrightarrow{r}|}{|ds|} = 1 $$
+  $$ |\overrightarrow{n}| = \frac{|\overrightarrow{r}'|}{|\overrightarrow{\tau}'|} = 1 $$
   
+  Этот трехгранник называют репер Ферне. (Дарбу, сопровождающий трехгранник).
+  
+  \paragraph{Теорема} $ \overrightarrow{v} = v \overrightarrow{\tau} $, $ \overrightarrow{w} = v' \overrightarrow{\tau} + \frac{v^2}{\rho} \overrightarrow{n} $, где $ v = s' $.
+  
+  $$ \overrightarrow{v} = \frac{d\overrightarrow{r}}{dt} = \frac{d\overrightarrow{r}}{ds} \frac{ds}{dt} $$
+  
+  $$ \overrightarrow{\tau}' = \frac{d\overrightarrow{\tau}}{ds} \frac{ds}{dt} = \overrightarrow{n}kv $$
+  $k$ - кривизна.
+  $$ \overrightarrow{w} = \overleftarrow{v}' = v' \overrightarrow{\tau} + v \overrightarrow{\tau}' = v' \overrightarrow{\tau} + v^2 k \overrightarrow{n} = v' \overrightarrow{\tau} + \frac{v^2}{\rho} \overrightarrow{n} $$
+  
+  $$ v' \overrightarrow{\tau} \text{ - касательное ускорение} $$
+  $$ \frac{v^2}{\rho} \overrightarrow{n} \text{ - нормальное ускорение } $$
+  
+  \paragraph{Формулы Френе:}
+  $$ \overrightarrow{\tau}' = k \overrightarrow{n} $$
+  $$ \overrightarrow{n}' = - k\overrightarrow{\tau} + \kappa \overleftarrow{b} $$
+  $$ \overrightarrow{b}' = -\kappa\overrightarrow{n} $$
+  
+  $$ | \overrightarrow{n} | = 1 \Rightarrow (\overrightarrow{n}, \overrightarrow{n}) = 0 $$
+  $$ \overrightarrow{n} \perp \overrightarrow{\tau} = 0 \Rightarrow (\overrightarrow{n}', \overrightarrow{\tau}) + (\overleftarrow{n}, \overrightarrow{\tau}) + k = 0 $$
+  
+  $$ \overrightarrow{b}' = [\overrightarrow{r}', \overrightarrow{n}] + [\overrightarrow{\tau}, \overrightarrow{n}'] = [k\overrightarrow{n}, \overrightarrow{n}] + [\overrightarrow{\tau}, -k\overrightarrow{\tau} + \kappa \overrightarrow{b}] = 0 + \kappa[\overrightarrow{r}, \overrightarrow{b}] = -\kappa\overrightarrow{n} $$
+  
+  \subsection*{Ортогональные векторные координаты}
+  
+  \begin{gather}
+  \overrightarrow{r} = \overrightarrow{r}(q_1(t), q_2(t), q_3(t)) \\
+  \overrightarrow{v} = \sum \limits_{i = 1}^3 \frac{\partial\overrightarrow{r}}{\partial q_i} q_i'\\
+  \overrightarrow{H_i} = \frac{\partial\overrightarrow{r}}{\partial q_i} = H_i \overrightarrow{e_i} 
+  \end{gather}
+  $H_i$ - коэффициенты Ламе.
+  \begin{gather}
+  \overrightarrow{H_i} = \frac{\partial \overrightarrow{r}}{\partial q_i} = \sqrt{\left(\frac{\partial x}{\partial q_i}\right) ^2}
+  \end{gather}
+  Копоненты вектора ускорения в ортогональном криволинейном базисе определяются равенством:
+  $$ w_i = \frac{1}{H_i}\left(\frac{d}{dt} \frac{\partial}{\partial q_i'} \left(\frac{v^2}{2}\right) - \frac{\partial}{\partial q_i} \left(\frac{v^2}{2} \right) \right) $$
+  
+$$ (\overrightarrow{w}, \overrightarrow{H_i}) = \left(\frac{d\overrightarrow{v}}{dt}, \frac{\partial \overrightarrow{r}}{\partial q_i} \right) = \frac{d}{dt} \left(\overrightarrow{v}, \frac{\overrightarrow{r}}{\partial q_i}\right) - \left((\overrightarrow{v}, \frac{d}{dt} \frac{\partial \overrightarrow{r}}{\partial q_i} \right) $$
+$$ \frac{\partial \overrightarrow{r}}{\partial q_i} = \frac{\partial \overrightarrow{v}}{\partial q_i'} \text{ - из определения скорости} $$  
+$$ \frac{d}{dt} \left(\frac{\partial \overrightarrow{r}}{\partial q_i} \right) = \sum \limits_{j = 1}^3 \frac{\partial^2 \overrightarrow{r}}{\partial q_j \partial q_i} q_j' = \sum \limits_{j = 1}^3 \frac{\partial^2 \overrightarrow{r}}{\partial q_i \partial q_j} q_i' = \frac{\partial}{\partial q_i} \left( \frac{d\overrightarrow{r}}{dt} \right) = \frac{\partial \overrightarrow{r}'}{\partial q_i} = \frac{\partial \overrightarrow{v}}{\partial q_i} $$
+
+$$ \frac{d}{dt} \left(\overrightarrow{v}, \frac{\partial \overrightarrow{v}}{\partial q_i} \right) - \left( \overrightarrow{v}, \frac{\partial \overrightarrow{v}}{\partial q_i} \right) = \frac{d}{dt} \frac{1}{2} \frac{\partial}{\partial q_i} (\overrightarrow{v}, \overrightarrow{v}) - \frac{1}{2} \frac{\partial}{\partial q_i} (\overrightarrow{v}, \overrightarrow{v}) = \frac{d}{dt} \frac{\partial}{\partial q_i} \left(\frac{v^2}{2} \right) = \ldots $$
+
 \end{document}
 
