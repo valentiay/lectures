@@ -9,13 +9,27 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage{graphics}
+\usepackage{amsthm}
 
-\author{Аланакян}
+\newtheorem*{df}{Определение}
+\newtheorem{teo}{Теорема}
+\newtheorem{lem}{Лемма}
+\newtheorem{prp}{Предложение}
+\newtheorem{hyp}{Предположение}
+\newtheorem{ass}{Утверждение}
+\newtheorem*{cor}{Следствие}
+\newtheorem*{ntc}{Замечание}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+
+\author{Аланакян Юрий Робертович}
 \title{Лекции по общей физике, электричество}
 
 \begin{document}
     \maketitle
-    \pagebreak
     
     \section*{Заряды.}
     
@@ -93,23 +107,97 @@
     $$ \overrightarrow{E}= q \left(l_x \frac{\partial\overrightarrow{E}}{\partial x} + l_y \frac{\partial\overrightarrow{E}}{\partial y} + l_z \frac{\partial\overrightarrow{E}}{\partial z} \right)  = \left(\overrightarrow{p}\triangledown\right)\overrightarrow{E} $$ 
 
     \subsection*{Теорема Гаусса.}
-    Поток вектора:
+    
+    \subsubsection*{Поток вектора:}
     $$ d\Phi = \overrightarrow{A} d\overrightarrow{S} $$
   
     $$ \Phi = \int \overrightarrow{A}d\overrightarrow{S} $$
   
-    $$ \Phi = \oint \overrightarrow{E}d\overrightarrow{S} $$
-  
-    \subsubsection*{Теорема Гаусса в интегральной форме.} Поток вектора напряженности в электрического поля в ограниенном объеме равен $ 4\pi q $.
+    $$ \Phi = \oint \overrightarrow{E}d\overrightarrow{S} $$    
+    
+    \subsubsection*{Дивергенция:}
+    $$ div \overrightarrow{A} = \lim \limits_{V \rightarrow 0} \oint \frac{\overrightarrow{A}d\overrightarrow{S}}{V} $$
+    $$ div \overrightarrow{E} = \triangledown \overrightarrow{E} $$ 
+    
+    \begin{teo}(Теорема гаусса в интегральной форме) Поток вектора напряженности в электрического поля в ограниенном объеме равен $ 4\pi q $.
   
     $$ q = \int \rho dV $$
   
     $$ \oint \frac{q}{r^3} \overrightarrow{r} d\overrightarrow{S} = q\int d\Omega $$
-  
-    \subsubsection*{Теорема Гаусса в дифференциальной форме.}
-
-    \subparagraph{Дивергенция.}
-    $$ div \overrightarrow{A} = \lim \limits_{V \rightarrow 0} \oint \frac{\overrightarrow{A}d\overrightarrow{S}}{V} $$
+    
+    $$ \boxed{\oint \overrightarrow{E} d\overrightarrow{S} = 4\pi q} $$
+    \end{teo}
+    \begin{teo}{(Теорема Гаусса в дифференциальной форме)}
     $$ \boxed{div \overrightarrow{E} = 4\pi \rho} $$
-  
+    \end{teo}
+    
+    % 2017-09-07    
+    
+    \subsection*{Теорема Остроградского-Гаусса}
+    \begin{teo}
+    $$ \int div \overrightarrow{A} dV = \oint \overrightarrow{A}d\overrightarrow{S} $$ 
+    \end{teo}
+    
+    \subsection*{Теорема Ирншоу}
+    \begin{teo}
+    Невозможно создания статической конфигурации электрических зарядов. 
+    \end{teo}
+    \begin{proof}
+    Следует из теоремы Гаусса.
+    \end{proof}  
+    \section*{Потенциал электрического поля}
+    Пусть у нас имеется точечный заряд $Q$. Возьмем заряд $q$ и переместим из точки $1$ в точку $2$. Посчитаем работу:
+    $$ A = \int\limits_1^2 \overrightarrow{E}d\overrightarrow{r} = qQ\int\limits_1^2 \frac{\overrightarrow{r}d\overrightarrow{r}}{r^3} = qQ\int\limits_1^2 \frac{dr}{r^2} = qQ\lb \frac{1}{r_1^2} - \frac{1}{r_2^2} \rb $$
+    \begin{df}
+    Разность потенциалов - работа, которую необходимо совершить  для перемещения единичного заряда ежду двумя точками. Потенциальным называется поле, работа в котором зависит тололько от начального и конечного положения.
+    \end{df}
+    $$ \overrightarrow{E} = -\triangledown \varphi $$
+    $$ d\varphi = \overrightarrow{E}d\overrightarrow{l} $$
+    
+    Т.к. потенциальное поле скалярное, можно провести линии, на которых потенциал одинаков. Эти линии будут параллельны силовым линиям поля.
+    
+    \begin{ntc}
+    Потенциалы нескольких зарядов суммируются. Это называется принципом суперпозиции.
+    $$ \varphi = \int \frac{\rho(\overrightarrow{r})dV}{r} $$
+    \end{ntc}
+    
+    \subsection*{Уравнение Пуассона}
+    $$ \triangledown \triangledown \varphi = -4\pi\rho $$
+    $$ \triangledown \triangledown = \triangle = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \text{ - лапласиан} $$
+    $$ \boxed{\triangle \varphi = - 4\pi\rho} $$
+    
+    \begin{ntc}
+    Решения уравнения Лапласа называются гармоническими функциями.
+    \end{ntc}
+    
+    \begin{teo} {(О циркуляции в электростатическом поле)}
+    Циркуляция электростатического поля по замкнутому контуру равна нулю.
+    $$ \oint \overrightarrow{E}d\overrightarrow{l} = 0 $$
+    Такое поле называется безвихревым.
+    \end{teo}
+    
+    \subsubsection*{Граничные условия}
+    Есть плоская граница двух сред. 
+    $$ E_n^{(1)} - E_n^{(2)} = 3\pi\sigma $$
+    Тангенциальные составляющие равны между собой из теоремы о циркуляции.
+    $$ E_t^{(1)} = E_t^{(2)} $$
+    
+    \paragraph{Следствие из теоремы Ирншоу.} Потенциал не может иметь максимума и минимума.
+    \begin{teo}
+    Уравнение Лапласа с граничными условиями имеет единственное решение.
+    \end{teo}  
+    \begin{proof}
+    Пусть у нас есть несколько точек, в которых $\varphi_i = 0$.
+    Предположим, что уравнение Лапласа имеет решения $\varphi$ и $\psi$. Т.к. уравнение линейное, $\varphi - \psi$ должно удовлетворять уравнению, но не граничным условиям, т.к. оно не имеет ни максимума, ни минимума и имеет ноль в нескольких точках.
+    \end{proof}
+    
+    \subsubsection*{Ротор}
+    $$ rot \overrightarrow{A} = \lim\limits_{s \rightarrow 0} \frac{\oint \overrightarrow{A}d\overrightarrow{l}}{S} $$
+    
+    \begin{ass}
+    $$ rot \overrightarrow{A} = \triangledown \times \overrightarrow{A} $$
+    \end{ass}
+    \begin{proof}
+    Возьмем в ДСК прямоугольный контур и вычислим по нему циркуляцию. 
+    \end{proof}
 \end{document}
