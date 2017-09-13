@@ -9,95 +9,70 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage{graphics}
+\usepackage{amsthm}
 
-\author{Муницина Валерия Александровна}
-\title{Аналитическая механика}
+\newtheorem*{df}{Определение}
+\newtheorem{teo}{Теорема}
+\newtheorem{lem}{Лемма}
+\newtheorem{prp}{Предложение}
+\newtheorem{hyp}{Предположение}
+\newtheorem{ass}{Утверждение}
+\newtheorem*{cor}{Следствие}
+\newtheorem*{ntc}{Замечание}
+\newtheorem*{xmp}{Пример}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+
+\author{Эрлих Иван Генрихович}
+\title{Основы вероятности и теория меры}
 
 \begin{document}
-  \maketitle
-  \section*{Кинематика точки}
-  \paragraph*{Материальная точка} - точка, размером которой можно пренебречь.
-  
-  Мы будем полагать, что время меняетсяр равномерно и непрерывно.
-  \begin{picture}(100, 100)
-  \put(0,0){\vector(1,1){10}} %
-  \end{picture}
-  \subsection*{Векторное описание движения}.
-  Зависимость координат от времени назовем законом движения.
-  $$ \overrightarrow{r} = \overrightarrow{r}(t) \in C^2 $$
-  $$ \gamma = \{ \overrightarrow{r}(t),~ t \in (0,~ +\infty) \} $$
-  $$ \overrightarrow{v} = \frac{d\overrightarrow{r}}{dt} $$
-  $$ \overrightarrow{w} = \frac{d\overrightarrow{v}}{dt} = \frac{d^2\overrightarrow{r}}{dt^2} $$
-  \subsection*{Декартовы координаты}
-  $$ \overrightarrow{r}(t) = x(t)\overrightarrow{e_x} + y(t)\overrightarrow{e_y} + z(t)\overrightarrow{e_z} $$
-  $$ \overrightarrow{v}(t) = x'(t)\overrightarrow{e_x} + y'(t)\overrightarrow{e_y} + z'(t)\overrightarrow{e_z} $$
-  \subsection*{Движение по окружности}
-  $$ x = R cos \varphi $$
-  $$ y = R sin \varphi $$
-  $$ x' = -R sin \varphi \varphi' $$
-  $$ y' = -R cos \varphi \varphi' $$
-  $$ x'' = -R cos \varphi \varphi'^2 - R sin \varphi \varphi'' $$
-  $$ y'' = -R sin \varphi \varphi'^2 + R cos \varphi \varphi'' $$
-  $$ \overrightarrow{v} = 2\varphi'(-sin \varphi \overrightarrow{e_x} + cos \varphi \overrightarrow{e_y} = R \varphi' \overrightarrow{r} $$
-  $$ w = R \varphi''( - sin \varphi \overrightarrow{e_x} + cos \varphi \overrightarrow{e_y}) + R \varphi'^2(-cos \varphi \overrightarrow{e_x} - sin \varphi{\overrightarrow{e_y}}) = R \varphi'' \overleftarrow{\tau} + R \varphi'^2 \overrightarrow{n} $$
-  
-  $$ \overrightarrow{v} = R\varphi' \overrightarrow{\tau} $$
-  $$ \overrightarrow{w} = R \varphi'' \overrightarrow{\tau} + R \varphi'^2 \overrightarrow{n} $$
-  
-  \subsection*{Естественное описание движения}
-  Кривая задана параметрически естественным параметром $s$. $ ds = |dr\overrightarrow{dr}| \neq 0 $
-  Определение: 
-  $$ \overrightarrow{\tau} = \frac{d\overrightarrow{r}}{ds} = \overrightarrow{r}' \text{Касательный вектор} $$
-  $$ \overrightarrow{n} = \frac{\overrightarrow{r}'}{|\overrightarrow{\tau}'|} \text{ - вектор главной нормали }$$
-  $$ \overrightarrow{b} = [\overrightarrow{t}; \overrightarrow{n}] \text{ - вектор бинормали }$$
+\maketitle
 
-  \paragraph{Утверждение} $ \{\overrightarrow{\tau}, \overrightarrow{n}, \overrightarrow{b} $ - тройка ортогональных единичных векторов.
+\subsection*{Формула умножения вероятностей}
+\begin{xmp}
+  Урна: 5 белых, 3 красных шара. Последовательны вынимаются три. Найти вероятность события, что выпадет белый-красный-белый именно в такой последовательности.
   
-  $$ |\overrightarrow{\tau}| = \frac{|d\overrightarrow{r}|}{|ds|} = 1 $$
-  $$ |\overrightarrow{n}| = \frac{|\overrightarrow{r}'|}{|\overrightarrow{\tau}'|} = 1 $$
+  $$ P\{(\text{б},\text{к},\text{б})\} = \frac{5}{8} \cdot \frac{3}{7} \cdot \frac{4}{6} $$
   
-  Этот трехгранник называют репер Ферне. (Дарбу, сопровождающий трехгранник).
+  $$ P(A_1 \cap \ldots \cap A_n) = P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1 \cap A_2) \cdot \ldots \cdot P(A_n | A_1 \cap \ldots \cap A_{n-1}) $$
   
-  \paragraph{Теорема} $ \overrightarrow{v} = v \overrightarrow{\tau} $, $ \overrightarrow{w} = v' \overrightarrow{\tau} + \frac{v^2}{\rho} \overrightarrow{n} $, где $ v = s' $.
-  
-  $$ \overrightarrow{v} = \frac{d\overrightarrow{r}}{dt} = \frac{d\overrightarrow{r}}{ds} \frac{ds}{dt} $$
-  
-  $$ \overrightarrow{\tau}' = \frac{d\overrightarrow{\tau}}{ds} \frac{ds}{dt} = \overrightarrow{n}kv $$
-  $k$ - кривизна.
-  $$ \overrightarrow{w} = \overleftarrow{v}' = v' \overrightarrow{\tau} + v \overrightarrow{\tau}' = v' \overrightarrow{\tau} + v^2 k \overrightarrow{n} = v' \overrightarrow{\tau} + \frac{v^2}{\rho} \overrightarrow{n} $$
-  
-  $$ v' \overrightarrow{\tau} \text{ - касательное ускорение} $$
-  $$ \frac{v^2}{\rho} \overrightarrow{n} \text{ - нормальное ускорение } $$
-  
-  \paragraph{Формулы Френе:}
-  $$ \overrightarrow{\tau}' = k \overrightarrow{n} $$
-  $$ \overrightarrow{n}' = - k\overrightarrow{\tau} + \kappa \overleftarrow{b} $$
-  $$ \overrightarrow{b}' = -\kappa\overrightarrow{n} $$
-  
-  $$ | \overrightarrow{n} | = 1 \Rightarrow (\overrightarrow{n}, \overrightarrow{n}) = 0 $$
-  $$ \overrightarrow{n} \perp \overrightarrow{\tau} = 0 \Rightarrow (\overrightarrow{n}', \overrightarrow{\tau}) + (\overleftarrow{n}, \overrightarrow{\tau}) + k = 0 $$
-  
-  $$ \overrightarrow{b}' = [\overrightarrow{r}', \overrightarrow{n}] + [\overrightarrow{\tau}, \overrightarrow{n}'] = [k\overrightarrow{n}, \overrightarrow{n}] + [\overrightarrow{\tau}, -k\overrightarrow{\tau} + \kappa \overrightarrow{b}] = 0 + \kappa[\overrightarrow{r}, \overrightarrow{b}] = -\kappa\overrightarrow{n} $$
-  
-  \subsection*{Ортогональные векторные координаты}
-  
-  \begin{gather}
-  \overrightarrow{r} = \overrightarrow{r}(q_1(t), q_2(t), q_3(t)) \\
-  \overrightarrow{v} = \sum \limits_{i = 1}^3 \frac{\partial\overrightarrow{r}}{\partial q_i} q_i'\\
-  \overrightarrow{H_i} = \frac{\partial\overrightarrow{r}}{\partial q_i} = H_i \overrightarrow{e_i} 
-  \end{gather}
-  $H_i$ - коэффициенты Ламе.
-  \begin{gather}
-  \overrightarrow{H_i} = \frac{\partial \overrightarrow{r}}{\partial q_i} = \sqrt{\left(\frac{\partial x}{\partial q_i}\right) ^2}
-  \end{gather}
-  Копоненты вектора ускорения в ортогональном криволинейном базисе определяются равенством:
-  $$ w_i = \frac{1}{H_i}\left(\frac{d}{dt} \frac{\partial}{\partial q_i'} \left(\frac{v^2}{2}\right) - \frac{\partial}{\partial q_i} \left(\frac{v^2}{2} \right) \right) $$
-  
-$$ (\overrightarrow{w}, \overrightarrow{H_i}) = \left(\frac{d\overrightarrow{v}}{dt}, \frac{\partial \overrightarrow{r}}{\partial q_i} \right) = \frac{d}{dt} \left(\overrightarrow{v}, \frac{\overrightarrow{r}}{\partial q_i}\right) - \left((\overrightarrow{v}, \frac{d}{dt} \frac{\partial \overrightarrow{r}}{\partial q_i} \right) $$
-$$ \frac{\partial \overrightarrow{r}}{\partial q_i} = \frac{\partial \overrightarrow{v}}{\partial q_i'} \text{ - из определения скорости} $$  
-$$ \frac{d}{dt} \left(\frac{\partial \overrightarrow{r}}{\partial q_i} \right) = \sum \limits_{j = 1}^3 \frac{\partial^2 \overrightarrow{r}}{\partial q_j \partial q_i} q_j' = \sum \limits_{j = 1}^3 \frac{\partial^2 \overrightarrow{r}}{\partial q_i \partial q_j} q_i' = \frac{\partial}{\partial q_i} \left( \frac{d\overrightarrow{r}}{dt} \right) = \frac{\partial \overrightarrow{r}'}{\partial q_i} = \frac{\partial \overrightarrow{v}}{\partial q_i} $$
+  $$ \frac{P(A_1)}{1} \cdot \frac{P(A_1 \cup A_2)}{P(A_1)} \cdot \ldots \cdot \frac{P(A_1 \cap A_2 \cap \ldots \cap A_n)}{P(A_1 \cap A_2 \cap \ldots \cap A_{n - 1})} $$
+\end{xmp}
 
-$$ \frac{d}{dt} \left(\overrightarrow{v}, \frac{\partial \overrightarrow{v}}{\partial q_i} \right) - \left( \overrightarrow{v}, \frac{\partial \overrightarrow{v}}{\partial q_i} \right) = \frac{d}{dt} \frac{1}{2} \frac{\partial}{\partial q_i} (\overrightarrow{v}, \overrightarrow{v}) - \frac{1}{2} \frac{\partial}{\partial q_i} (\overrightarrow{v}, \overrightarrow{v}) = \frac{d}{dt} \frac{\partial}{\partial q_i} \left(\frac{v^2}{2} \right) = \ldots $$
+\subsection*{Формула Байеса (Апостериорная вероятность)}
+$$ P(B_k | A) = \frac{P(AB_k)}{P_A} = \frac{P(AB_k)P(B_k)}{\sum\limits_{i=1}^{n} P(A|B_i) P(B_i)} $$
+Пример с учителем:
+$$ P (\text{плохой вызван} | \text{дан ответ} ) = \frac{2/3 \cdot 1/10}{31/90} = \frac{6}{31} $$
+
+\subsection*{Геометрическая вероятность (Вопросы задания вероятностей)}
+
+  $ A \subseteq \mathbb{R}^n \text{ , для $\Omega$ определен объем, конечн., положит.}$
+  
+  \noindent $ \mathcal{F} - ? = \{ A : A \subseteq \Omega\}$
+  
+  \noindent $ P(A) = \frac{\mu(A)}{\mu(\Omega)} $
+  
+  \noindent $ \mu(\Omega) < \infty $
+
+\begin{xmp}(Задача о встрече)
+Есть два друга, договорились встретиться с 12 до 13. Каждый ждет 15 минут, после чего уходит, если друг не пришел. Найти вероятность того, что они встретятся.
+
+Задача для двумерного пространства $n = 2$. Построим график. Нам подходят такие координаты $(u, v) \in [12, 13]$ и $ |u - v| \leqslant \frac{1}{4} $.
+
+$ \mu(\Omega) = 1,~~ \mu(A) = 1 - 2 \cdot \frac{1}{2} \left(\frac{3}{4}\right)^2 = \frac{7}{16} $
+\end{xmp}
+
+$$ P(A) = \frac{\mu(A)}{\mu(\Omega)} $$
+
+\subsubsection*{Проблемы:}
+\begin{enumerate}
+\item Аксиоматика Колмогорова.
+\item Системы множеств.
+\item Строить меру.
+\end{enumerate}
 
 \end{document}
-
