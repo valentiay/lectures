@@ -1,0 +1,290 @@
+\documentclass{article}
+
+%\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{graphics}
+\usepackage{amsthm}
+
+\newtheorem*{df}{Определение}
+\newtheorem{teo}{Теорема}
+\newtheorem{lem}{Лемма}
+\newtheorem{prp}{Предложение}
+\newtheorem{hyp}{Предположение}
+\newtheorem{ass}{Утверждение}
+\newtheorem*{cor}{Следствие}
+\newtheorem*{ntc}{Замечание}
+\newtheorem{xmp}{Пример}
+
+\setcounter{secnumdepth}{0}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+
+\author{Свирщевский Сергей Ростиславович}
+\title{Дифференциальные уравнения}
+
+\begin{document}
+  \begin{titlepage}
+  \maketitle
+  \begin{center}
+  {\itshape\footnotesize Набор: Алесандр Валентинов}
+  
+  {\itshape\footnotesize Об ошибках писать: vk.com/valentiay}
+  \end{center}
+  \tableofcontents
+  \vfill
+  \end{titlepage}
+  
+  \section{Лекция 1}
+  \subsection{Введение}
+  \subsubsection{Основные понятия}
+  \begin{df}
+  Обыкновенным дифференциальным уравнением {(ОДУ)} $n$-го порядка называется уравнение вида:
+  \begin{equation}
+  \label{diffur}
+  F(x, y, y', \ldots y^{(n)})
+  \end{equation}
+  где $x$ - независимая переменная, $y(x)$ - искомая функция, $ y', \ldots, y^{(n)} $ - ее производные, $F$ - заданная функция, определенная в области $\Omega \subseteq \mathbb{R}^{n+2}$. Порядок $n$ уравнения равен порядку старшей производной, входящей в уравнение. 
+  \end{df}
+  
+  \begin{df}
+  Функция $y = \varphi(x)$, определенная на некотором интервале $X = (\alpha, \beta)$, называется решением уравнения (\ref{diffur}), если 
+  \begin{enumerate}
+  \item $\varphi(x)$ $n$ раз дифференцируемо на $X$,
+  \item $x, \varphi(x), \varphi'(x), \ldots \varphi^{(n)} \in \Omega,~~ \forall x \in X$,
+  \item $F(x, \varphi(x), \varphi'(x), \ldots, \varphi^{(n)}(x)) = 0$.
+  \end{enumerate}
+  \end{df}
+  \begin{ntc}
+  В этом определении в качестве $X$ можно взять полуинтервал или отрезок, т.е любой промежуток действительной оси.
+  \end{ntc}
+  \begin{ntc}
+  Решение может быть определено на сколько можно малом интервале. Разные решения могут быть определены на разных интервалах.
+  \end{ntc}
+  
+  \begin{df}
+  Уравнение 
+  \begin{equation}
+  \label{normaldiffur}
+  y^{(n)} = f(x, y, y', \ldots y^{(n-1)})
+  \end{equation}
+  где $f$ - заданная функция, определенная в некоторой области $D \subseteq \mathbb{R}^{n+1}$, называется разрешенным относительно старшей производной или уравнение в нормальной форме.
+  \end{df}
+  
+  \begin{df}
+  Функция $y = \varphi(x)$, определенная на некотором интервале $X = (\alpha, \beta)$, называется решением уравнения (\ref{normaldiffur}), если 
+  \begin{enumerate}
+  \item $\varphi(x)$ $n$ раз дифференцируемо на $X$,
+  \item $x, \varphi(x), \varphi'(x), \ldots \varphi^{(n - 1)} \in D,~~ \forall x \in X$,
+  \item $\varphi^{(n)} \equiv f(x, \varphi(x), \varphi'(x), \ldots, \varphi^{(n - 1)}(x))$.
+  \end{enumerate}
+  \end{df}
+  \begin{ntc}
+  Процесс нахождения решений уравнения называется его интегрированием.
+  \end{ntc}
+  
+  \begin{xmp}
+  ~
+  \begin{enumerate}
+  \item $$ y' = f(x) \Rightarrow y = \int f(x) dx $$
+  $$ y' = e^{-x^2},~~ y = \frac{1}{2}e^{-x^2} + C $$
+  \item $$ y^{(n)} = f(x) \Rightarrow y = \int f(x) dx $$
+  $$ y'' = 2x,~~ y' = x^2 + C_1,~~ y = \frac{1}{3}x^3 + C_1 x + C_2 $$ 
+  \item $$ y' = ky,~~ k = const \neq 0 $$
+  $$ y = Ce^{kx} $$
+  \item $$ y' = y^2,~~ y = -\frac{1}{x} $$
+  \end{enumerate}
+  \end{xmp}
+
+  \begin{ntc}
+  Формулы, описывающие все решения уравнения содержат $n$ произвольных постоянных.
+  \end{ntc}  
+  
+  \subsection{Задача Коши и теорема существования и единственности для уравнения (\ref{normaldiffur})}
+  Для получения из множества решений какого-либо частного решения, необходимо задать дополнительные условия. Рассмотрим, например, уравнение первого порядка:
+  \begin{equation}
+  \label{lindiff}
+     y' = f(x, y),~~ (x,y) \in D
+  \end{equation}
+  \begin{equation}
+  \label{conditkoshi}
+  y_0 = y(x_0)
+  \end{equation}
+  Возьмем точку $(x_0, y_0) \in D$ и рассмотрим начальное условие (НУ).
+  \begin{df}
+  Найти решение уравнения (\ref{lindiff}), удовлетворяющее НУ (\ref{conditkoshi})
+  \end{df}
+  
+  \begin{teo}
+  \label{koshi}
+  Пусть функция $f(x, y)$ и ее частная производная $\frac{\partial f(x,y)}{\partial y}$ непрерывны в области $D\subseteq \mathbb{R}^2$. Тогда, $\forall (x_0, y_0) \in D$:
+  \begin{enumerate}
+  \item Существует решение задачи Коши, определенное на некотором интервале $ X \ni x_0 $
+  \item Если $y_1(x)$, $y_2(x)$ - какие-либо решения, то $y_1(x) \equiv y_2(x)$ на пересечении их интервалов определения.
+  \end{enumerate}
+  \end{teo}
+  
+  \begin{xmp}
+  $$ y' = kx ,~~ k = const \neq 0 $$
+  Решение: $y = Ce^{kx}, ~~ x \in (-\infty, +\infty)$
+  Докажем, что других решений нет. Пусть $y = \varphi(x), x \in X$ - какое-либо решение. Возьмем произвольную $x_0 \in X$ и найдем $y_0 = \varphi(x_0)$. Теперь покажем, что в этом семействе есть решение с такими же начальными условиями. Рассмотрим $ y = C_0 e^{kx},~~ C_0 = y_0e^{kx_0} $.  Оба этих решения являются решениями одной и той же задачи Коши с НУ $(x_0, y_0)$. В силу единственности по теореме (\ref{koshi}) мы имеем $\varphi(x)  = C_0 e^{kx}$ на $X$.
+  \end{xmp}
+  \begin{ntc}
+  Решение $y = \varphi (x),~~ x \in X$ называется сужением решения $y = C_0e^{kx},~~ x \in \mathbb{R}$, на интервал $X$. А решение $y = C_0e^{kx}$ называется продолжением решения $y = \varphi (x)$ на $\mathbb{R} $.
+  \end{ntc}
+  
+  \begin{df}
+  Пусть $ y = \varphi_1(x),~~ x \in X_1 $ и $ y = \varphi_2(x),~~ x \in X_2 $ - какие-либо решения уравнения, и пусть $ X_1 \subseteq X_2 $. Тогда решение $ y = \varphi_2(x) $ называется продолжением решения $ y = \varphi_1(x) $ на $X_2$.
+  \end{df} 
+  \begin{ntc}
+  В дальнейшем докажем, что каждое решение может быть продолжено на некоторый максимальный интервал до непродолжаемого решения.
+  \end{ntc}
+  
+  \begin{df}
+  График решения $ y = \varphi(x) $ на плоскости $(x, y)$  называется его интегральной кривой. Если под интегральной кривой понимать непродолжаемое решение, то теорему (\ref{koshi}) можно переформулировать так:
+  
+  Через каждую точку $(x_0, y_0) \in D$ проходит единственная интегральная кривая уравнения (\ref{lindiff}). 
+  \end{df}
+  
+  \begin{ntc}
+  Мы можем нарисовать интегральные кривые, не решая уравнение, поскольку мы знаем, как направлена касательная в любой точке.
+  Не каждое уравнение не имеет аналитическое решение, например: $ y' = x^2 + y^2 $. В качестве альтернативы можно нарисовать на плоскости $(x, y)$ изоклины и получить представления о том, как выглядят интегральные кривые.
+  \end{ntc}
+  
+  \begin{ntc}
+  Для \textbf{существования} решения задачи Коши достаточно непрерывности функции $f(x, y)$. Но решение может быть не единственным.
+  \end{ntc}
+  
+  \begin{xmp}
+  $$ y' = 3\sqrt[3]{y^2} $$
+  $$ \text{Решения: } y = 0, y = (x - C)^3 $$ В каждой точки интегральной кривой $y = 0$ нарушается единственность решения задачи Коши. Решение $y = 0$ называется особым. 
+  \end{xmp}
+
+  % 2017-09-14  
+  \section{Лекция 2}
+  \begin{df}
+  Решение уравнения (\ref{lindiff}) и его интегральная кривая $l$ называются особыми, если в любой окрестности каждой точки кривой $l$ через эту точку проходит, касаясь $l$, по крайней мере одна интегральная кривая уравнения (\ref{lindiff}), отличная от $l$.
+  \end{df}
+  \begin{ntc}
+  Условие про касание $l$ избыточно.
+  \end{ntc}
+  
+  Аналогично рассмотрим уравнение (\ref{normaldiffur}) при $n \geqslant 1$.
+  Возьмем точку $(x_0, y_0, y'_0, \ldots y_0^{(n-1)}) \in D$. Рассмотрим НУ:
+  \begin{equation}
+  \label{five}
+  y(x_0) = y_0,~ y'(x_0) = y'_0,~ \ldots y^{(n - 1)}(x_0) = y^{(n - 1)}_0
+  \end{equation}   
+  Задача Коши: найти  решение уравнения (\ref{normaldiffur}) для НУ (\ref{five})
+  \begin{teo}
+  Пусть функция $f$ и ее частные производные $f_y, f_{y'}, \ldots f_{y^{(n + 1)}} $ непрерывны в $ D \subseteq \mathbb{R}^{(n + 1)}$. Тогда задача Коши (\ref{normaldiffur}), (\ref{five}) имеет решение на интервале $X \ni x_0$. Любые два решения задачи (\ref{normaldiffur}), (\ref{five}) совпадают на пересечении их интервалов определения.
+  \end{teo}
+  
+  \subsection{Уравнения первого порядка, интегрируемые в квадратурах}
+  \subsubsection{Уравнения с разделяющимися переменными}
+  $\boxed{y' = f(x)g(y) }$, где $f$ и $g$ - неперывны на $X$ и $Y$. 
+  
+  \noindent Схема решения:
+  \begin{enumerate}
+  
+  \item $g(y) = 0 \Rightarrow$ постоянные решения $y = y_1$, $y = y_2$, $\ldots$
+  \item $g(y) \neq 0$ На каждом интервале это выполнено.
+  $$ \int \frac{y'(x)}{g(y(x))}dx = \int f(x)dx $$
+  $$ \int \frac{dy}{g(y)} = \int f(x)dx $$
+  $$ G(y) = F(x) + C \text{ - решение в неявной форме} $$
+  $G$, $F$ - первообразные, $C$ - константа.
+  Т.к. $G'(y) = \frac{1}{g(y)}$ на рассмаотриваемом интервале сохраняет знак, то $G(y)$ строго монотонна и, следовательно, имеет обратную. Поэтому можно написать явную формулу для решения.
+  \end{enumerate}
+  
+  \subsubsection{Однородные уравнения}
+  $\boxed{ y' = f\left(\frac{y}{x}\right) }$
+  
+  \noindent Замена: $\frac{y(x)}{x} = z(x)$, $y = xz$. 
+  
+  \noindent $ xz' + z = f(z) $, $xz' = f(z) - z $ - уравнение, с разделяющимися переменными.
+  
+  \begin{ntc}
+  Уравнение инвариантно относительно растяжения: $ x \rightarrow ax $, $ y \rightarrow ay $; $ a > 0 $.
+  \end{ntc}
+  
+  \subsubsection{Обобщенные однородные уравнения}
+  $\boxed{ \frac{1}{x^{m - 1}}\frac{dy}{dx} = f \left(\frac{y}{x^m}\right) }$, $ x \neq 0 $
+  
+  \noindent Замена $\frac{y}{x^m} = z$, $y = x^m z$.
+  
+  \subsubsection{Линейные уравнения}
+  $\boxed{ y' + a(x)y = b(x) }$
+  
+  \noindent Схема решения:
+  \begin{enumerate}
+  \item Рассматриваем однородное уравнение $y' + a(x)y = 0$, $y' = -a(x)y$,
+    \begin{enumerate}
+    \item $y = 0$ - решение.
+    \item $y \neq 0 \Rightarrow$ $\int \frac{dy}{y} -\int a(x)dx$.
+    $$ ln|y| = A(x) + \dot{C},~~ A(x) = \int a(t)dt $$
+    $$ y = Ce^{-A(x)} $$
+    \end{enumerate}
+    \item Ищем решение в виде $ y = C(x)e^{-A(x)} $.
+    $$ C'(x)e^{-A(x)} + C(x)e^{-A(x)}\left(-a(x)\right) + C(x)e^{-A(x)}\left(a(x)\right) = b(x) $$
+    $$ C(x) = \int\limits_{x_0}^{x} b(t)e^{A(t)}dt + C_0 $$
+    Общее решение:
+    $$ y = e^{-A(x)} \int\limits_{x_0}^{x}b(t)e^{A(t)}dt + C_0e^{-A(x)} $$
+    Задача Коши с НУ $y(x_0) = y_0$, $C_0 = y_0$.
+  \end{enumerate}
+  Каждое решение линейного уравнения определено на всем интервале $X$.
+  
+  \subsubsection{Уравнение Бернулли}
+  $ \boxed{y' + a(x)y = b(x) y^n} $, $n \neq 0, 1 $
+  
+  \noindent Схема решения.  
+  При $n > 0$ имеется решение $y = 0$.
+  Пусть $y \neq 0$. Разделим на $y^n$:
+  $$ y^{-n}y' + a(x)y^{1 - n} = b(x) $$
+  $$ \frac{1}{1 - n}(y^{1-n})' + a(x)y^{1 - n} = b(x) $$
+  $$ \text{Замена: } y^{1 -n} = z $$
+  
+  \subsubsection{Уравнения Риккати}
+  $ \boxed{y' = a(x)y^2 + b(x) y + c(x)} $ 
+  
+  \noindent В общем случае не решается в квадратурах. Рассмотрим случай, когда известно какое-либо частное решение $y_0(x)$. 
+  
+  \noindent Замена: $y = z + y_0(x)$
+  
+  $$ z' + y_0' = a(z^2 + 2zy_0 + y_0^2) + b(z + y_0) + C $$
+  $$ z' = az^2 + (2ay_0 + b)z \text{ - уравнение Бернулли} $$
+  
+  \subsubsection{Уравнение в полных дифференциалах}
+  \subparagraph*{Уравнения 1-го порядка в симметричной форме}  
+  \begin{equation} 
+  \label{fulldiff}
+  \boxed{P(x, y)dx + Q(x,y)dy = 0}
+  \end{equation} 
+  где $P, Q$ непрерывны в области $D \subset \mathbb{R}^2$, $P^2 + Q^2 \neq 0$ в $D$. 
+  
+  Уравнение называется уравнением в полных дифференциалах, если существует функция $U(x, y)$ непрерывно дифференцируемая в области $D$, такая, что 
+  \begin{equation}
+  \label{six}
+  dU = Pdx + Qdy
+  \end{equation} 
+  в $D$. $dU(x,y) = 0$, $U(x, y) = C$ - содержит все решения $x(y)$ и $y(x)$.
+  
+  Пусть выполнено (\ref{six}), тогда $ P = \frac{\partial U}{\partial x} $, $ Q = \frac{\partial U}{\partial y} $.
+  Пусть $P_y$ и $Q_x$ непрерывны в $D$. Тогда имеем:
+  $$ P_y = \frac{\partial^2 U}{\partial x \partial y} = \frac{\partial^2 U}{\partial y \partial x} = Q_x \Rightarrow $$
+  $$ \Rightarrow \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} $$ 
+   - необходимое условие того, что (\ref{fulldiff}) - уравнение в полных дифференциалах.
+  
+  \begin{ntc}
+  Если область $D$ односвязна, то это условие является и достаточным. (Из курса математического анализа известно, что любой замкнутый контур можно стянуть в точку в этой области)
+  \end{ntc}
+
+\end{document} 
+
