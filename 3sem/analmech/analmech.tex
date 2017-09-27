@@ -11,6 +11,8 @@
 \usepackage{graphics}
 \usepackage{amsthm}
 
+\renewcommand{\v}[1]{{\vec{#1}}}
+
 \newtheorem*{df}{Определение}
 \newtheorem{teo}{Теорема}
 \newtheorem{lem}{Лемма}
@@ -59,23 +61,23 @@
   \put(92,42){$x$} %
   \put(42,92){$z$} %
   \put(8,8){$y$} %
-  \put(82,62){$\vec{r}$} %
+  \put(82,62){$\v{r}$} %
   \qbezier(50,70)(60,80)(80,60) %
   \qbezier(80,60)(85,50)(90,50) %
   \end{picture}
   \end{center}
   \subsection{Векторное описание движения}
   Зависимость координат от времени назовем законом движения.
-  $$ \vec{r} = \vec{r}(t) \in C^2 $$
+  $$ \v{r} = \v{r}(t) \in C^2 $$
   \begin{df}
-  $ \gamma = \{ \vec{r}(t),~ t \in (0,~ +\infty) \} $ - траектория
+  $ \gamma = \{ \v{r}(t),~ t \in (0,~ +\infty) \} $ - траектория
   \end{df}
-  $$ \vec{v} = \frac{d\vec{r}}{dt} $$
-  $$ \vec{w} = \frac{d\vec{v}}{dt} = \frac{d^2\vec{r}}{dt^2} $$
+  $$ \v{v} = \frac{d\v{r}}{dt} $$
+  $$ \v{w} = \frac{d\v{v}}{dt} = \frac{d^2\v{r}}{dt^2} $$
   \subsection{Декартовы координаты}
-  $$ \vec{r}(t) = x(t)\vec{e_x} + y(t)\vec{e_y} + z(t)\vec{e_z} $$
-  $$ \vec{v}(t) = \dot x(t)\vec{e_x} + \dot y(t)\vec{e_y} + \dot z(t)\vec{e_z} $$
-  $$ \vec{w}(t) = \ddot x(t)\vec{e_x} + \ddot y(t)\vec{e_y} + \ddot z(t)\vec{e_z} $$
+  $$ \v{r}(t) = x(t)\v{e_x} + y(t)\v{e_y} + z(t)\v{e_z} $$
+  $$ \v{v}(t) = \dot x(t)\v{e_x} + \dot y(t)\v{e_y} + \dot z(t)\v{e_z} $$
+  $$ \v{w}(t) = \ddot x(t)\v{e_x} + \ddot y(t)\v{e_y} + \ddot z(t)\v{e_z} $$
   \subsection{Движение по окружности}
   $$ 
   \begin{cases}
@@ -109,107 +111,107 @@
   \put(52,97){$y$} %
   \put(65,65){$\varphi(t)$} %
   \put(36,36){\vector(1,-1){10}} %
-  \put(40,15){$\vec{\tau}$} %
+  \put(40,15){$\v{\tau}$} %
   \put(36,36){\vector(1,1){10}} %
-  \put(31,40){$\vec{n}$} %
+  \put(31,40){$\v{n}$} %
   \end{picture}
   \end{center}
   
-  $$ \vec{v} = R\dot\varphi(-\sin \varphi \cdot \vec{e_x} + \cos \varphi \cdot\vec{e_y}) = R \dot\varphi \vec{r} $$
-  $$ \vec{w} = R \ddot\varphi ( - \sin \varphi \cdot \vec{e_x} + \cos \varphi \cdot \vec{e_y}) + R \dot\varphi^2(-\cos \varphi \cdot \vec{e_x} - \sin \varphi \cdot {\vec{e_y}}) = R \ddot \varphi \vec{\tau} + R \dot \varphi^2 \vec{n}  $$
+  $$ \v{v} = R\dot\varphi(-\sin \varphi \cdot \v{e_x} + \cos \varphi \cdot\v{e_y}) = R \dot\varphi \v{r} $$
+  $$ \v{w} = R \ddot\varphi ( - \sin \varphi \cdot \v{e_x} + \cos \varphi \cdot \v{e_y}) + R \dot\varphi^2(-\cos \varphi \cdot \v{e_x} - \sin \varphi \cdot {\v{e_y}}) = R \ddot \varphi \v{\tau} + R \dot \varphi^2 \v{n}  $$
   
-  $$ \vec{v} = R \dot\varphi \vec{\tau} = v \vec{\tau}$$
-  $$ \vec{w} = R \ddot\varphi \vec{\tau} + R \dot \varphi^2 \vec{n} = \dot v \vec{\tau} + \frac{v^2}{R} \vec{n}$$
+  $$ \v{v} = R \dot\varphi \v{\tau} = v \v{\tau}$$
+  $$ \v{w} = R \ddot\varphi \v{\tau} + R \dot \varphi^2 \v{n} = \dot v \v{\tau} + \frac{v^2}{R} \v{n}$$
   
   \subsection{Естественное описание движения}
-  Кривая задана параметрически естественным параметром $s$. $ ds = |\vec{dr}| \neq 0 $
+  Кривая задана параметрически естественным параметром $s$. $ ds = |\v{dr}| \neq 0 $
   \begin{df}
   \begin{equation} 
   \label{tang}
-  \vec{\tau} = \frac{d\vec{r}}{ds} = \dot{\vec r} \text{ - касательный вектор}
+  \v{\tau} = \frac{d\v{r}}{ds} = \dot{\vec r} \text{ - касательный вектор}
   \end{equation}
   \begin{equation}
   \label{normal}
-  \vec{n} = \frac{\dot{\vec r}}{|\dot{\vec {\tau}}|} \text{ - вектор главной нормали }
+  \v{n} = \frac{\dot{\vec r}}{|\dot{\vec {\tau}}|} \text{ - вектор главной нормали }
   \end{equation}
   \begin{equation}    
-  \vec{b} = [\vec{t}; \vec{n}] \text{ - вектор бинормали }
+  \v{b} = [\v{t}; \v{n}] \text{ - вектор бинормали }
   \end{equation}  
   \end{df}
   
   \begin{ass} 
-  $ \{\vec{\tau}, \vec{n}, \vec{b}\} $ - тройка ортогональных единичных векторов.
+  $ \{\v{\tau}, \v{n}, \v{b}\} $ - тройка ортогональных единичных векторов.
   \end{ass}
   \begin{proof}  
   \begin{gather}
-  |\vec{\tau}| = \frac{|d\vec{r}|}{|ds|} = 1 \\
-  |\vec{n}| = \frac{|\dot{\vec r}|}{|\dot{\vec{\tau}}|} = 1 \\
-  |\vec{\tau}| = 1 \Rightarrow (\tau, \tau) = 1 \\
-  (\dot{\vec {\tau}}, \vec{\tau}) + (\vec{\tau}, \dot{\vec {\tau}}) = 0 \\
-  2 (\dot{\vec{\tau}}, \vec{\tau}) = 0 \Rightarrow \dot{\vec{\tau}} \perp \vec{\tau} \Rightarrow \vec{n} \perp \vec{\tau}
+  |\v{\tau}| = \frac{|d\v{r}|}{|ds|} = 1 \\
+  |\v{n}| = \frac{|\dot{\vec r}|}{|\dot{\v{\tau}}|} = 1 \\
+  |\v{\tau}| = 1 \Rightarrow (\tau, \tau) = 1 \\
+  (\dot{\vec {\tau}}, \v{\tau}) + (\v{\tau}, \dot{\vec {\tau}}) = 0 \\
+  2 (\dot{\v{\tau}}, \v{\tau}) = 0 \Rightarrow \dot{\v{\tau}} \perp \v{\tau} \Rightarrow \v{n} \perp \v{\tau}
   \end{gather}
   
   \end{proof}
   Этот трехгранник называют репер Ферне. (Дарбу, сопровождающий трехгранник).
   
   \begin{teo} 
-  $ \vec{v} = v \vec{\tau} $, $ \vec{w} = \dot v \vec{\tau} + \frac{v^2}{\rho} \vec{n} $, где $ v = \dot s $.
+  $ \v{v} = v \v{\tau} $, $ \v{w} = \dot v \v{\tau} + \frac{v^2}{\rho} \v{n} $, где $ v = \dot s $.
   \end{teo}
   \begin{proof}
   \begin{gather}
-  \vec{v} = \frac{d\vec{r}}{dt} = \frac{d\vec{r}}{ds} \frac{ds}{dt} = v\vec{\tau} \\
-  \dot{\vec {\tau}} = \frac{d\vec{\tau}}{ds} \frac{ds}{dt} = \vec{n}kv \text{, по формуле (\ref{normal})} \\
-  \vec{w} = \dot{\vec {v}} = \dot v \vec{\tau} + v \dot{\vec {\tau}} = \dot v \vec{\tau} + v^2 k \vec{n} = \dot v \vec{\tau} + \frac{v^2}{\rho} \vec{n} 
+  \v{v} = \frac{d\v{r}}{dt} = \frac{d\v{r}}{ds} \frac{ds}{dt} = v\v{\tau} \\
+  \dot{\vec {\tau}} = \frac{d\v{\tau}}{ds} \frac{ds}{dt} = \v{n}kv \text{, по формуле (\ref{normal})} \\
+  \v{w} = \dot{\vec {v}} = \dot v \v{\tau} + v \dot{\vec {\tau}} = \dot v \v{\tau} + v^2 k \v{n} = \dot v \v{\tau} + \frac{v^2}{\rho} \v{n} 
   \end{gather}
-  $$ \dot v \vec{\tau} \text{ - касательное ускорение} $$
-  $$ \frac{v^2}{\rho} \vec{n} \text{ - нормальное ускорение } $$
+  $$ \dot v \v{\tau} \text{ - касательное ускорение} $$
+  $$ \frac{v^2}{\rho} \v{n} \text{ - нормальное ускорение } $$
   $$ \rho = \frac{1}{|\dot r|} \text{ - радиус кривизны} $$
-  $$ k = | \vec{\ddot r} | \text{ - кривизна} $$
-  $$ \vec{\ddot r} \text{ - вектор кривизны} $$
+  $$ k = | \v{\ddot r} | \text{ - кривизна} $$
+  $$ \v{\ddot r} \text{ - вектор кривизны} $$
   
   \end{proof}
   
   \paragraph{Формулы Френеля:}
   $$ 
   \begin{cases}
-  \vec{\tau}' = k \vec{n} \\
-  \vec{n}' = - k\vec{\tau} + \varkappa \vec{b} \\
-  \vec{b}' = -\varkappa\vec{n}
+  \v{\tau}' = k \v{n} \\
+  \v{n}' = - k\v{\tau} + \varkappa \v{b} \\
+  \v{b}' = -\varkappa\v{n}
   \end{cases}
   $$
   где $\varkappa$ - коэффициент кручения.
   
   \begin{proof}
-  $$ | \vec{n} | = 1 \Rightarrow (\vec{n}, \vec{n}) = 0 $$
-  $$ \vec{n} \perp \vec{\tau} \Rightarrow (\vec{n}', \vec{\tau}) + (\vec{n}, \vec{\tau}') = 0 \Rightarrow (\vec{n}', \vec{\tau}) + k = 0 $$
+  $$ | \v{n} | = 1 \Rightarrow (\v{n}, \v{n}) = 0 $$
+  $$ \v{n} \perp \v{\tau} \Rightarrow (\v{n}', \v{\tau}) + (\v{n}, \v{\tau}') = 0 \Rightarrow (\v{n}', \v{\tau}) + k = 0 $$
   
-  $$ \vec{b}' = [\vec{ \tau}', \vec{n}] + [\vec{\tau}, \vec{n}'] = [k\vec{n}, \vec{n}] + [\vec{\tau}, -k\vec{\tau} + \varkappa \vec{b}] = 0 + \varkappa[\vec{r}, \vec{b}] = -\varkappa\vec{n} $$
+  $$ \v{b}' = [\v{ \tau}', \v{n}] + [\v{\tau}, \v{n}'] = [k\v{n}, \v{n}] + [\v{\tau}, -k\v{\tau} + \varkappa \v{b}] = 0 + \varkappa[\v{r}, \v{b}] = -\varkappa\v{n} $$
   \end{proof}
   \subsection{Ортогональные векторные координаты}
   
   \begin{gather}
-  \vec{r} = \vec{r}(q_1(t), q_2(t), q_3(t)) \\
-  \vec{v} = \dot{\vec {\tau}}= \sum \limits_{i = 1}^3 \frac{\partial\vec{r}}{\partial q_i} \dot q_i\\
-  \vec{H_i} = \frac{\partial\vec{r}}{\partial q_i} = H_i \vec{e_i} \text{, где $H_i$ - коэффициенты Ламе.} \\ 
+  \v{r} = \v{r}(q_1(t), q_2(t), q_3(t)) \\
+  \v{v} = \dot{\vec {\tau}}= \sum \limits_{i = 1}^3 \frac{\partial\v{r}}{\partial q_i} \dot q_i\\
+  \v{H_i} = \frac{\partial\v{r}}{\partial q_i} = H_i \v{e_i} \text{, где $H_i$ - коэффициенты Ламе.} \\ 
   \end{gather}
   \subsubsection{Геометрический смысл}
   $$ ds_i = H_i dq_i $$
   $s_i$ - длина дуги $i$-й к-ой линии.
-  $$ H_i = \frac{\partial \vec{r}}{\partial q_i}  = \sqrt{\left(\frac{\partial x}{\partial q_i}\right) ^2 + \left(\frac{\partial y}{\partial q_i}\right) ^2 + \left(\frac{\partial z}{\partial q_i}\right) ^2} $$
-  $$ \vec{v} = \sum\limits_{i=1}^3 H_i \dot{q_i} \vec{e_i},~~ v^2 = (\vec{v}, \vec{v}) = \sum H_i^2\dot{q_i^2} $$ 
+  $$ H_i = \frac{\partial \v{r}}{\partial q_i}  = \sqrt{\left(\frac{\partial x}{\partial q_i}\right) ^2 + \left(\frac{\partial y}{\partial q_i}\right) ^2 + \left(\frac{\partial z}{\partial q_i}\right) ^2} $$
+  $$ \v{v} = \sum\limits_{i=1}^3 H_i \dot{q_i} \v{e_i},~~ v^2 = (\v{v}, \v{v}) = \sum H_i^2\dot{q_i^2} $$ 
   \begin{teo}
   Копоненты вектора ускорения в ортогональном криволинейном базисе определяются равенством:
   $$ w_i = \frac{1}{H_i}\left(\frac{d}{dt} \frac{\partial}{\partial \dot q_i} \left(\frac{v^2}{2}\right) - \frac{\partial}{\partial q_i} \left(\frac{v^2}{2} \right) \right) $$
   \end{teo}
   \begin{proof}
   \begin{gather}
-(\vec{w}, \vec{H_i}) = \left(\frac{d\vec{v}}{dt}, \frac{\partial \vec{r}}{\partial q_i} \right) = \frac{d}{dt} \left(\vec{v}, \frac{\vec{r}}{\partial q_i}\right) - \left(\vec{v}, \frac{d}{dt} \frac{\partial \vec{r}}{\partial q_i} \right) \triangleq \\
-1) ~ \frac{\partial \vec{r}}{\partial q_i} = \frac{\partial \vec{v}}{\partial q_i'} \text{ - из определения скорости} \\
-2) ~ \frac{d}{dt} \left(\frac{\partial \vec{r}}{\partial q_i} \right) = \sum \limits_{j = 1}^3 \frac{\partial^2 \vec{r}}{\partial q_j \partial q_i} \dot q_j = \sum \limits_{j = 1}^3 \frac{\partial^2 \vec{r}}{\partial q_i \partial q_j} \dot q_j = \\ 
-= \frac{\partial}{\partial q_i} \left( \frac{d\vec{r}}{dt} \right) = \frac{\partial \dot{\vec r}}{\partial q_i} = \frac{\partial \vec{v}}{\partial q_i} \\
-\triangleq \frac{d}{dt} \left(\vec{v}, \frac{\partial \vec{v}}{\partial q_i} \right) - \left( \vec{v}, \frac{\partial \vec{v}}{\partial q_i} \right) = \frac{d}{dt} \frac{1}{2} \frac{\partial}{\partial q_i} (\vec{v}, \vec{v}) - \frac{1}{2} \frac{\partial}{\partial q_i} (\vec{v}, \vec{v}) = \\ 
+(\v{w}, \v{H_i}) = \left(\frac{d\v{v}}{dt}, \frac{\partial \v{r}}{\partial q_i} \right) = \frac{d}{dt} \left(\v{v}, \frac{\v{r}}{\partial q_i}\right) - \left(\v{v}, \frac{d}{dt} \frac{\partial \v{r}}{\partial q_i} \right) \triangleq \\
+1) ~ \frac{\partial \v{r}}{\partial q_i} = \frac{\partial \v{v}}{\partial q_i'} \text{ - из определения скорости} \\
+2) ~ \frac{d}{dt} \left(\frac{\partial \v{r}}{\partial q_i} \right) = \sum \limits_{j = 1}^3 \frac{\partial^2 \v{r}}{\partial q_j \partial q_i} \dot q_j = \sum \limits_{j = 1}^3 \frac{\partial^2 \v{r}}{\partial q_i \partial q_j} \dot q_j = \\ 
+= \frac{\partial}{\partial q_i} \left( \frac{d\v{r}}{dt} \right) = \frac{\partial \dot{\vec r}}{\partial q_i} = \frac{\partial \v{v}}{\partial q_i} \\
+\triangleq \frac{d}{dt} \left(\v{v}, \frac{\partial \v{v}}{\partial q_i} \right) - \left( \v{v}, \frac{\partial \v{v}}{\partial q_i} \right) = \frac{d}{dt} \frac{1}{2} \frac{\partial}{\partial q_i} (\v{v}, \v{v}) - \frac{1}{2} \frac{\partial}{\partial q_i} (\v{v}, \v{v}) = \\ 
 = \frac{d}{dt} \frac{\partial}{\partial \dot q_i} \left(\frac{v^2}{2} \right) - \frac{\partial}{\partial q_i} \left(\frac{v^2}{2}\right) \\
-w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
+w_i = (\v{w}, \v{e_i}) = \frac{1}{H_i}(\v{w}, \v{H_i})
   \end{gather}
   \end{proof}
   
@@ -219,7 +221,7 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   \begin{df}
   Абсолютно твердым телом называется множество точек, расстояние между которыми не меняется со временем.
   
-  $  \{ \vec{r_i}, i = \overline{1 \ldots n} ~~:~~|\vec{r_i} - \vec{r_j} | = C_{ij} = const ,~~ n \geqslant 3 \}$ 
+  $  \{ \v{r_i}, i = \overline{1 \ldots n} ~~:~~|\v{r_i} - \v{r_j} | = C_{ij} = const ,~~ n \geqslant 3 \}$ 
   
   \end{df}
   
@@ -231,22 +233,22 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   X = 
   \left(
   \begin{matrix} 
-  (\vec{e_{\xi}}, \vec{e_{x}}) & 
-  (\vec{e_{\xi}}, \vec{e_{y}}) & 
-  (\vec{e_{\xi}}, \vec{e_{z}}) \\ 
-  (\vec{e_{\eta}}, \vec{e_{x}}) & 
-  (\vec{e_{\eta}}, \vec{e_{y}}) & 
-  (\vec{e_{\eta}}, \vec{e_{z}}) \\  
-  (\vec{e_{\zeta}}, \vec{e_{x}}) & 
-  (\vec{e_{\zeta}}, \vec{e_{y}}) & 
-  (\vec{e_{\xi}}, \vec{e_{\zeta}}) \\
+  (\v{e_{\xi}}, \v{e_{x}}) & 
+  (\v{e_{\xi}}, \v{e_{y}}) & 
+  (\v{e_{\xi}}, \v{e_{z}}) \\ 
+  (\v{e_{\eta}}, \v{e_{x}}) & 
+  (\v{e_{\eta}}, \v{e_{y}}) & 
+  (\v{e_{\eta}}, \v{e_{z}}) \\  
+  (\v{e_{\zeta}}, \v{e_{x}}) & 
+  (\v{e_{\zeta}}, \v{e_{y}}) & 
+  (\v{e_{\xi}}, \v{e_{\zeta}}) \\
   \end{matrix}
   \right)
   \text{ - матрица направляющих косинусов.}
   $$
  
-  $$ \vec{AB} = x\vec{e_x} + y\vec{e_y} + z\vec{e_z} $$
-  $$ \vec{AB} = \xi\vec{e_{\xi}} + \eta\vec{e_{\eta}} + \zeta\vec{e_{\zeta}} $$
+  $$ \v{AB} = x\v{e_x} + y\v{e_y} + z\v{e_z} $$
+  $$ \v{AB} = \xi\v{e_{\xi}} + \eta\v{e_{\eta}} + \zeta\v{e_{\zeta}} $$
 
   $$ X
   \left(
@@ -257,17 +259,17 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   =
   \left(
   \begin{matrix}
-  (\vec{e_{\xi}}, x\vec{e_x} + y \vec{e_y} + z \vec{e_z}) \\
-  (\vec{e_{\eta}}, x\vec{e_x} + y \vec{e_y} + z \vec{e_z}) \\
-  (\vec{e_{\zeta}}, x\vec{e_x} + y \vec{e_y} + z \vec{e_z}) \\
+  (\v{e_{\xi}}, x\v{e_x} + y \v{e_y} + z \v{e_z}) \\
+  (\v{e_{\eta}}, x\v{e_x} + y \v{e_y} + z \v{e_z}) \\
+  (\v{e_{\zeta}}, x\v{e_x} + y \v{e_y} + z \v{e_z}) \\
   \end{matrix}
   \right)
   = 
   \left(
   \begin{matrix}
-  (\vec{e_{\xi}}, \vec{AB}) \\
-  (\vec{e_{\eta}}, \vec{AB}) \\
-  (\vec{e_{\zeta}}, \vec{AB}) \\
+  (\v{e_{\xi}}, \v{AB}) \\
+  (\v{e_{\eta}}, \v{AB}) \\
+  (\v{e_{\zeta}}, \v{AB}) \\
   \end{matrix}
   \right)
   =
@@ -279,10 +281,10 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   \end{matrix}
   \right)
   =
-  \vec{\rho}
+  \v{\rho}
   $$
 
-  $$ \vec{\rho} = X \vec{r} $$
+  $$ \v{\rho} = X \v{r} $$
   
   \begin{ass}
   $X$ - ортогональная матрица.
@@ -291,9 +293,9 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   $$ XX^T = X^TX = 
   \left(
   \begin{matrix}
-  (\vec{e_{\xi}}, \vec{\xi}) & 
-  (\vec{e_{\xi}}, \vec{\eta}) & 
-  (\vec{e_{\xi}}, \vec{\zeta}) \\
+  (\v{e_{\xi}}, \v{\xi}) & 
+  (\v{e_{\xi}}, \v{\eta}) & 
+  (\v{e_{\xi}}, \v{\zeta}) \\
   \vdots & \ddots & \vdots \\
    & \ldots &
   \end{matrix} 
@@ -305,18 +307,18 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   $$
   \left(
   \begin{matrix}
-  \vec{e_{\xi}} \\
-  \vec{e_{\eta}} \\
-  \vec{e_{\zeta}} \\
+  \v{e_{\xi}} \\
+  \v{e_{\eta}} \\
+  \v{e_{\zeta}} \\
   \end{matrix}
   \right)  
   =  
   X
   \left(
   \begin{matrix}
-  \vec{e_{x}} \\
-  \vec{e_{y}} \\
-  \vec{e_{z}} \\
+  \v{e_{x}} \\
+  \v{e_{y}} \\
+  \v{e_{z}} \\
   \end{matrix}
   \right)
   $$
@@ -324,18 +326,18 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   $$
   \left(
   \begin{matrix}
-  \dot{\vec{e_{\xi}}} \\
-  \dot{\vec{e_{\eta}}} \\
-  \dot{\vec{e_{\zeta}}} \\  
+  \dot{\v{e_{\xi}}} \\
+  \dot{\v{e_{\eta}}} \\
+  \dot{\v{e_{\zeta}}} \\  
   \end{matrix}
   \right)
   = 
   \dot{X}
   \left(
   \begin{matrix}
-  \vec{e_{x}} \\
-  \vec{e_{y}} \\
-  \vec{e_{z}} \\
+  \v{e_{x}} \\
+  \v{e_{y}} \\
+  \v{e_{z}} \\
   \end{matrix}
   \right) =
   \underbrace{
@@ -343,18 +345,18 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   }_{\Omega}
   \left(
   \begin{matrix}
-  \vec{e_{\xi}} \\
-  \vec{e_{\eta}} \\
-  \vec{e_{\zeta}} \\
+  \v{e_{\xi}} \\
+  \v{e_{\eta}} \\
+  \v{e_{\zeta}} \\
   \end{matrix}
   \right)
   =
   \Omega
   \left(
   \begin{matrix}
-  \vec{e_{\xi}} \\
-  \vec{e_{\eta}} \\
-  \vec{e_{\zeta}} \\
+  \v{e_{\xi}} \\
+  \v{e_{\eta}} \\
+  \v{e_{\zeta}} \\
   \end{matrix}
   \right) 
   $$
@@ -384,65 +386,65 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   \end{cor}
   
   \begin{df}
-  $ \vec{\omega} = \omega_{\xi}\vec{e_{\xi}} + \omega_{\eta}\vec{e_{\eta}} + \omega_{\zeta}\vec{e_{\zeta}} $ - угловая скорость подвижного репера.
+  $ \v{\omega} = \omega_{\xi}\v{e_{\xi}} + \omega_{\eta}\v{e_{\eta}} + \omega_{\zeta}\v{e_{\zeta}} $ - угловая скорость подвижного репера.
   \end{df}
   
   \subsection{Формулы Пуассона}
   \begin{ass}
-  $$ \dot{\vec{e_i}} = [\vec{\omega}, \vec{e_i}],~~ i = \overline{1 \ldots 3} $$
+  $$ \dot{\v{e_i}} = [\v{\omega}, \v{e_i}],~~ i = \overline{1 \ldots 3} $$
   \end{ass}
   \begin{proof}
   $$
-  \dot{\vec{e_{\xi}}} = \omega_{\zeta} \vec{e_{\eta}} - \omega_{\eta} \vec{e_{\zeta}} =
+  \dot{\v{e_{\xi}}} = \omega_{\zeta} \v{e_{\eta}} - \omega_{\eta} \v{e_{\zeta}} =
   \begin{vmatrix}
-  \vec{e_{\xi}} & \vec{e_{\eta}} & \vec{e_{\zeta}} \\
+  \v{e_{\xi}} & \v{e_{\eta}} & \v{e_{\zeta}} \\
   \omega_{\xi} & \omega_{\eta} & \omega_{\zeta} \\
   1 & 0 & 0 \\ 
   \end{vmatrix}
   =
-  [\vec{\omega}, \vec{e_{\xi}}] 
+  [\v{\omega}, \v{e_{\xi}}] 
   $$
   \end{proof}
   
   \begin{ass}
-  $ \vec{\omega} = \vec{e_{\xi}}(\dot{\vec{e_{\eta}}}, \vec{e_{\zeta}}) + \vec{e_{\eta}}(\dot{\vec{e_{\zeta}}}, \vec{e_{\xi}}) + \vec{e_{\zeta}}(\dot{\vec{e_{\xi}}}, \vec{e_{\eta}}) $
+  $ \v{\omega} = \v{e_{\xi}}(\dot{\v{e_{\eta}}}, \v{e_{\zeta}}) + \v{e_{\eta}}(\dot{\v{e_{\zeta}}}, \v{e_{\xi}}) + \v{e_{\zeta}}(\dot{\v{e_{\xi}}}, \v{e_{\eta}}) $
   \end{ass}
   \begin{proof}
-  $$ (\dot{\vec{e_{\xi}}}, \vec{e_{\eta}}) = \omega_{\zeta} $$
-  $$ (\dot{\vec{e_{\eta}}}, \vec{e_{\zeta}}) = \omega_{\xi} $$
-  $$ (\dot{\vec{e_{\zeta}}}, \vec{e_{\xi}}) = \omega_{\eta} $$
+  $$ (\dot{\v{e_{\xi}}}, \v{e_{\eta}}) = \omega_{\zeta} $$
+  $$ (\dot{\v{e_{\eta}}}, \v{e_{\zeta}}) = \omega_{\xi} $$
+  $$ (\dot{\v{e_{\zeta}}}, \v{e_{\xi}}) = \omega_{\eta} $$
   \end{proof}
   
   \begin{ass}
-  $ \vec{\omega} = \frac{1}{2} ([\vec{e_{\xi}}, \dot{\vec{e_{\xi}}}] + [\vec{e_{\eta}}, \dot{\vec{e_{\eta}}}] + [\vec{e_{\zeta}}, \dot{\vec{e_{\zeta}}}]) $
+  $ \v{\omega} = \frac{1}{2} ([\v{e_{\xi}}, \dot{\v{e_{\xi}}}] + [\v{e_{\eta}}, \dot{\v{e_{\eta}}}] + [\v{e_{\zeta}}, \dot{\v{e_{\zeta}}}]) $
   \end{ass}
   \begin{proof}
-  $$ \vec{\omega} 
-  = \frac{1}{2} ([\vec{e_{\xi}}, \dot{\vec{e_{\xi}}}] + [\vec{e_{\eta}}, \dot{\vec{e_{\eta}}}] + [\vec{e_{\zeta}}, \dot{\vec{e_{\zeta}}}]) 
-  = \frac{1}{2} ([\vec{e_{\xi}}, [\vec{\omega}, \vec{e_{\xi}}]] + [\vec{e_{\eta}}, [\vec{\omega}, \vec{e_{\eta}}]] + [\vec{e_{\zeta}}, [\vec{\omega}, \vec{e_{\zeta}}]]) = $$
-  $$ = \frac{1}{2} \left( \vec{\omega}(\vec{e_{\xi}}, \vec{e_{\xi}}) - \vec{e_{\xi}}(\vec{\omega}, \vec{e_{\xi}}) + \vec{\omega}(\vec{e_{\eta}}, \vec{e_{\eta}}) - \vec{e_{\eta}}(\vec{\omega}, \vec{e_{\eta}}) + \vec{\omega}(\vec{e_{\zeta}}, \vec{e_{\zeta}}) - \vec{e_{\zeta}}(\vec{\omega}, \vec{e_{\zeta}}) \right) = $$ 
-  $$ = \frac{1}{2}(3\vec{\omega} - \vec{\omega}) = \vec{\omega} $$
+  $$ \v{\omega} 
+  = \frac{1}{2} ([\v{e_{\xi}}, \dot{\v{e_{\xi}}}] + [\v{e_{\eta}}, \dot{\v{e_{\eta}}}] + [\v{e_{\zeta}}, \dot{\v{e_{\zeta}}}]) 
+  = \frac{1}{2} ([\v{e_{\xi}}, [\v{\omega}, \v{e_{\xi}}]] + [\v{e_{\eta}}, [\v{\omega}, \v{e_{\eta}}]] + [\v{e_{\zeta}}, [\v{\omega}, \v{e_{\zeta}}]]) = $$
+  $$ = \frac{1}{2} \left( \v{\omega}(\v{e_{\xi}}, \v{e_{\xi}}) - \v{e_{\xi}}(\v{\omega}, \v{e_{\xi}}) + \v{\omega}(\v{e_{\eta}}, \v{e_{\eta}}) - \v{e_{\eta}}(\v{\omega}, \v{e_{\eta}}) + \v{\omega}(\v{e_{\zeta}}, \v{e_{\zeta}}) - \v{e_{\zeta}}(\v{\omega}, \v{e_{\zeta}}) \right) = $$ 
+  $$ = \frac{1}{2}(3\v{\omega} - \v{\omega}) = \v{\omega} $$
   \end{proof}
   
   \begin{xmp}
   Угловая скорость репера Френеля.
   $$ 
   \begin{cases}
-  \vec{\tau}' = k \vec{n} \\
-  \vec{n}' = - k\vec{\tau} + \varkappa \vec{b} \\
-  \vec{b}' = -\varkappa\vec{n}
+  \v{\tau}' = k \v{n} \\
+  \v{n}' = - k\v{\tau} + \varkappa \v{b} \\
+  \v{b}' = -\varkappa\v{n}
   \end{cases}
   $$
   
   $$
   \begin{cases}
-  \dot{\vec{\tau}} = \frac{d\vec{\tau}}{ds} \dot s \\
-  \dot{\vec{n}} = \frac{d\vec{n}}{ds} \dot s \\
-  \dot{\vec{b}} = \frac{d\vec{b}}{ds} \dot s \\
+  \dot{\v{\tau}} = \frac{d\v{\tau}}{ds} \dot s \\
+  \dot{\v{n}} = \frac{d\v{n}}{ds} \dot s \\
+  \dot{\v{b}} = \frac{d\v{b}}{ds} \dot s \\
   \end{cases} 
   $$
   
-  $$ \vec{\omega} = \vec{\tau}(\dot s (-k\vec{\tau} + \varkappa\vec{b}), \vec{b}) + \vec{n}(\dot s (-\varkappa\vec{n}, \vec{\tau}) + \vec{b}(\dot s(k \vec{n}), \vec{n}) = \dot s (\varkappa\vec{\tau} + k\vec{b}) $$
+  $$ \v{\omega} = \v{\tau}(\dot s (-k\v{\tau} + \varkappa\v{b}), \v{b}) + \v{n}(\dot s (-\varkappa\v{n}, \v{\tau}) + \v{b}(\dot s(k \v{n}), \v{n}) = \dot s (\varkappa\v{\tau} + k\v{b}) $$
   \end{xmp}
   
   \begin{df}
@@ -450,49 +452,49 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   \end{df}
  
   \subsection{Формула распределения скоростей точек твердого тела}
-  $ \vec{v_B} = \vec{v_A} + [\vec{\omega}, \vec{AB}] $
+  $ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] $
   \begin{proof}
-  $$ \vec{AB} = \xi \vec{e_{\xi}} + \eta \vec{e_{\eta}} + \zeta \vec{e_{\zeta}} $$
-  $$ \dot{\vec{AB}} = \xi \dot{\vec{e_{\xi}}} + \eta \dot{\vec{e_{\eta}}} + \zeta \dot{\vec{e_{\zeta}}},~~ \dot{\xi} = \dot{\eta} = \dot{\zeta} = 0 $$
-  $$ \dot{\left(\vec{r_B} - \vec{r_A}\right)}~~ = \xi[\vec{\omega}, \vec{e_{\xi}}] + \eta[\vec{\omega}, \vec{e_{\eta}}] + \zeta[\vec{\omega}, \vec{e_{\zeta}}] $$ 
-  $$ \dot{\vec{r_1}} - \dot{\vec{r_2}} = [\vec{\omega}, \xi \vec{e_{\xi}} + \eta \vec{e_{\eta}} + \zeta \vec{e_{\zeta}}] $$
-  $$ \vec{v_B} = \vec{v_A} + [\vec{\omega}, \vec{AB}] $$  
+  $$ \v{AB} = \xi \v{e_{\xi}} + \eta \v{e_{\eta}} + \zeta \v{e_{\zeta}} $$
+  $$ \dot{\v{AB}} = \xi \dot{\v{e_{\xi}}} + \eta \dot{\v{e_{\eta}}} + \zeta \dot{\v{e_{\zeta}}},~~ \dot{\xi} = \dot{\eta} = \dot{\zeta} = 0 $$
+  $$ \dot{\left(\v{r_B} - \v{r_A}\right)}~~ = \xi[\v{\omega}, \v{e_{\xi}}] + \eta[\v{\omega}, \v{e_{\eta}}] + \zeta[\v{\omega}, \v{e_{\zeta}}] $$ 
+  $$ \dot{\v{r_1}} - \dot{\v{r_2}} = [\v{\omega}, \xi \v{e_{\xi}} + \eta \v{e_{\eta}} + \zeta \v{e_{\zeta}}] $$
+  $$ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] $$  
   \end{proof}
   
   \begin{cor}
-  $S\xi\eta\zeta \rightarrow \vec{\omega}$, $S'\xi'\eta'\zeta' \rightarrow \vec{\omega}'$
+  $S\xi\eta\zeta \rightarrow \v{\omega}$, $S'\xi'\eta'\zeta' \rightarrow \v{\omega}'$
   $$ 
   \left.
   \begin{array}{ccc}
-  \vec{v_B} = \vec{v_A} + [\vec{\omega}, \vec{AB}] \\
-  \vec{v_B} = \vec{v_A} + [\vec{\omega'}, \vec{AB}]
+  \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] \\
+  \v{v_B} = \v{v_A} + [\v{\omega'}, \v{AB}]
   \end{array}
   \right|
-  [\vec{\omega} - \vec{\omega}', \vec{AB}] = 0;~ \forall A, B \text{ в абсолютно твердом теле} \Rightarrow
+  [\v{\omega} - \v{\omega}', \v{AB}] = 0;~ \forall A, B \text{ в абсолютно твердом теле} \Rightarrow
   $$
-  $$ \Rightarrow \vec{\omega} - \vec{\omega}' = 0 \Rightarrow \boxed{\vec{\omega} = \vec{\omega}'} $$
+  $$ \Rightarrow \v{\omega} - \v{\omega}' = 0 \Rightarrow \boxed{\v{\omega} = \v{\omega}'} $$
   \end{cor}
   
-  \begin{ass}(Формула Ривальса) $ \vec{w_B} = \vec{w_A} + [\vec{\varepsilon}, \vec{AB}] + [\vec{\omega}, [\omega, \vec{AB}]] $.
+  \begin{ass}(Формула Ривальса) $ \v{w_B} = \v{w_A} + [\v{\varepsilon}, \v{AB}] + [\v{\omega}, [\omega, \v{AB}]] $.
   \end{ass}
   \begin{proof}
-  $$ \vec{v_B} = \vec{v_A} + [\vec{\omega}, \vec{AB}] $$
-  $$ \dot{\vec{v_B}} = \dot{\vec{v_A}} + [\dot{\vec{\omega}}, \vec{AB}] + [\vec{\omega}, \dot{\vec{r_B} - \vec{r_A}}~]  $$
-  $$ \vec{w_B} = \vec{w_A} + [\vec{\varepsilon}, \vec{AB}] + [\vec{\omega}, [\vec{\omega}, \vec{AB}]]  $$
-  $$ [\vec{\varepsilon}, \vec{AB}] \text{ - вращательное ускорение,~~} [\vec{\omega}, [\vec{\omega}, \vec{AB}]] \text{ - осестремительное ускорение} $$ 
+  $$ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] $$
+  $$ \dot{\v{v_B}} = \dot{\v{v_A}} + [\dot{\v{\omega}}, \v{AB}] + [\v{\omega}, \dot{\v{r_B} - \v{r_A}}~]  $$
+  $$ \v{w_B} = \v{w_A} + [\v{\varepsilon}, \v{AB}] + [\v{\omega}, [\v{\omega}, \v{AB}]]  $$
+  $$ [\v{\varepsilon}, \v{AB}] \text{ - вращательное ускорение,~~} [\v{\omega}, [\v{\omega}, \v{AB}]] \text{ - осестремительное ускорение} $$ 
   \end{proof}
   
   \subsubsection{Геометрический смысл}
-  $ \vec{w} = [\vec{\omega}, [\vec{\omega}, \vec{AB}]] = \vec{\omega} (\vec{\omega}, \vec{AB}) - \vec{AB} \omega^2 = \omega^2 ( \vec{e_{\omega}}(\vec{AB}, \vec{e_{\omega}}) - \vec{AB}) $
+  $ \v{w} = [\v{\omega}, [\v{\omega}, \v{AB}]] = \v{\omega} (\v{\omega}, \v{AB}) - \v{AB} \omega^2 = \omega^2 ( \v{e_{\omega}}(\v{AB}, \v{e_{\omega}}) - \v{AB}) $
   
-  $ | \vec{w_{\textbf{ос}}} |= \omega^2 \rho(B, l) $
+  $ | \v{w_{\textbf{ос}}} |= \omega^2 \rho(B, l) $
   
   \begin{ass}
   Проекции скоростей двух точек твердого тела на прямую, их соединяющую, равны.
   \end{ass}
   \begin{proof}
-  $$ \vec{v_B} = \vec{v_A} + [\vec{\omega}, \vec{AB}] $$
-  $$ (\vec{v_B}, \vec{AB}) = (\vec{v_A}, \vec{AB}) + ([\vec{\omega}, \vec{AB}], \vec{AB}) $$
+  $$ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] $$
+  $$ (\v{v_B}, \v{AB}) = (\v{v_A}, \v{AB}) + ([\v{\omega}, \v{AB}], \v{AB}) $$
   $$ v_B \cos \beta = v_A \cos \alpha $$
   \end{proof}
   \begin{ntc}
@@ -505,15 +507,289 @@ w_i = (\vec{w}, \vec{e_i}) = \frac{1}{H_i}(\vec{w}, \vec{H_i})
   \begin{df}
   Такое движение твердого тела, при котором угловая скорость равна нулю.
   \end{df}
-  $$ \vec{v_B} \equiv \vec{v_A} $$
-  $$ \vec{w_B} \equiv \vec{v_A} $$
-  \subsubsection{Мгновенное поступательное движение}
-  $ \exists t : \vec{\omega}(t) = 0,~~ \vec{\varepsilon}(t) \neq 0 $
+  $$ \v{v_B} \equiv \v{v_A} $$
+  $$ \v{w_B} \equiv \v{v_A} $$
+  \paragraph{Мгновенное поступательное движение:}
+  $ \exists t : \v{\omega}(t) = 0,~~ \v{\varepsilon}(t) \neq 0 $
   
   \subsection{Вращательное движение (вращение вокруг неподвижной оси)}
-  %$ \exists A, B : \vec{v_A} = \vec{v_B} = 0 $
+  ~
+
+  $ \exists A, B : \v{v_A} = \v{v_B} = 0 $
   
-  %$ \vec{v_B} = \vec{v_A} + [\vec{\omega}, \vec{AB}], \vec{v_A} = \vec{v_B} = 0 \Rightarrow [\omega, \vec{AB}] = 0 \Rightarrow \omega \parallel \vec{AB} $
-  %$\forall M \in l : \vec{v_M} = 0 \text{, $l$ - ось} $
-  TODO
-\end{document}
+  $ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}], \v{v_A} = \v{v_B} = 0 \Rightarrow [\omega, \v{AB}] = 0 \Rightarrow \omega \parallel \v{AB} $
+  
+  $\forall M \in l : \v{v_M} = 0 \text{, $l$ - ось вращения} $
+  
+  $\dot{\vec{e}}_{\xi} = \dot{\varphi} \vec{e}_{\eta},~ \dot{\vec{e}}_{\eta} = -\dot{\varphi} \vec{e}_{\xi},~ \dot{\vec{e}}_{\zeta} = 0 $
+
+  $\vec{\omega} = \vec{e}_{\xi}(-\dot{\varphi}\vec{e}_{\xi}, \vec{e}_{\zeta}) + \vec{e}_{\eta}(0, \vec{e}_{\xi}) + \vec{e}_{\zeta}(\dot{\varphi} \vec{e}_{\eta}, \vec{e}_{\eta}) = \dot{\varphi} \vec{e}_{\zeta} = \dot{\varphi}\vec{e}_{z} $
+
+  $ \vec{\varepsilon} = \dot{\vec{\omega}} = \ddot{\varphi}\vec{e}_z $
+
+  $ \vec{v}_p = \vec{v}_{p'} + [\vec{\omega}, \overrightarrow{pp'}] = 0 + [\dot{\varphi}\vec{e}_z, \xi\vec{e}_{\xi} + \eta\vec{e}_{\eta}] = \dot{\varphi}(x\vec{e}_{\eta} - y\vec{e}_{\xi}) $
+
+  $ | \vec{v}_p | = | \vec{\omega} | \cdot | \overrightarrow{p'p} | $
+
+  $ \vec{w}_p = \vec{w}_{p'} + [\vec{\varepsilon}, \overrightarrow{p'p}] + [\vec{\omega}, [\vec{\omega}, \overrightarrow{p'p}]] = 0 + [\vec{\varepsilon}, \overrightarrow{p'p}] - \omega^2 \overrightarrow{p'p} $
+
+  %2017-09-20
+  \subsection{Плоскопараллельное движение}
+  \begin{df}
+  Движение твердого тела называется плоскопараллельным, если скорости всех точек тела параллельны некоторой неподвижной плоскости:
+  $$ \v{v}_{p_i} \parallel \pi,~ \forall p_i \in \text{АТТ} $$
+  \end{df}
+
+  $$ \v{v}_{p_i} = \v{v}_{p_j} + [\v{\omega}, \v{p_j p_i}] $$
+  $$ 
+  (\v{p}_i - \v{v}_{p_i}) = 0 \Leftrightarrow 
+  \left[
+  \begin{array}{l}
+  \v{\omega} = 0 \\
+  \v{v}_{p_i} = \v{v}_{p_j},~ \forall p_i, p_j \in \text{АТТ} \\
+  \v{\omega} \perp \v{p}_i - \v{v}_{p_i} \parallel \pi \\
+  \end{array}
+  \right.
+  $$
+  $$ \vec{v}_{M_i} = \vec{v}_{M_j} + \omega [\vec{\omega}, \overrightarrow{M_jM_i}] = \vec{v}_{M_j},~~ \forall M_i, M_j: \overrightarrow{M_iM_j} \perp \pi \Rightarrow \vec{w}_{M_i} = \vec{w}_{M_j} $$
+  Качение:
+  $$ \vec{r}_S = x_S \vec{e}_x + y_S \vec{e}_y $$
+  $$ \dot{\vec{e}}_{\xi} = \dot{\varphi}\vec{e}_{\eta},~~ \dot{\vec{e}}_{\eta} = \dot{\varphi}\vec{e}_{\zeta},~~ \dot{\vec{e}}_{\zeta} = 0$$
+  $$ \vec{\omega} = \dot{\varphi} \vec{e}_z,~~ \vec{\varepsilon} = \ddot{\varphi} \vec{e}_z \parallel \vec{\omega}$$
+  $$ \vec{v}_M = \vec{v}_S + [\vec{\omega}, \overrightarrow{SM}] $$
+  $$ \vec{w}_M = \vec{w}_S + [\vec{\varepsilon}, \overrightarrow{SM}] + [\vec{\omega}, [\vec{\omega}, \overrightarrow{SM}]] = \vec{w}_s + [\vec{\varepsilon}, \overrightarrow{SM}] - \omega^2 \overrightarrow{SM} $$ 
+
+  \begin{teo}
+  Если при плоскопараллельном движении угловая скорость твердого тела отлична от нуля, то существует точка, скорость которой равна нулю в данный момент времени.
+  \end{teo}
+  \begin{proof}
+  $$
+  \begin{cases}
+  \v{v}_c = \v{v}_s + [\v{\omega}, \v{SC}] \\
+  \v{v}_c = 0 \\
+  \end{cases}
+  \Rightarrow
+  [\v{\omega}, \v{v}_s] + [\v{\omega}, [\v{\omega}, \v{SC}]] = 0 $$
+  $$ [\v{\omega}, \v{v}_s] + \v{\omega}(\v{\omega}, \v{SC}) - \omega^2 \v{SC} = 0 $$
+  $$ \v{SC} = \frac{[\v{\omega}, \v{v}_s]}{\omega^2} $$
+  \end{proof}
+  \begin{cor} 
+  Любое плоскопараллельное движение является либо мгновенно-поступательным, либо мгновенно-вращательным
+  \end{cor}
+  \begin{proof}
+  $\v{\omega} = 0$ - мгновенно-поступательное. $\v{\omega}(t) \neq 0$ - вращение вокруг $l$. 
+  
+  \end{proof}
+
+  \begin{df}
+  $C$ - мгновенный центр скоростей
+  \end{df}
+  \begin{ntc}
+  Положение $C$ меняется со временем.
+  \end{ntc}
+  \begin{xmp}
+  Качение без проскальзывания
+  \end{xmp}
+
+  \subsection{Тело с неподвижной точкой (вращение вокруг точки)}
+  $$ \exists \v{v}_0 \equiv 0 $$
+  $$ l \parallel \v{\omega}, O \in l $$
+  $$ \v{v}_M = \v{v}_0 + [\v{\omega}, \v{OM}] = 0 + 0,~ \forall M \in l $$
+  \begin{df} 
+  $l$ - мгновенная ось вращения 
+  \end{df}
+  $$ \v{v}_p = [\v{\omega}, \v{OP}],~ \v{w_p} = [\v{\varepsilon}, \v{OP}] + \underbrace{[\v{\omega}, [ \v{\omega}, \overrightarrow{OP}]]}_{\v{v}_{OC}} $$
+  \subsection{Винтовое движение}
+  \begin{df} 
+  Движение твердого тела называется винтовым, если тело равномерно вращается вокруг неподвижной оси, а скорости всех точек, лежащий на этой оси, равны между собой, постоянны и сонаправленны с осью.
+  \end{df}
+  \subsection{Общий случай}
+  \begin{teo}
+  $ \v{\omega} \neq 0 \Rightarrow \exists l:~ \v{\omega} \parallel l,~ \v{v}_{k_i} \parallel l,~ \forall k_i \in l$
+  \end{teo}
+  \begin{proof}
+  $$ \v{\alpha} \perp \v{\omega},~ S \in \alpha $$
+  $$
+  \begin{cases}
+  \v{v}_c = \v{v}_c = \v{v}_s + [\v{\omega}, \v{SC}] \\
+  \v{v}_c = \lambda \v{\omega}
+  \end{cases}
+  \Rightarrow
+  0 = [\v{\omega}, \v{v}_s] + [\v{\omega}, [\v{\omega}, \v{SC}]]
+  $$
+  $$ [ \v{\omega}, \v{v}_s] + \v{\omega}(\v{\omega}, \v{SC}) - \omega^2 \v{SC} = 0 $$
+  $$ \v{SC} = \frac{[\v{\omega},\v{v}_c]}{\omega^2} $$
+  $$ \exists l: C \in l, l \parallel \v{\omega} $$
+  $$ \v{v}_{C_1} = \v{v}_C + [\v{\omega}, \v{CC_1}] = \v{v}_C,~~ \forall C_1 \in l$$ 
+
+  \end{proof}
+  $$\v{v}_C = \v{v}_S + \left[ \v{\omega}, \frac{[\v{\omega}, \v{v}_C]}{\omega^2} \right] = \vec{v}_S + \frac{1}{\omega^2}\left(\vec{\omega}(\vec{\omega}, \vec{v}_S) - \omega^2\vec{v}_S \right) = \underbrace{\frac{(\vec{\omega}, \vec{v}_S)}{\omega^2}}_{\lambda} \vec{\omega}$$
+  $$\lambda = \frac{(\vec{\omega}, \vec{v}_S)}{\omega^2} \text{ - параметр (шаг винта).}$$
+
+  \begin{cor}
+  Любое движение твердого тела является в каждый момент времени либо мгновенно-поступательным ($\omega = 0$, $\lambda \rightarrow +\infty$), либо мгновенно-вращательным ($\omega \neq 0$, $\lambda = 0$) , либо мгновенно-винтовым ($\omega \neq 0$, $\lambda \neq 0$).
+  \end{cor}
+  \begin{df}
+  $\{l, \v{\omega}, \v{v}\}$ - кинематический винт.
+  \end{df}
+  $$\v{v}_S = v_x\v{e}_x + v_y\v{e}_y + v_z\v{e}_z$$
+  $$\v{r}_S = x_S\v{e}_x + y_S\v{e}_y + z_S\v{e}_z$$
+  $$\v{\omega} = \omega_x\v{e}_x + \omega_y\v{e}_y + \omega_z\v{e}_z$$
+  $$ \v{r}_C = x\v{e}_x + y\v{e}_y + z\v{e}_z $$
+  $$ \v{v}_S + [\v{\omega}, \v{SC}] = \lambda \v{\omega} \Rightarrow \lambda = \frac{v_x + \omega_y(z - z_S) - \omega_z(y - y_S)}{\omega_x} = $$
+  $$ = \frac{v_y + \omega_z(x - x_S) - \omega_x(z - z_S)}{\omega_y} = \frac{v_z + \omega_x(y - y_S) - \omega_y(x - x_S)}{\omega_z} $$
+  \section{Кинематика сложного движения}
+  $OXYZ$ - неподвижная система отсчета ($\v{r})$, $O_1\xi\eta\zeta$ - подвижная система отсчета ($\v{\rho}$).
+
+  $$ \v{u} = u_x \v{e}_x + u_y \v{e}_y + u_z \v{e}_z $$
+  $$ \v{u} = u_{\xi} \v{e}_{\xi} + u_{\eta} \v{e}_{\eta} + u_{\zeta} \v{e}_{\zeta} $$
+  $$ \frac{d\v{u}}{dt} = \dot {u_x} \v{e}_x + \dot{u_y} \v{e}_y + \dot{u_z} \v{e}_z \text{ - абсолютная производная} $$
+  $$ \dot{\v u} = \dot{u_{\xi}} \v{e}_{\xi} + \dot{u_{\eta}} \v{e}_{\eta} + \dot{u_{\zeta}} \v{e}_{\zeta} \text{ - относительная производная}$$
+  \begin{teo}(Связь абсолютной и относительной производной) 
+  $\frac{d\v{u}}{dt} = \dot{\v{u}} + [\v{\omega}, \v{u}]$, где $\v{\omega}$ - угловая скорость $O_1\xi\eta\zeta$ относительно $OXYZ$
+  \end{teo}
+  \begin{proof}
+  $$ \frac{du}{dt} = \dot{u}_{\xi}\vec{e}_{\xi} + \dot{u}_{\eta}\vec{e}_{\eta} + \dot{u}_{\zeta}\vec{e}_{\zeta} + u_{\xi}\frac{d\vec{e}_{\xi}}{dt} + u_{\eta}\frac{d\vec{e}_{\eta}}{dt} + u_{\zeta}\frac{d\vec{e}_{\zeta}}{dt} = $$
+  $$ = \dot{\vec{u}} + u_{\xi}[\vec{\omega}, \vec{e}_{\xi}] + u_{\eta}[\vec{\omega}, \vec{e}_{\eta}] + u_{\zeta}[\vec{\omega}, \vec{e}_{\zeta}] = \dot{\vec{u}} + [\vec{\omega}, \vec{u}] $$
+  $$ \left(\frac{d\vec{e}_i}{dt} = [\vec{\omega}, \vec{e}_i] - \text{ - формула Пуассона},~~ \dot{\vec{e}}_i = 0\right) $$
+  \end{proof}
+  \subsection{Сложное движение материальной точки}
+  \begin{df}
+  Абсолютной скоростью материальной точки называется ее скорость относительно неподвижной системы отсчета. $\v{v}_{\text{абс}} = \frac{d}{dt}\v{r}$
+  \end{df}
+  \begin{df}
+  Относительной скоростью материальной точки называется ее скорость относительно подвижной системы отсчета. $\v{v}_{\text{отн}} = \dot{\v{\rho}}$
+  \end{df}
+  \begin{df}
+  Переносной скоростью материальной точки называется абсолютная скорость той точки подвижной системы отсчета, в которой находится движующаяся точка в данный момент времени.
+  \end{df}
+  \begin{teo}
+  [Формула сложения скоростей] $\v{v}_{\text{абс}} = \v{v}_{\text{отн}} + \v{v}_{\text{пер}}$
+  \end{teo}
+  \begin{proof}
+  $$ \v{v}_{\text{абс}} = \frac{d}{dt}(\v{R} + \v{\rho}) = \frac{dR}{dt} + \dot{\v{\rho}} + [\v{\omega}, \v{\rho}] = $$
+  $$ = \v{v}_{O_1} + \v{v}_{\text{отн}} + [\v{\omega}, \v{\rho}] = \v{v}_{\text{отн}} + \v{v}_{\text{пер}} $$
+  \end{proof}
+  \begin{df}
+  Абсолютным ускорением материальной точки называется ее ускорение относительно неподвижной системы отсчета. $\v{w}_{\text{абс}} = \frac{d}{dt}\v{v}_{\text{абс}}$
+  \end{df}
+  \begin{df}
+  Относительным ускорением материальной точки называется ее ускорение относительно подвижной системы отсчета. $\v{w}_{\text{отн}} = \dot{\v{v}_{\text{отн}}}$
+  \end{df}
+  \begin{df}
+  $ \vec{\omega}_{\text{пер}} = \vec{\omega}_{O_1} + [\vec{\varepsilon}, \vec{\rho}] + [\vec{\omega}, [\vec{\omega}, \vec{\rho}]] $
+  \end{df}
+  \begin{df}
+  $ \vec{\omega}_{\text{кор}} = 2[\vec{\omega}, \vec{v}_\text{отн}] $
+  \end{df}
+  \begin{teo}
+  [Формула сложения ускорений] $\v{w}_{\text{абс}} = \v{w}_{\text{отн}} + \v{w}_{\text{пер}} + \v{w}_{\text{кор}}$
+  \end{teo}
+
+  \begin{proof}
+  $$ \vec{w}_{\text{абс}} = \frac{d}{dt}(\vec{v}_{\text{отн}} + \vec{v}_{\text{пер}}) = \frac{d}{dt} (\vec{v}_{\text{отн}} + \vec{v}_{O_1} + [\vec{\omega}, \vec{\rho}]) = $$ 
+  $$ = \dot{\vec{v}}_{\text{отн}} + [\vec{\omega}, \vec{v}_{\text{отн}}] + \frac{d}{dt}\vec{v}_{O_1} + \left[\frac{d\vec{\omega}}{dt}, \vec{\rho}\right] + [\vec{\omega}, \vec{\rho} + [\vec{\omega}, \vec{\rho}]] = $$ 
+  $$ = \dot{\vec{v}}_{\text{отн}} + \dot{\vec{v}}_{O_1} + [\vec{\varepsilon}, \vec{\rho}] + 2[\vec{\omega}, \vec{v}_{\text{отн}}] + [\vec{\omega}, [\vec{\omega}, \vec{\rho}]] $$
+  \end{proof}
+
+  %2017-09-27
+  \subsection{Сложное движение твердого тела}
+  Рассмотрим неподвижную систему отсчета $OXYZ$, подвижную $O_1xyz$, и систему, связанную с телом $S\xi\eta\zeta$.
+  \begin{df} Абсолютная угловая скорость - угловая скорость $S\xi\eta\zeta$ относительно $OXYZ$\end{df}
+  \begin{df} Относительная угловая скорость - угловая скорость $S\xi\eta\zeta$ относительно $O_1xyz$\end{df}
+  \begin{df} Переносная угловая скорость - угловая скорость $Oxyz$ относительно $OXYZ$\end{df}  
+  \begin{teo}[О сложении угловых скоростей] $\vec{\omega}_{\text{абс}} = \vec{\omega}_{\text{отн}} + \vec{\omega}_{\text{пер}}$ \end{teo}
+  \begin{proof}
+  $$ \vec{v}_A^{\text{абс}} = \vec{v}_A^{\text{отн}} + \vec{v}_A^{\text{пер}} $$
+  $$ \vec{v}_B^{\text{абс}} = \vec{v}_B^{\text{отн}} + \vec{v}_B^{\text{пер}} $$
+  $$ \vec{v}_B^{\text{абс}} = \vec{v}_A^\text{абс} + [\vec{\omega}_{\text{абс}}, \overrightarrow{AB}] $$
+
+  $$ \vec{v}_B^{\text{отн}} = \vec{v}_A^\text{отн} + [\vec{\omega}_{\text{отн}}, \overrightarrow{AB}] $$
+
+  $$ \vec{v}_B^{\text{пер}} = \vec{v}_A^\text{пер} + [\vec{\omega}_{\text{пер}}, \overrightarrow{AB}] $$
+  $$ \Rightarrow 0 = 0 + [\vec{\omega}_{\text{абс}} - \vec{\omega}_{\text{отн}} - \vec{\omega}_{\text{пер}}, \overrightarrow{AB}] = 0,~~ \forall \overrightarrow{AB} \Leftrightarrow \vec{\omega}_{\text{абс}} = \vec{\omega}_{\text{отн}} + \vec{\omega}_{\text{пер}} $$
+  \end{proof}
+
+  \begin{ntc}
+  $\frac{d\vec{\omega}_{\text{пер}}}{dt} = \dot{\vec{\omega}}_\text{пер} + [\vec{\omega}_\text{пер}, \vec{\omega}_\text{пер}] = \dot{\vec{\omega}}_\text{пер} $
+  \end{ntc}
+
+  \begin{teo}[О сложении угловых ускорений] 
+  $\vec{\varepsilon}_{\text{абс}} = \vec{\varepsilon}_{\text{отн}} + \vec{\varepsilon}_{\text{пер}} + [\vec{\omega}_{\text{пер}}, \vec{\omega}_\text{отн}]$, где $\vec{\varepsilon}_{\text{абс}} = \frac{d}{dt}\vec{\omega}_{\text{абс}}$, $\vec{\varepsilon}_{\text{отн}} = \dot{\vec{\omega}}_{\text{отн}}$, $\vec{\varepsilon}_{\text{пер}} = \frac{d}{dt}\vec{\omega}_{\text{пер}} = \dot{\vec{\omega}}_{\text{пер}}$
+  \end{teo}
+
+  \begin{proof}
+  $$ \vec{\varepsilon}_{\text{абс}} = \frac{d}{dt}(\vec{\omega}_{\text{отн}} + \vec{\omega}_{\text{пер}}) = $$ 
+  $$ = \dot{\vec{\omega}}_{\text{отн}} + [\vec{\omega}_{\text{пер}}, \vec{\omega}_{\text{отн}}] + \frac{d}{dt}\vec{\omega}_{\text{пер}} =
+  \vec{\varepsilon}_{\text{отн}} + [\vec{\omega}_{\text{пер}}, \vec{\omega}_{\text{отн}}] + \vec{\varepsilon}_{\text{пер}} $$ 
+
+  \end{proof}
+
+  \subparagraph{Несколько подвижных сисем отсчета}~
+  
+  $OXYZ$ - неподвижная СО
+  
+  $Ox_1y_1z_1$, $Ox_2y_2z_2$ , $\ldots Ox_ny_nz_n$ - подвижные СО
+  
+  $S\xi\eta\zeta$ - связана с телом
+  
+  $\vec{\omega}$ - угловая скорость $S\xi\eta\zeta$ относительно $OXYZ$
+
+  Тогда: $\vec{\omega} = \sum\limits_{i = 1}^{n} \vec{\omega_i}$
+  
+  \subsection{Кинематические формулы Эйлера} 
+  \begin{df} $ Ox = (OXY)\cap(O\xi\eta) $ - линия узлов \end{df}
+  \begin{df} $\psi = \angle(Ox, OX)$ - угол прецессии \end{df}
+  \begin{df} $\Theta = \angle (O\zeta, OZ)$ - угол нутации \end{df}
+  \begin{df} $\varphi = \angle (Ox, O\xi)$ - угол нутации \end{df}
+  \begin{df} $\{\psi, \Theta, \varphi\}$ - углы Эйлера \end{df}
+
+  Повороты:
+  $ OXYZ \xrightarrow{\psi, OZ} OxyZ \xrightarrow{\Theta, Ox} Oxy\zeta \xrightarrow{\varphi, O\zeta} O\xi\eta\zeta $
+
+  $\vec{\omega} = \dot{\psi}\vec{e}_z + \dot{\Theta}\vec{e}_x + \dot{\varphi}\vec{e}_{\zeta}$
+
+  $\vec{e}_x = \cos \varphi \vec{e}_{\xi} + \sin \varphi \vec{e}_{\eta}$
+  
+  $\vec{e}_z = \cos \Theta \vec{e}_{\zeta} + \sin \Theta ( \sin \varphi \vec{e}_{\xi} + \cos \varphi \vec{e}_{\eta} )$
+  $$\begin{array}{rcl}\vec{\omega} & = & \dot\psi(\sin \Theta \sin \varphi \vec{e}_{\xi} + \sin \Theta \cos \varphi \vec{e}_{\eta} + \cos \Theta \vec{e}_{\zeta}) \\
+  & + & \dot \Theta (\cos \varphi \vec{e}_{\xi} - \sin \vec{e}_{\eta}) \\
+  & + & \dot{\varphi}\vec{e}_{\zeta} = \omega_{\xi}\vec{e}_{\xi} + \omega_{\eta}\vec{e}_{\eta} + \omega_{\zeta}\vec{e}_{\zeta} \\
+  \end{array}$$
+
+  $$
+  \begin{cases}
+  \vec{\omega}_{\xi} = \dot{\psi}\sin\Theta \sin\varphi + \dot{\Theta}\cos\varphi \\
+  \vec{\omega}_{\eta} = \dot{\psi}\sin\Theta \cos\varphi + \dot{\Theta}\sin\varphi \\
+  \vec{\omega}_{\zeta} = \dot{\psi}\cos\Theta + \dot{\varphi} \\
+  \end{cases}
+  \text{ - кинематические формулы Эйлера}
+  $$
+
+  \begin{df} 
+  Движение твердого тела называется прецессией, если некоторая ось, неподвижная в теле, в абсолютном пространстве движется по поверхности неподвижного кругового конуса. $\dot{\Theta} = 0$. Если $\dot {\psi} = const$, $\dot {\varphi} = const$, то прецессия называется регулярной.
+  \end{df}
+
+  \section{Алгебра кватернионов}
+  \begin{df} Алгеброй над полем называется векторное пространство над этим полем, снабженное билинейной операцией умножения. \end{df}
+  \begin{xmp} $\underline{n=2}$(Комплексные числа). $z_1 = a + bi$, $z_2 = c + di$ 
+
+  $$ z_1z_2 = (ac - bd) + (ad + bc)i $$
+
+  \end{xmp}
+  $\underline{n=4}$(Алгебра кватернионов)
+
+  $$ \Lambda = \lambda_0 \vec{i}_0 + \lambda_1 \vec{i}_1 + \lambda_2 \vec{i}_2 + \lambda_3 \vec{i}_3 \in \mathbb{H} $$
+  $$ \{\vec{i}_0, \vec{i}_1, \vec{i}_2, \vec{i}_3\} \text{ - базис} $$
+  $$ \Lambda = \lambda_0 + \overline{\lambda} $$
+  $$ i_0 \circ i_k = i_k k = \overline{1, 3},~ i_0 \circ i_0 = 1 $$
+  $$ i_k \circ i_m = -(i_k, i_m) + [i_k, i_m] k, m \in \{1,2,3\} $$
+  $$ \overline{\lambda} \circ \overline{\mu} = (\lambda_1 \vec{i}_1 + \lambda_2 \vec{i}_2 + \lambda_3 \vec{i}_3) \circ (\mu_1 \vec{i}_1 + \mu_2 \vec{i}_2 + \mu_3 \vec{i}_3) = -(\overline{\lambda}, \overline{\mu}) + [\overline{\lambda}, \overline{\mu}] $$
+  $$ \Lambda \circ M = (\lambda + \overline{\lambda}) \circ (\mu + \overline{\mu}) = \lambda_0 \mu_0 + \lambda\overline{\mu} + \overline{\lambda}\mu - (\overline{\lambda}, \overline{\mu}) + [\overline{\lambda}, \overline{\mu}] $$
+  \paragraph{Свойства:}
+  \begin{enumerate}
+    \item $(\Lambda \circ M) \circ N = \Lambda \circ (M \circ N)$
+    \item $(\Lambda + M) \circ N = \Lambda \circ N + M \circ N $
+    \item $\Lambda \circ M \neq M \circ \Lambda$
+  \end{enumerate}
+  \end{document}
