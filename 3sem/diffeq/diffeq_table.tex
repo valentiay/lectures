@@ -1,0 +1,48 @@
+\documentclass{article}
+
+%\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{graphics}
+\usepackage{amsthm}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\newcommand{\pd}[2]{\frac{\partial {#1}}{\partial {#2}}}
+
+\author{Валентинов Александр}
+
+\begin{document}
+\begin{table}
+   \begin{center}
+   \caption{Методы решения дифференциальных уравнений}
+   \begin{tabular}{|p{2.5cm}|p{6cm}|p{4cm}|p{2.5cm}|}
+   \hline 
+   \multicolumn{1}{|c}{Название} & \multicolumn{1}{|c}{Вид} & \multicolumn{1}{|c}{Алгоритм решения} & \multicolumn{1}{|c|}{Сводится к} \\ \hline 
+   Уравнение с разделяющимися переменными \textbf{(РП)} & $$ P(x, y)dx + Q(x, y)dy = 0 $$ & \multicolumn{2}{|p{7.5cm}|}{Умножить или разделить на такое выражение, чтобы получить уравенение, одна часть которого содержит только $dx$ и функцию от $x$, а вторая только $dy$ и функцию от $y$}\\ \hline 
+   Однородное уравнение \textbf{(ОУ)} & $$ P(x, y)dx + Q(x, y)dy = 0 $$ & $$ y = xz $$ & РП \\ \hline 
+   Линейное уравнение \textbf{(ЛУ)}& $$ y' + a(x)y = f(x) $$ & \multicolumn{2}{|p{7.5cm}|}{Найти общее решение соответствующего однородного уравнения $y' + a(x)y = 0$. Представить константу в этом решении как функцию от $x$, подставить в исходное уравнение и найти эту функцию.}\\ \hline 
+   Уравнение Бернулли & $$y' + a(x)y = b(x)y^m$$ & $$z = y^{1-m}$$ & ЛУ \\ \hline 
+   Уравнение Рикатти & $$y' + a(x)y^2 + b(x)y + c(x) = 0$$ & $y = z + y_0(x)$, где $y_0(x)$ - какое-нибудь решение & Уравнение Бернулли\\ \hline 
+   Уравнение в полных дифференциалах & $$ P(x, y)dx + Q(x, y)dy = 0 = dU $$ & \multicolumn{2}{|p{7.5cm}|}{$$U(x, y) = C, ~~\pd{U}{x} = P(x, y),~~\pd{U}{y} = Q(x, y)$$} \\ \hline 
+   Интегрирующий множитель & $$ P(x, y)dx + Q(x, y)dy = 0 $$ & Поделить или умножить на такое $f(x, y)$, чтобы уравнение стало уравнением в полных дифференциалах & Уравнение в полных дифференциалах\\ \hline 
+   \multicolumn{4}{|c|}{Уравнения, допускающие понижения порядка} \\ \hline
+   1 & $$ F(x, y^{(k)}, y^{(k+1)}, \ldots, y^{(n)}) = 0 $$ & \multicolumn{2}{|p{7.5cm}|}{$$ y^k = z $$} \\ \hline 
+   2 & $$ F(y, y', y'', \ldots, y^{(n)}) = 0 $$ & \multicolumn{2}{|p{7.5cm}|}{$$ y' = p(y) $$} \\ \hline 
+   3 & $$ F(x, y, y', \ldots, y^{(n)}) = 0 \Leftrightarrow $$ $$ \Leftrightarrow F(kx, ky, ky', \ldots, ky^{(n)}) = 0 $$ & \multicolumn{2}{|p{7.5cm}|}{$$ y' = yz $$} \\ \hline
+   4 & $$ F(x, y, y', \ldots, y^{(n)}) = 0 \Leftrightarrow $$ $$ F(kx, k^m y, k^{m - 1} y', \ldots, k^{m - n}y^{(n)}) = 0 $$ & $$ x = e^t,~~ y = ze^{mt} $$ & 1 - 3 \\ \hline 
+   \end{tabular}
+   \end{center} 
+   \end{table} 
+\end{document} 
