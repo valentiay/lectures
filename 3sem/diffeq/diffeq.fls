@@ -132,9 +132,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-OUTPUT diffeq.toc
 OUTPUT diffeq.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map
+OUTPUT diffeq.toc
 INPUT /home/valentiay/.cache/texlive/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm
 INPUT /home/valentiay/.cache/texlive/texmf-var/fonts/tfm/lh/lh-t2a/labi1000.tfm
 INPUT /home/valentiay/.cache/texlive/texmf-var/fonts/tfm/lh/lh-t2a/lati0700.tfm

@@ -20,11 +20,11 @@
 \newtheorem*{cor}{Следствие}
 \newtheorem*{ntc}{Замечание}
 \newtheorem{xmp}{Пример}
-
 \setcounter{secnumdepth}{0}
 
 \renewcommand\qedsymbol{$\blacksquare$}
-
+\newcommand{\pd}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\re}[1]{(\ref{#1})}
 \newcommand{\lb}{\left(}
 \newcommand{\rb}{\right)}
 
@@ -35,7 +35,7 @@
   \begin{titlepage}
   \maketitle
   \begin{center}
-  {\itshape\footnotesize Набор: Алесандр Валентинов}
+  {\itshape\footnotesize Набор: Александр Валентинов}
   
   {\itshape\footnotesize Об ошибках писать: vk.com/valentiay}
   \end{center}
@@ -286,5 +286,281 @@
   Если область $D$ односвязна, то это условие является и достаточным. (Из курса математического анализа известно, что любой замкнутый контур можно стянуть в точку в этой области)
   \end{ntc}
 
+  \section{Лекция 3}
+  \subsubsection{Уравнение в полных дифференциалах}
+  \begin{equation}
+  \label{three.five}
+  \boxed{P(x, y)dx + Q(x,y)dy = 0}
+  \end{equation} 
+  где $P, Q$ непрерывны в области $D \subset \mathbb{R}^2$, $P^2 + Q^2 \neq 0$ в $D$. 
+  
+  Уравнение называется уравнением в полных дифференциалах, если существует функция $U(x, y)$ непрерывно дифференцируемая в области $D$, такая, что 
+  \begin{equation}
+    \label{three.seven}
+    dU = Pdx + Qdy
+  \end{equation}
+
+  \begin{equation}
+    \label{three.eight}
+    P = \pd{U}{x}, ~~ Q = \pd{U}{y}
+  \end{equation} 
+  Пусть $D: a < x < b,~ c < y < d$. Пусть выполняется (\ref{three.eight}), пусть $(x_0, y_0) \in D$ - произв. Найдем $U$ из \re{three.seven}:
+
+  \[ \pd{U}{x} = P(x, y) \Rightarrow U(x, y) = \int\limits_{x_0}^xP(\xi, y)d\xi + \varphi(y) \]
+  \[ \pd{U}{y} = Q(x, y) \Rightarrow \int\limits_{x_0}^{x}\pd{P(\xi, y)}{y}d\xi + \varphi'(y) = Q(x, y) \]
+  \[ \int\limits_{x_0}^{x}\pd{Q(\xi, y)}{\xi}d\xi + \varphi'(y) = Q(x, y) \]
+  \[ Q(x, y) - Q(x_0, y) + \varphi'(y) = Q(x ,y) \]
+  \[ \varphi'(y) = Q(x_0, y) \]
+  \[ \varphi(y) = \int\limits_{y_0}^{y}Q(x_0, \eta)d\eta \]
+
+  \subsubsection{Интегрирующий множитель}
+  Пусть уравнение \re{three.five} не является уравнением в полных дифференциалах.
+  \begin{df}
+  Функция $\mu(x, y)$ непрерывна в области $D, \mu(x, y) \neq 0$ в $D$, называется интегрирующим множителем уравнения \re{three.five}, если после умножения на нее \re{three.five} становится уравнением в полных дифференциалах, т.е.
+
+  \[ \mu Pdx + \mu Qdy = dU \]
+  \end{df}
+
+  Если $\mu \in C^1(D)$ и $P$ и $Q$ удовлетворяют введенным ранее условиям, то делим уравнение на $\mu$:
+  \[ \pd{(\mu P)}{y} = \pd{(\mu Q)}{x} \text{ или } Q\pd{\mu}{x} - P\pd{\mu}{y} = \mu\left(\pd{P}{y} - \pd{Q}{x} \right) \]
+
+  Это уравнение с частными производными, вообще говоря, более сложное, чем исходное. Иногда удается найти его частное решение. Например, пусть  $\mu = \mu(y)$, тогда при $P \neq 0$
+
+  \[ \pd{\mu}{y} = \omega\mu \text{, где } \omega = \frac{1}{p} \left( \pd{Q}{x} - \pd{P}{y} \right)\]
+
+  Если $\omega = \omega(y)$, то для $\mu$ имеем ОДУ.
+
+  \subsection{Методы понижения порядка дифференциальных уравнений}
+  Рассматриваем уравнения вида
+  \begin{equation}
+  \label{three.one}
+  F(x, y, y', \ldots , y^{(n)}) = 0
+  \end{equation}
+  допускающее понижение порядка с помощью некоторой замены переменных.
+  
+  \subsubsection{Уравнения, не содержащие $y , y', \ldots, y^{(k-1)}$}
+  \begin{equation}
+  \label{three.two}
+  F(x, y^{(k)}, \ldots, y^{(n)}) = 0,~~ 1 \leqslant k \leqslant n
+  \end{equation}
+  Замена $z = y^{(k)}$. Получаем уравнение
+  \[ F(x, z, \ldots, z^{(n - k)}) = 0 \]
+  $(n - k)$-го порядка.
+
+  \subsubsection{Уравнения, не содержащие $x$ (автономные)}
+  \begin{equation}
+  \label{three.three}
+  F(y, y', \ldots, y^{(n)}) = 0
+  \end{equation}
+  \begin{enumerate}
+  \item Находим решения вида $y = const$ (если такие есть)
+  \item Пусть $y \neq const$. Замена $y' = z(y) = f_0(z)$
+
+  \noindent $y'' = z'z = f_1(z, z'); ~~ y''' = (z'z)'z = f_2(z, z', z'')$
+
+  \noindent $y^{(n)} = f_{n - 1}(z, z', \ldots, z^{(n-1)})$
+
+  Получаем уравнение
+  $$ \tilde{F}(y, z, z', \ldots, z^{(n -1)}) = 0 $$
+  $(n - 1)$-го порядка.
+  \end{enumerate}
+
+  \subsubsection{Уравнения, однородные относительно $y, y', \ldots y^{(n)}$}
+  Пусть $F$ удовлетворяет условию $\forall \lambda > 0$
+  \begin{equation}
+  \label{three.four}
+  F(x , \lambda y, \lambda y', \ldots, \lambda y^{(n)}) = \lambda^m F(x , y, y', \ldots, y^{(n)})
+  \end{equation}
+  Замена $\frac{y'}{y} = z(x)$ при $y \neq 0$. Имеем:
+
+  \[ y' = yz = yf_0(z);~~ y'' = yz' + y'z = y(z' + z^2) = yf_1(z, z'); \]
+  \[\ldots\]
+  \[y ^{(n)} yf_{n-1}(z, z', \ldots, z^{(n-1)}) \]
+
+  \noindent Уравнение \re{three.one} примет вид
+
+  \[ F(x, y, yf_0, \ldots, yf_{n - 1}) = 0 \]
+  Пусть $y > 0$. В силу \re{three.four}
+  \[ y^mF(x, 1, f_0, \ldots, f_{n-1}) = 0\]
+  \[\tilde{F}(x, z, z', \ldots, z^{(n-1)}) = 0 \text{ --- уравнение $(n-1)$-го порядка}\]
+  \begin{xmp}{$y'' = \sqrt{y'^2 + y^2}$}
+  \begin{enumerate}
+  \item $y = 0$ --- решение.
+  \item $y \neq 0 ~~~ y' = yz,~ y'' = y(z' + z^2)$
+
+  \noindent $y(z' + z^2) = \sqrt{y^2(z^2 + 1)}$
+
+  \noindent $y(z' + z^2) = \pm y\sqrt{z^2 + 1}$
+
+  \noindent $z' = -z^2 \pm \sqrt{z^2 + 1}$
+  \end{enumerate}
+  \end{xmp}
+
+  \subsubsection{Обобщенные однородные уравнения}
+  Это уравнения \re{three.one} с функцией $F$, удовлетворяющей условию
+  \begin{equation}
+  \label{three.five}
+  F(\lambda x, \lambda^ky, \lambda^{k - 1}y, \ldots, \lambda^{k - n}y^{(n)}) = \lambda^m F(x, y, y', \ldots, y^{(n)}),~~ \forall \lambda > 0
+  \end{equation}
+  В этом случае уравнение \re{three.one} инвариантно относительно растяжений $x \rightarrow \lambda x$, $y \rightarrow \lambda^k y$.
+
+  \noindent Замена: $\frac{y}{x^k} = z(x)$, $x \neq 0$ Имеем:
+
+  \[ y  =x^kz = x^kf_0(z);~ y' = x^{k-1}(xz' + kz) = x^{k - 1}f_1(z, z') \]
+  \[ \ldots \]
+  \[ y^{(n)} = x^{k - n} f_n(z, z', \ldots, z^{(n)}) \]
+
+  \[ F(x, x^kf_0, x^{k-1}f_1, \ldots, x^{k-n}f_n) = 0 \]
+  Пусть $x > 0$. Тогда 
+  \[ x^mF(1, f_0, f_1, \ldots, f_n) = 0 \]
+  \[ \tilde{F}(x, z, z', \ldots, z^{(n)}) = 0 \]
+  Имеем:
+
+  \[ y = x^kz = x^kf_0(z) \]
+  \[ y' = x^{k-1}(xz' + kz) = x^{k-1}f_1(z, xz') \]
+  \[ y'' = x^{k-2}f_2(z, xz', x^2z'') \]
+  \[ \ldots \]
+  \[ y^{(n)} = x^{k-n}f_n(z, xz', \ldots, x^nz^{(n)}) \]
+
+  \[ x^mF(1, f_0, f_1, \ldots, f_n) = 0\]
+  Группа: $x \rightarrow \lambda x$, $z \rightarrow z$
+
+  \noindent Замена: $t = \ln x$, $x = e^t$. Уравнение примет вид:
+
+  \[ \hat{F}(z, z', \ldots, z^{(n)}) = 0 \text{ --- автономное}\]
+
+  \section{Лекция 4}
+  \subsection{Уравнения первого порядка, не разрешаемые относительно производных}
+  \subsubsection{Метод введения параметра}
+  \begin{equation}
+  \label{four.one}
+  F(x, y, y') = 0
+  \end{equation}
+  $F$ определено и непрерывно в области $ \Omega \subseteq \mathbb{R}^3$. $X$ и $T$ - интервалы.
+  \begin{df}
+  $\varPhi: y = \varphi(x),~ x \in X$ называется решением уравнения \re{four.one}, если:
+  \begin{enumerate}
+  \item $\varphi(x)$ непрерывно дифференцируемо на $X$,
+  \item $(x, \varphi(x), \varphi'(x)) \in \Omega ~~ \forall x \in X$,
+  \item $F(x, \varphi(x), \varphi'(x)) \equiv 0$ на $x$.
+  \end{enumerate}
+  \end{df}
+
+  \begin{df}
+  Функции $x = \varphi(t)$, $y = \psi(t)~~ t \in T$ задают решение уравнения \re{four.one} в параметрической форме, если:
+  \begin{enumerate}
+  \item $\varphi(t)$ и $\psi(t)$ непрерывно дифференцируемы и $\varphi'(t) \neq 0$ на $T$,
+  \item $\left(\varphi(t), \psi(t), \frac{\psi'(t)}{\varphi'(t)}\right) \in \Omega ~~ t \in T$,
+  \item $F\left(\varphi(t), \psi(t), \frac{\psi'(t)}{\varphi'(t)}\right) \equiv 0$ на $T$.
+  \end{enumerate}
+  \end{df}
+
+  Положим $y' = P$ и запишем \re{four.one} в эквивалентном виде:
+  \begin{equation}
+  \begin{cases}
+  \label{four.two}
+  F(x ,y, P) = 0 \\
+  dy = Pdx \\
+  \end{cases}
+  \end{equation}
+
+  Каждому решению $x = \varphi(t)$, $y = \psi(t)$ уравнения \re{four.one} соответствует решение $x = \varphi(t)$, $y = \psi(t)$, $P = \frac{\psi'(t)}{\varphi(t)}$ системы \re{four.two}. Каждому решению $x = \varphi(t)$, $y = \psi(t)$, $P = \chi(t)$, где $\chi(t) = \frac{\psi'(t)}{\varphi'(t)}$ соответствует решение $x = \varphi(t)$, $y = \psi(t)$ уравнения \re{four.one}.
+
+  Будем предполагать, что уравнение
+  \[ F(x, y, P) = 0 \]
+  задает в $\mathbb{R}^3$ гладкую поверхность $S$, допускающую параметрическое представление
+  \[ x = \varphi(u, v),~~ y = \psi(u, v),~~ P = \chi(u, v) \]
+  где $(u, v) \in D,~~ D \subseteq \mathbb{R}^2$ --- некоторая область и выполняются условия:
+  \begin{enumerate}
+  \item $\varphi$, $\xi$ и $\chi$ непрерывно дифференцируемы в $D$, причем
+  \[ 
+  \begin{vmatrix}
+  \varphi_u & \varphi_v \\
+  \psi_u & \psi_v \\
+  \end{vmatrix}^2
+  +
+  \begin{vmatrix}
+  \psi_u & \psi_v \\
+  \chi_u & \chi_v \\
+  \end{vmatrix}^2
+  + 
+  \begin{vmatrix}
+  \chi_u & \chi_v \\
+  \varphi_u & \varphi_v \\
+  \end{vmatrix}^2
+  \neq 0 \text{ в $D$}\]
+  \item Задано взаимооднозначное отображение $D \leftrightarrow S$
+  \item $F(\varphi(u, v), \psi(u ,v), \chi(u, v) \equiv 0$ на $D$.
+  \end{enumerate}
+
+  В этом случае имеем
+
+  \[ dy = Pdx \Rightarrow \psi_udu + \psi_vdv = \chi(u ,v)(\varphi_udu + \varphi_vdv) \]
+
+  $ (\psi_u - \chi\varphi_u)du + (\psi_v - \chi\varphi_v)dv = 0$ --- уравнение в симметричной форме(разрешимо относительно производной).
+
+  Если $v = g(u, C)$ --- его решение, то
+  \[ x = \varphi(u, y(u, C)),~~ y = \varphi(u, y(u, C)) \]
+  --- решение уравнения \re{four.one} в параметрической форме.
+
+  \subsection{Задача Коши и теорема существования и единственности решения уравнения \re{four.one}}
+  \[ F(x, y, y') = 0 \]
+  $F$ определено и непрерывно в области $ \Omega \subseteq \mathbb{R}^3$.
+
+  Возьмем точку $(x_0, y_0, p_0) \in \Omega$ такую, что
+  \[ F(x_0, y_0, p_0) = 0 \]
+  \textbf{Задача Коши}: найти решение уравнения \re{four.one}, удовлетворяющее условию 
+  \begin{equation}
+  \label{four.four}
+  y(x_0) = y_0, y'(x_0) = p_0
+  \end{equation}
+  \begin{teo}{Существования и единственности решения уравнения \re{four.one}}
+  Пусть функция $F$ непрерывно дифференцируема в области $\Omega$ и пусть 
+  \begin{equation}
+  \pd{F(x_0, y_0, p_0)}{p} \neq 0
+  \end{equation}
+  Тогда решение задачи \re{four.one}, \re{four.four} существует и единственно на некотором интервале $X \ni x_0$
+  \end{teo}
+  \begin{proof}
+  В силу теоремы о неявной функции из уравнения $F(x, y, p) = 0$ можно выразить $p$:
+  \[ p = f(x, y), \]
+  \text{где $f$ непрерывно дифференцируема в некоторой окрестности $U(x_0, y_0)$}, единственна и удовлетворяет условию
+  \[ f(x_0, y_0) = p_0 \]
+  Получим задачу
+  \begin{equation}
+  \label{four.six}
+  y' = f(x, y),~ y(x_0) = y_0
+  \end{equation}
+  По теореме \re{koshi} из лекции 1, существует единственное решение задачи \re{four.six}, определенное на некотором интервале $X \ni x_0$. Эта функция является решением уравнения \re{four.one}, удовлетворяющим Н.У. \re{four.four}.
+  \end{proof}
+
+  \begin{ntc}
+  Если $\exists \tilde{p}_0 \neq p_0:~ F(x_0, y_0, \tilde{p}_0 = 0$, $\pd{F(x_0, y_0, \tilde{p}_0)}{p} \neq 0$, то получим другое решение $y = \tilde{\varphi}'(x)$, удовлетворяющее условиям
+  \[ \tilde{\varphi}(x_0) = y_0,~~ \tilde{\varphi}'(x_0) = \tilde{p}_0 \]
+  При этом единственность не нарушается, т.к. решение $y = \varphi(x)$ и $y = \tilde{\varphi}(x)$ соответсвуют разным начальным параметрам: $(x_0, y_0, p_0)$ и $(x_0, y_0, \tilde{p}_0$).
+  \end{ntc}
+
+  \subsubsection{Особые решения уравнения \re{four.one}}
+  \begin{df}
+  Решение $y = \varphi(x)$, $x \in X$ уравнения \re{four.one} и его интегральная кривая $l$ называются особыми, если в люблй окрестности каждоый точки кривой $l$ через эту точку проходит, касаясь $l$, по крайней мере одна интегральная кривая, отличная от $l$.
+  \end{df}
+
+  Теоремы единственности предыдущего пункта следует, что в особых точках кривой формально выполнены условия
+  \begin{equation}
+  \label{four.seven}
+  F(x, y, p) = 0,~~ \pd{F(x, y, p)}{p} = 0
+  \end{equation}
+
+  Это необходимое условие особого решения.
+
+  Исключим из \re{four.seven} $p$ (если это возможно), получим уравнение $\varPhi(x, y) = 0$, задающее на плоскости т.н. дискриминантную кривую (или дискриминантное множество). Дискриминантное множество содержит все особые решения, но может также включать и другие точки.
+
+  \subsubsection{Алгоритм отыскания особых решений}
+  Из \re{four.seven} находим дискриминантные кривые и проверяем:
+  \begin{enumerate}
+  \item Являются ли они решениями
+  \item Если да, то касаются ли их в каждой точке другие решения
+  \end{enumerate}
+  Если в обоих случаях ответ положительный, то соответствующая ветвь дискриминантной кривой является особым решением.
 \end{document} 
 
