@@ -75,4 +75,33 @@ $$ P(A) = \frac{\mu(A)}{\mu(\Omega)} $$
 \item Строить меру.
 \end{enumerate}
 
+\begin{df} 
+$\mathbb{T} над $\sigma$-алгеброй, если
+\begin{enumerate}
+	\item $\OMega \in \mathbb{T}$
+	\item $\forall A \in \mathbb{T}, \overline{A} \in \mathbb{T}$
+	\item $\forall A, B \in \mathbb{T},~ A \cup B \in \mathbb{T}$
+\end{df}
+\begin{df}
+Пара $(\omega, \mathbb{T})$ множества и $\sigma$-алгебры на нем над измерениями пространством.
+\end{df}
+\begin{df}
+Вероятностью (вероятностной мерой) на измеримом пространстве $(\omega, \mathbb{T})$ над
+$$P: \mathbb{T} \rightarrow [0, 1]$$
+\begin{enumerate}
+	\item $P(\Omega) = 1$
+	\item (счетная аддитивность) $\forall A_n \in \mathbb{T}: A_i \cap A_j = \emptyset,~ i \neq j$
+	$$ P (\cup \limits_{n=1}^{\infty}A_n) = \sum \limits_{n=1}^{\infty} P(A_n) $$
+\end{enumerate}
+\section{Независимость}
+\begin{df} 
+События $A$ и $B$ называются независимымиЮ если $P(A \cap B) = P(A) \cdot P(B)$
+\end{df}
+\begin{xmp} Схема Бернулли доказать независимость (первая монетка орлом) ||_ (вторая монетка решкой) $n \geqslant 2$
+
+Решение: 
+$$\omega = (i_1, \ldots i_n), ij \in {0,1}$$
+$$P(\omega) = p^{\sum ij}q^{n - \sum ij},~ p+q = 1$$
+$$P(A) = \sum \limits_{\omega : (i_1, \ldots i_n)} P(\omega) = \sum \limits_{\omega : (i_1, \ldots i_n)} p^{1 + \sum \limitsj  j ij}q^{n - \sum ij} = $$
+$$ = p \sum \limits_{(i_2, \ldots i_n)} p^{\sum ij}q^{n - \sum ij}
 \end{document}
