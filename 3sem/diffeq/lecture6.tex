@@ -1,0 +1,70 @@
+\section{Лекция 6}
+\subsubsection{Линейные однородные уравнения}
+\begin{equation}
+\label{six.three}
+L[y] = 0
+\end{equation}
+\subparagraph{Линейно зависимые/независимые функции}
+\begin{df}
+Функции $y_1(t),~ \ldots,~ y_k(t),~~ t \in T$ называются линейно зависимыми, если существуют числа $C_1,~ \ldots,~ C_k$, $|C_1| + \ldots + |C_k| \neq 0$, такие что 
+\begin{equation}
+\label{six.four}
+C_1y_1(t) + \ldots + C_ky_k(t) \equiv 0 \text{ на $T$}
+\end{equation}
+\end{df}
+\begin{df}
+Функции $y_1(t), \ldots, y_n(t)$ называются линейно независимыми, если \re{six.four} выполнено только при $C_1 = \ldots = C_k = 0$
+\end{df}
+
+Пусть $y_i(t),~~i = 1, \ldots, n$ имеет производную до $n - 1$ порядка $\forall t \in T$:
+\[
+\begin{cases}
+C_1y_1(t) + \ldots + C_ky_k(t) = 0 \\
+C_1y'_1(t) + \ldots + C_ky'_k(t) = 0 \\
+C_1y^{k - 1}_1(t) + \ldots + C_ky^{k - 1}_k(t) = 0 \\
+\end{cases}
+\]
+\begin{df}
+Определитель
+\[ W(t) = W(y_1(t), \ldots, y_k(t)) = 
+\begin{vmatrix}
+y_1(t) & \ldots & y_k(t) \\
+y_1'(t) & \ldots & y_k'(t) \\
+\vdots & \ddots & \vdots \\
+y_1^{(k - 1)}(t) & \ldots & y_k^{(k - 1)}(t)
+\end{vmatrix}\]
+называется определитель Вронского функций $\{y_i(t)\}$ или их вронскиан.
+\end{df}
+
+\begin{lem}
+Если функции $y_1(t), \ldots, y_k(t)$ линейно зависимы на $T$, то $W(y_1, \ldots, y_k(t))~\equiv~0$
+\end{lem}
+
+\subparagraph*{Линейная зависимость/независимость решений уравнения \re{six.three}}
+Пусть $y_1(t), \ldots, y_n(t)$ --- решения уравнения \re{six.three}, а $W(T)$ --- их вронскиан.
+\begin{lem}
+Если $W(t_0) = 0,~~\forall t_0 \in T$, то решение $y_1(t), \ldots y_n(t)$ линейно зависимо на $T$.
+\end{lem}
+\begin{proof}
+\begin{flalign*}
+&
+W(t_0) = 0 \Rightarrow Y_i = 
+\left(
+\begin{matrix}
+y_i(t_0) \\
+\vdots \\
+y_i^{(n - 1)}(t_0) \\
+\end{matrix}
+\right)
+\text{ --- линейно зависимые}
+&\\
+& \exists C_1, \ldots, C_n;~~ |C_1| + \ldots + |C_n| \neq 0 \rightarrow C_1Y_1 + \ldots + C_nY_n = 0 &\\
+\end{flalign*}
+Составим функцию:
+\begin{flalign*}
+& y(t) = C_1y_1(t) + \ldots + C_ny_n(t) &\\
+& y(t) \text{ --- решение уравнения \re{six.three} и } y(t_0) = 0 \Rightarrow &\\
+& \Rightarrow \text{ по теореме о существовании и единственности } y(t) \equiv 0 &\\
+& \text{т.е. } C_1y_1(t) + \ldots + C_ny_n(t) \equiv 0 \text{ на } T \Rightarrow y_1, \ldots, y_n \text{ --- линейно зависимые}
+\end{flalign*}
+\end{proof}

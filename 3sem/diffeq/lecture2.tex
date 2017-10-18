@@ -1,0 +1,116 @@
+\section{Лекция 2}
+  \begin{df}
+  Решение уравнения (\ref{lindiff}) и его интегральная кривая $l$ называются особыми, если в любой окрестности каждой точки кривой $l$ через эту точку проходит, касаясь $l$, по крайней мере одна интегральная кривая уравнения (\ref{lindiff}), отличная от $l$.
+  \end{df}
+  \begin{ntc}
+  Условие про касание $l$ избыточно.
+  \end{ntc}
+  
+  Аналогично рассмотрим уравнение (\ref{normaldiffur}) при $n \geqslant 1$.
+  Возьмем точку $(x_0, y_0, y'_0, \ldots y_0^{(n-1)}) \in D$. Рассмотрим НУ:
+  \begin{equation}
+  \label{five}
+  y(x_0) = y_0,~ y'(x_0) = y'_0,~ \ldots y^{(n - 1)}(x_0) = y^{(n - 1)}_0
+  \end{equation}   
+  Задача Коши: найти  решение уравнения (\ref{normaldiffur}) для НУ (\ref{five})
+  \begin{teo}
+  Пусть функция $f$ и ее частные производные $f_y, f_{y'}, \ldots f_{y^{(n + 1)}} $ непрерывны в $ D \subseteq \mathbb{R}^{(n + 1)}$. Тогда задача Коши (\ref{normaldiffur}), (\ref{five}) имеет решение на интервале $X \ni x_0$. Любые два решения задачи (\ref{normaldiffur}), (\ref{five}) совпадают на пересечении их интервалов определения.
+  \end{teo}
+  
+  \subsection{Уравнения первого порядка, интегрируемые в квадратурах}
+  \subsubsection{Уравнения с разделяющимися переменными}
+  $\boxed{y' = f(x)g(y) }$, где $f$ и $g$ - неперывны на $X$ и $Y$. 
+  
+  \noindent Схема решения:
+  \begin{enumerate}
+  
+  \item $g(y) = 0 \Rightarrow$ постоянные решения $y = y_1$, $y = y_2$, $\ldots$
+  \item $g(y) \neq 0$ На каждом интервале это выполнено.
+  $$ \int \frac{y'(x)}{g(y(x))}dx = \int f(x)dx $$
+  $$ \int \frac{dy}{g(y)} = \int f(x)dx $$
+  $$ G(y) = F(x) + C \text{ - решение в неявной форме} $$
+  $G$, $F$ - первообразные, $C$ - константа.
+  Т.к. $G'(y) = \frac{1}{g(y)}$ на рассмаотриваемом интервале сохраняет знак, то $G(y)$ строго монотонна и, следовательно, имеет обратную. Поэтому можно написать явную формулу для решения.
+  \end{enumerate}
+  
+  \subsubsection{Однородные уравнения}
+  $\boxed{ y' = f\left(\frac{y}{x}\right) }$
+  
+  \noindent Замена: $\frac{y(x)}{x} = z(x)$, $y = xz$. 
+  
+  \noindent $ xz' + z = f(z) $, $xz' = f(z) - z $ - уравнение, с разделяющимися переменными.
+  
+  \begin{ntc}
+  Уравнение инвариантно относительно растяжения: $ x \rightarrow ax $, $ y \rightarrow ay $; $ a > 0 $.
+  \end{ntc}
+  
+  \subsubsection{Обобщенные однородные уравнения}
+  $\boxed{ \frac{1}{x^{m - 1}}\frac{dy}{dx} = f \left(\frac{y}{x^m}\right) }$, $ x \neq 0 $
+  
+  \noindent Замена $\frac{y}{x^m} = z$, $y = x^m z$.
+  
+  \subsubsection{Линейные уравнения}
+  $\boxed{ y' + a(x)y = b(x) }$
+  
+  \noindent Схема решения:
+  \begin{enumerate}
+  \item Рассматриваем однородное уравнение $y' + a(x)y = 0$, $y' = -a(x)y$,
+    \begin{enumerate}
+    \item $y = 0$ - решение.
+    \item $y \neq 0 \Rightarrow$ $\int \frac{dy}{y} -\int a(x)dx$.
+    $$ ln|y| = A(x) + \dot{C},~~ A(x) = \int a(t)dt $$
+    $$ y = Ce^{-A(x)} $$
+    \end{enumerate}
+    \item Ищем решение в виде $ y = C(x)e^{-A(x)} $.
+    $$ C'(x)e^{-A(x)} + C(x)e^{-A(x)}\left(-a(x)\right) + C(x)e^{-A(x)}\left(a(x)\right) = b(x) $$
+    $$ C(x) = \int\limits_{x_0}^{x} b(t)e^{A(t)}dt + C_0 $$
+    Общее решение:
+    $$ y = e^{-A(x)} \int\limits_{x_0}^{x}b(t)e^{A(t)}dt + C_0e^{-A(x)} $$
+    Задача Коши с НУ $y(x_0) = y_0$, $C_0 = y_0$.
+  \end{enumerate}
+  Каждое решение линейного уравнения определено на всем интервале $X$.
+  
+  \subsubsection{Уравнение Бернулли}
+  $ \boxed{y' + a(x)y = b(x) y^n} $, $n \neq 0, 1 $
+  
+  \noindent Схема решения.  
+  При $n > 0$ имеется решение $y = 0$.
+  Пусть $y \neq 0$. Разделим на $y^n$:
+  $$ y^{-n}y' + a(x)y^{1 - n} = b(x) $$
+  $$ \frac{1}{1 - n}(y^{1-n})' + a(x)y^{1 - n} = b(x) $$
+  $$ \text{Замена: } y^{1 -n} = z $$
+  
+  \subsubsection{Уравнения Риккати}
+  $ \boxed{y' = a(x)y^2 + b(x) y + c(x)} $ 
+  
+  \noindent В общем случае не решается в квадратурах. Рассмотрим случай, когда известно какое-либо частное решение $y_0(x)$. 
+  
+  \noindent Замена: $y = z + y_0(x)$
+  
+  $$ z' + y_0' = a(z^2 + 2zy_0 + y_0^2) + b(z + y_0) + C $$
+  $$ z' = az^2 + (2ay_0 + b)z \text{ - уравнение Бернулли} $$
+  
+  \subsubsection{Уравнение в полных дифференциалах}
+  \subparagraph*{Уравнения 1-го порядка в симметричной форме}  
+  \begin{equation} 
+  \label{fulldiff}
+  \boxed{P(x, y)dx + Q(x,y)dy = 0}
+  \end{equation} 
+  где $P, Q$ непрерывны в области $D \subset \mathbb{R}^2$, $P^2 + Q^2 \neq 0$ в $D$. 
+  
+  Уравнение называется уравнением в полных дифференциалах, если существует функция $U(x, y)$ непрерывно дифференцируемая в области $D$, такая, что 
+  \begin{equation}
+  \label{six}
+  dU = Pdx + Qdy
+  \end{equation} 
+  в $D$. $dU(x,y) = 0$, $U(x, y) = C$ - содержит все решения $x(y)$ и $y(x)$.
+  
+  Пусть выполнено (\ref{six}), тогда $ P = \frac{\partial U}{\partial x} $, $ Q = \frac{\partial U}{\partial y} $.
+  Пусть $P_y$ и $Q_x$ непрерывны в $D$. Тогда имеем:
+  $$ P_y = \frac{\partial^2 U}{\partial x \partial y} = \frac{\partial^2 U}{\partial y \partial x} = Q_x \Rightarrow $$
+  $$ \Rightarrow \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} $$ 
+   - необходимое условие того, что (\ref{fulldiff}) - уравнение в полных дифференциалах.
+  
+  \begin{ntc}
+  Если область $D$ односвязна, то это условие является и достаточным. (Из курса математического анализа известно, что любой замкнутый контур можно стянуть в точку в этой области)
+  \end{ntc}

@@ -1,0 +1,142 @@
+  \section{Лекция 3}
+  \subsubsection{Уравнение в полных дифференциалах}
+  \begin{equation}
+  \label{three.five}
+  \boxed{P(x, y)dx + Q(x,y)dy = 0}
+  \end{equation} 
+  где $P, Q$ непрерывны в области $D \subset \mathbb{R}^2$, $P^2 + Q^2 \neq 0$ в $D$. 
+  
+  Уравнение называется уравнением в полных дифференциалах, если существует функция $U(x, y)$ непрерывно дифференцируемая в области $D$, такая, что 
+  \begin{equation}
+    \label{three.seven}
+    dU = Pdx + Qdy
+  \end{equation}
+
+  \begin{equation}
+    \label{three.eight}
+    P = \pd{U}{x}, ~~ Q = \pd{U}{y}
+  \end{equation} 
+  Пусть $D: a < x < b,~ c < y < d$. Пусть выполняется (\ref{three.eight}), пусть $(x_0, y_0) \in D$ - произв. Найдем $U$ из \re{three.seven}:
+
+  \[ \pd{U}{x} = P(x, y) \Rightarrow U(x, y) = \int\limits_{x_0}^xP(\xi, y)d\xi + \varphi(y) \]
+  \[ \pd{U}{y} = Q(x, y) \Rightarrow \int\limits_{x_0}^{x}\pd{P(\xi, y)}{y}d\xi + \varphi'(y) = Q(x, y) \]
+  \[ \int\limits_{x_0}^{x}\pd{Q(\xi, y)}{\xi}d\xi + \varphi'(y) = Q(x, y) \]
+  \[ Q(x, y) - Q(x_0, y) + \varphi'(y) = Q(x ,y) \]
+  \[ \varphi'(y) = Q(x_0, y) \]
+  \[ \varphi(y) = \int\limits_{y_0}^{y}Q(x_0, \eta)d\eta \]
+
+  \subsubsection{Интегрирующий множитель}
+  Пусть уравнение \re{three.five} не является уравнением в полных дифференциалах.
+  \begin{df}
+  Функция $\mu(x, y)$ непрерывна в области $D, \mu(x, y) \neq 0$ в $D$, называется интегрирующим множителем уравнения \re{three.five}, если после умножения на нее \re{three.five} становится уравнением в полных дифференциалах, т.е.
+
+  \[ \mu Pdx + \mu Qdy = dU \]
+  \end{df}
+
+  Если $\mu \in C^1(D)$ и $P$ и $Q$ удовлетворяют введенным ранее условиям, то делим уравнение на $\mu$:
+  \[ \pd{(\mu P)}{y} = \pd{(\mu Q)}{x} \text{ или } Q\pd{\mu}{x} - P\pd{\mu}{y} = \mu\left(\pd{P}{y} - \pd{Q}{x} \right) \]
+
+  Это уравнение с частными производными, вообще говоря, более сложное, чем исходное. Иногда удается найти его частное решение. Например, пусть  $\mu = \mu(y)$, тогда при $P \neq 0$
+
+  \[ \pd{\mu}{y} = \omega\mu \text{, где } \omega = \frac{1}{p} \left( \pd{Q}{x} - \pd{P}{y} \right)\]
+
+  Если $\omega = \omega(y)$, то для $\mu$ имеем ОДУ.
+
+  \subsection{Методы понижения порядка дифференциальных уравнений}
+  Рассматриваем уравнения вида
+  \begin{equation}
+  \label{three.one}
+  F(x, y, y', \ldots , y^{(n)}) = 0
+  \end{equation}
+  допускающее понижение порядка с помощью некоторой замены переменных.
+  
+  \subsubsection{Уравнения, не содержащие $y , y', \ldots, y^{(k-1)}$}
+  \begin{equation}
+  \label{three.two}
+  F(x, y^{(k)}, \ldots, y^{(n)}) = 0,~~ 1 \leqslant k \leqslant n
+  \end{equation}
+  Замена $z = y^{(k)}$. Получаем уравнение
+  \[ F(x, z, \ldots, z^{(n - k)}) = 0 \]
+  $(n - k)$-го порядка.
+
+  \subsubsection{Уравнения, не содержащие $x$ (автономные)}
+  \begin{equation}
+  \label{three.three}
+  F(y, y', \ldots, y^{(n)}) = 0
+  \end{equation}
+  \begin{enumerate}
+  \item Находим решения вида $y = const$ (если такие есть)
+  \item Пусть $y \neq const$. Замена $y' = z(y) = f_0(z)$
+
+  \noindent $y'' = z'z = f_1(z, z'); ~~ y''' = (z'z)'z = f_2(z, z', z'')$
+
+  \noindent $y^{(n)} = f_{n - 1}(z, z', \ldots, z^{(n-1)})$
+
+  Получаем уравнение
+  $$ \tilde{F}(y, z, z', \ldots, z^{(n -1)}) = 0 $$
+  $(n - 1)$-го порядка.
+  \end{enumerate}
+
+  \subsubsection{Уравнения, однородные относительно $y, y', \ldots y^{(n)}$}
+  Пусть $F$ удовлетворяет условию $\forall \lambda > 0$
+  \begin{equation}
+  \label{three.four}
+  F(x , \lambda y, \lambda y', \ldots, \lambda y^{(n)}) = \lambda^m F(x , y, y', \ldots, y^{(n)})
+  \end{equation}
+  Замена $\frac{y'}{y} = z(x)$ при $y \neq 0$. Имеем:
+
+  \[ y' = yz = yf_0(z);~~ y'' = yz' + y'z = y(z' + z^2) = yf_1(z, z'); \]
+  \[\ldots\]
+  \[y ^{(n)} yf_{n-1}(z, z', \ldots, z^{(n-1)}) \]
+
+  \noindent Уравнение \re{three.one} примет вид
+
+  \[ F(x, y, yf_0, \ldots, yf_{n - 1}) = 0 \]
+  Пусть $y > 0$. В силу \re{three.four}
+  \[ y^mF(x, 1, f_0, \ldots, f_{n-1}) = 0\]
+  \[\tilde{F}(x, z, z', \ldots, z^{(n-1)}) = 0 \text{ --- уравнение $(n-1)$-го порядка}\]
+  \begin{xmp}{$y'' = \sqrt{y'^2 + y^2}$}
+  \begin{enumerate}
+  \item $y = 0$ --- решение.
+  \item $y \neq 0 ~~~ y' = yz,~ y'' = y(z' + z^2)$
+
+  \noindent $y(z' + z^2) = \sqrt{y^2(z^2 + 1)}$
+
+  \noindent $y(z' + z^2) = \pm y\sqrt{z^2 + 1}$
+
+  \noindent $z' = -z^2 \pm \sqrt{z^2 + 1}$
+  \end{enumerate}
+  \end{xmp}
+
+  \subsubsection{Обобщенные однородные уравнения}
+  Это уравнения \re{three.one} с функцией $F$, удовлетворяющей условию
+  \begin{equation}
+  \label{three.five}
+  F(\lambda x, \lambda^ky, \lambda^{k - 1}y, \ldots, \lambda^{k - n}y^{(n)}) = \lambda^m F(x, y, y', \ldots, y^{(n)}),~~ \forall \lambda > 0
+  \end{equation}
+  В этом случае уравнение \re{three.one} инвариантно относительно растяжений $x \rightarrow \lambda x$, $y \rightarrow \lambda^k y$.
+
+  \noindent Замена: $\frac{y}{x^k} = z(x)$, $x \neq 0$ Имеем:
+
+  \[ y  =x^kz = x^kf_0(z);~ y' = x^{k-1}(xz' + kz) = x^{k - 1}f_1(z, z') \]
+  \[ \ldots \]
+  \[ y^{(n)} = x^{k - n} f_n(z, z', \ldots, z^{(n)}) \]
+
+  \[ F(x, x^kf_0, x^{k-1}f_1, \ldots, x^{k-n}f_n) = 0 \]
+  Пусть $x > 0$. Тогда 
+  \[ x^mF(1, f_0, f_1, \ldots, f_n) = 0 \]
+  \[ \tilde{F}(x, z, z', \ldots, z^{(n)}) = 0 \]
+  Имеем:
+
+  \[ y = x^kz = x^kf_0(z) \]
+  \[ y' = x^{k-1}(xz' + kz) = x^{k-1}f_1(z, xz') \]
+  \[ y'' = x^{k-2}f_2(z, xz', x^2z'') \]
+  \[ \ldots \]
+  \[ y^{(n)} = x^{k-n}f_n(z, xz', \ldots, x^nz^{(n)}) \]
+
+  \[ x^mF(1, f_0, f_1, \ldots, f_n) = 0\]
+  Группа: $x \rightarrow \lambda x$, $z \rightarrow z$
+
+  \noindent Замена: $t = \ln x$, $x = e^t$. Уравнение примет вид:
+
+  \[ \hat{F}(z, z', \ldots, z^{(n)}) = 0 \text{ --- автономное}\]

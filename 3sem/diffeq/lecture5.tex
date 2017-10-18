@@ -1,0 +1,161 @@
+\section{Лекция 5}
+\subsubsection{Уравнение Клеро}
+\[ y = xy' - \frac{1}{4}y'^2 \]
+\begin{enumerate}
+\item 
+\begin{flalign}
+\label{five.star}
+& y' = p \Rightarrow y = px - \frac{1}{4} p^2 &
+\end{flalign}
+\begin{flalign*}
+& dy = pdx \Rightarrow pdx = pdx + xdp -\frac{1}{2}pdp \Rightarrow (x - \frac{1}{2}p)dp = 0 &
+\end{flalign*}
+\begin{enumerate}
+\item $x = \frac{1}{2}p \Rightarrow p = 2x \xrightarrow{\re{five.star}} y = x^2$
+\item $dp = 0 \Rightarrow P = C \xrightarrow{\re{five.star}} y = Cx - \frac{1}{4}C^2$
+\end{enumerate}
+\item Особые решения. Дискриминантное множество.
+\begin{flalign*}
+&
+\begin{cases}
+F = 0 \\
+F'_p = 0 \\
+\end{cases}
+\Rightarrow
+\begin{cases}
+y = px - \frac{1}{4}p^2 \\
+0 = x - \frac{1}{2}p \\
+\end{cases}
+\Rightarrow
+y = x^2 \text{ --- дискриминантная кривая}
+\end{flalign*}
+Условия касания:
+\begin{flalign*}
+&
+\begin{cases}
+y_0(x) = y(x) \\
+y_0'(x) = y'(x) \\
+\end{cases}
+\Rightarrow
+\begin{cases}
+x^2 = Cx - \frac{1}{4}C^2 \\
+2x = C \\
+\end{cases}
+\Rightarrow
+C = 2x
+\Rightarrow &\\
+& \Rightarrow C = 2x \Rightarrow \text{ есть касание с соответствующей кривой семейства (b) } &\\
+\end{flalign*}
+при $x = 0$ имеем $C = 0 \Rightarrow y = 0$ \\
+при $x = 1$ $C = 2$, $y = 2x - 1$ 
+\end{enumerate}
+
+Еще одно уравнение:
+\[ y'^3 - 27y^2 = 0 \Leftrightarrow y' = 3\sqrt[3]{y^2} \]
+\begin{enumerate}
+\item Рассмотрено на Л1. Решения:
+\begin{flalign*}
+& y = 0,~ y = (x - C)^3 &\\
+\end{flalign*}
+\item Особые решение:
+\begin{flalign*}
+& \begin{cases}
+p^3 - 27y^2 = 0 \\
+3p^2 = 0 \\
+\end{cases}
+\Rightarrow
+p = 0,~~ y = 0 \text{ --- дискриминантная кривая} &\\
+\end{flalign*}
+\begin{enumerate}
+\item является решением
+\item Условие касания:
+\[ \begin{cases}
+0 = (x -C)^3 \\
+0 = 3(x - C)^2 \\
+\end{cases} 
+\Rightarrow
+C = x \Rightarrow \text{ есть касания}\]
+\end{enumerate}
+\end{enumerate}
+\subsection{Линейные уравнения с переменными коэффициентами}
+\subsubsection{Определение. Теорема о существовании и единственности}
+\begin{equation}
+\label{five.one}
+L[y] \equiv y^{(n)} + a_1(t)y^{(n - 1)} + \ldots + a_{n - 1}(t)y' + a_n(t)y = f(t)
+\end{equation}
+
+$t \in T = (a, b)$, $a_i(t)$, $f(t)$ - заданные функции, определенные и непрерывные на $T$.
+
+Начальные условия: 
+\begin{equation}
+\label{five.two}
+y(t_0) = y_0,~~ y'(t_0) = y_0',~~ \ldots,~~ y^{(n - 1)}(t_0) = y_0^{(n - 1)}
+\end{equation}
+где $t_0 \in T,~~ y_0,~~ y_0',~~ \ldots,~~ y_0^{(n - 1)} \in \mathbb{R}$ --- заданные числа
+
+\paragraph*{Задача Коши:} найти решение уравнения \re{five.one}, удовлетворяющее условию~\re{five.two}
+
+\begin{teo}{О существовании и единственности}
+$\forall t_0 \in T,~~ y_0,~y_0',~ \ldots,~y_0^{(n - 1)} \in \mathbb{R}$ существует единственное решение задачи Коши \re{five.one}, \re{five.two}, определенное на \emph{всем} интервале $T$.
+\end{teo}
+\begin{ntc}
+Если $a_i(t),~f(t)$ --- постоянные, то решение задачи Коши \re{five.one}, \re{five.two}, определенно на $\mathbb{R}$. 
+
+Если в \re{five.one} $f(t) \neq 0$, то уравнение называется \emph{неоднородным}.
+
+\label{five.three}
+Уравнение $L[y] = 0$ называется \emph{однородным} (соответствующим уравнению \re{five.one})
+\end{ntc}
+
+\subsubsection{Линейность оператора $L$ и ее следствия}
+\subparagraph{Линейность}
+\begin{lem}{Линейность}
+Оператор $L$ является линейным, т.е. $\forall$ различных непрерывно дифференцируемых функций $u(t), v(t), t \in T$ и $\forall$ чисел $A$ и $B$.
+
+\[ L[Au(t) + Bv(t)] = AL[u(t)] + BL[v(t)] \]
+\end{lem}
+\begin{proof}
+\begin{flalign*}
+& L[Au + Bv] = (Au + Bv)^{(n)} + a_1(Au + Bu)^{(n - 1)} + \ldots + a_n(Au + Bv) = &\\
+& = A(u^{(n)} + a_1u^{(n - 1)} + \ldots + a_nu) + B(v^{(n)} + a_1v^{(n - 1)} + \ldots + a_n v) = &\\
+& = AL[u(t)] + BL[v(t)] &\\
+\end{flalign*}
+\end{proof}
+\subparagraph{Структура общего решения уравнения \re{five.one}}
+\begin{df}
+Общим решением линейного уравнения \re{five.one} наызвается множество функций, содержащих все решения уравнения и только их.
+\end{df}
+
+В дальнейшем для однородного уравнения получим формулу общего решения, содержащее $n$ произвольных постоянных.
+\begin{teo}
+Общее решение уравнения \re{five.one} представляется в виде 
+\begin{equation}
+\label{five.four}
+y(t) = y_0(t) + y_r(t)
+\end{equation}
+где $y_0(t)$ - общее решение однородного уравнения, $y_r(t)$ - произвольное частное решение \re{five.one}.
+\end{teo}
+\begin{proof}
+Пусть $y_r(t)$ - какое-либо частное решение уравнения \re{five.one}. Замена:
+\[ y(t) = z(t) + y_r(t) \]
+Получим: $L[z] + L[y_r] = f(t)$, т.е. $L[z] = 0$. Это однородное уравнение. Его общее решение $z = y_0(t) \Rightarrow$ общее решение уравнения \re{five.one} имеет вид $y(t) = y_0(t) + y_r(t)$
+\end{proof}
+\subparagraph{Принцип суперпозиции}
+\begin{lem}
+Если $y_1(t), \ldots, y_k(t)$ --- решения однородного уравнения, то
+\[ y(t) = C_1y_1(t) + \ldots + C_ky_k(t), \]
+где $C_1, \ldots, C_k$ - произвольные постоянные, также являющиеся решениями однородного уравнения
+\end{lem}
+\begin{proof}
+$L[y] = C_1\underbrace{L[y_1]}_0 + \ldots + C_k\underbrace{L[y_k]}_0 = 0$
+\end{proof}
+
+\begin{ntc}
+Множество решений однородного уравнения является линейным пространством. Далее докажем, что его размерность $n$
+\end{ntc}
+\begin{lem}
+Пусть в \re{five.one} $f(t) \sum\limits_{i = 1}^{k}f_i(t)$, и пусть $y_i(t)$ --- решение уравнений $L[y] = f_i(t),~~ i = 1, \ldots, k$, тогда функция $y(t) = \sum\limits_{i = 1}^{k}y_i(t)$ является решением уравнения \re{five.one}
+\end{lem}
+\begin{proof}
+$L[\sum\limits_{i = 1}^k y_i] = \sum\limits_{i = 1}^kL[y_i] = \sum\limits_{i = 1}^k f_i(t) = f(t)$
+\end{proof}
