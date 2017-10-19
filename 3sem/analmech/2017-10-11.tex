@@ -11,7 +11,7 @@
   \end{flalign*}
   \begin{flalign*}
   & (\lambda_0 + \v \lambda) \circ (- \lambda^2 + \lambda_0 \v \lambda) = -\lambda_0\v \lambda ^2 - \lambda_0\v \lambda ^2 + \lambda_0^2 + \lambda^2 \v \lambda = &\\
-  & \v \lambda(\lambda_0^2 + \v \lambda^2) \Rightarrow \v \lambda \text{ --- неподвижная ось} \Rightarrow &\\
+  & = \v \lambda(\lambda_0^2 + \v \lambda^2) \Rightarrow \v \lambda \text{ --- неподвижная ось} \Rightarrow &\\
   & \Rightarrow \v e = \frac{\v \lambda}{\sin \nu} \text{ --- ось поворота} &\\
   & \v a \in \pi \perp \v e &\\
   & \v a' = f(\v a) = (\cos \nu + \v e \sin \nu) \circ \v a \circ (\cos \nu - \v e \sin \nu) = &\\
@@ -20,7 +20,7 @@
   \end{flalign*}
   \item
   \begin{flalign*}
-  & \overline a' = (\cos \frac{\varphi}{2} + e\sin\frac{\varphi}{2} \circ \overline a \circ (\cos \frac{\varphi}{2} + \overline e \sin \frac{\varphi}{2}) = &\\ 
+  & \overline a' = (\cos \frac{\varphi}{2} + \v e\sin\frac{\varphi}{2} \circ \overline a) \circ (\cos \frac{\varphi}{2} + \overline e \sin \frac{\varphi}{2}) = &\\ 
   & = (\overline a \cos \frac{\varphi}{2} + [\overline e, \overline a] \sin \frac{\varphi}{2}) \circ (\cos \frac{\varphi}{2} - \overline e \sin\frac{\varphi}{2}) = &\\ 
   & = \overline a \cos^2 \frac{\varphi}{2} + 2[\overline e, \overline a]\cos\frac{\varphi}{2}\sin\frac{\varphi}{2} - \overline a \sin^2 \frac{\varphi}{2} = &\\ 
   & = \overline a \cos \varphi + [\overline e, \overline a]\sin \varphi &\\
@@ -39,7 +39,7 @@
   \end{cor}
   \begin{proof}~
   \begin{enumerate}
-  \item \[ \forall E, E' \exists \Lambda E \rightarrow E'\]
+  \item \[ \forall E, E'~~ \exists \Lambda E \rightarrow E'\]
   \item \[ \forall \Lambda \overline r \rightarrow \overline r' \Leftrightarrow \text{Поворот вокруг $e$ на $\varphi$} \]
   \end{enumerate}
   \end{proof}
@@ -91,7 +91,7 @@
   \[ \Lambda = \cos \frac{\varphi}{2} + \overline e \sin \frac{\varphi}{2} \]
   \begin{flalign*}
   & \overline \omega = 2(-\sin \frac{\varphi}{2} \cdot \frac{\dot \varphi}{2} + \dot{\overline e}\sin\frac{\varphi}{2} + \overline e \cos \frac{\varphi}{2} \cdot \frac{\dot \varphi}{2}) \circ (\cos \frac{\varphi}{2} + \overline e \sin \frac{\varphi}{2}) = &\\
-  & -\cos \frac{\varphi}{2} \cdot \sin \frac{\varphi}{2} \cdot \dot \varphi+ \cos \frac{\varphi}{2} \cdot \sin \frac{\varphi}{2} \cdot \dot \varphi + \overline e \sin^2 \frac{\varphi}{2} \cdot \dot \varphi \:+ &\\ 
+  & =\cos \frac{\varphi}{2} \cdot \sin \frac{\varphi}{2} \cdot \dot \varphi+ \cos \frac{\varphi}{2} \cdot \sin \frac{\varphi}{2} \cdot \dot \varphi + \overline e \sin^2 \frac{\varphi}{2} \cdot \dot \varphi \:+ &\\ 
   & + \overline e \cos^2 \frac{\varphi}{2} \cdot \dot \varphi + 2\dot{\overline e} \sin \frac{\varphi}{2}\cos \frac{\varphi}{2} + 2[\overline e, \dot{\overline e}]\sin^2 \frac{\varphi}{2} =
   \overline e \dot \varphi + \dot{\overline e}\sin \varphi + 2[\overline e, \dot{\overline e}]\sin^2 \frac{\varphi}{2} &\\
   \end{flalign*}
@@ -125,7 +125,7 @@
   \dot{\overline x} = \overline f(\overline x, t)
   \end{equation}
   \begin{df}
-  Функция $\Phi(\overline x, t)$ называется первыим интегралом системы \re{upper_system}, если
+  Функция $\Phi(\overline x, t)$ называется первым интегралом системы \re{upper_system}, если
   \[ \Phi(\overline x(t), t) = const \]
   где $\overline x(t)$ --- решение системы \re{upper_system}
   \end{df}
@@ -163,7 +163,7 @@
   Случай 2. Регулярная прецессия:
   \[\overline \omega  = \overline \omega_1 + \overline \omega_2\]
   \[\Lambda_z = \cos \frac{\psi}{2} + \overline e_z \sin\frac{\varphi}{2}, \psi = \int\limits_0^t \omega_1(\tau)d\tau\]
-    \[\Lambda_{\zeta} = \cos \frac{\psi}{2} + \overline e_{\zeta} \sin\frac{\varphi}{2}, \psi = \int\limits_0^t \omega_1(\tau)d\tau\]
+    \[\Lambda_{\zeta} = \cos \frac{\psi}{2} + \overline e_{\zeta} \sin\frac{\varphi}{2}, \varphi = \int\limits_0^t \omega_2(\tau)d\tau\]
   1 способ: \\
   $O\zeta$ --- ось тела (подвижная)
   \[ \Lambda_1 = \Lambda_z,~~ \Lambda_2 = \Lambda_\zeta \]
