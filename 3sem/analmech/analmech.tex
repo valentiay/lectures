@@ -10,6 +10,14 @@
 \usepackage[english, russian]{babel}
 \usepackage{graphics}
 \usepackage{amsthm}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black
+}
 
 \renewcommand{\v}[1]{{\overline{#1}}}
 \newcommand{\norm}[1]{{\parallel #1 \parallel}}
@@ -44,9 +52,21 @@
 \title{Аналитическая механика}
 
 \begin{document}
+  \begin{titlepage}
+  \maketitle
+  \begin{center}
+  {\itshape\footnotesize Набор: Александр Валентинов}
+
+  {\itshape\footnotesize Об ошибках писать: \url{https://vk.com/valentiay}}
+  \end{center}
+  \tableofcontents
+  \vfill
+  \end{titlepage}
+
   \input{2017-09-06}
   \input{2017-09-13}
   \input{2017-09-20}
   \input{2017-09-27}
   \input{2017-10-11}
+  \input{2017-10-18}
 \end{document}
