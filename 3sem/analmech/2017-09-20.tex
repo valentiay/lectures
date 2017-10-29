@@ -16,13 +16,13 @@
   \end{array}
   \right.
   $$
-  $$ \vec{v}_{M_i} = \vec{v}_{M_j} + \omega [\vec{\omega}, \overline{M_jM_i}] = \vec{v}_{M_j},~~ \forall M_i, M_j: \overline{M_iM_j} \perp \pi \Rightarrow \vec{w}_{M_i} = \vec{w}_{M_j} $$
+  $$ \v{v}_{M_i} = \v{v}_{M_j} + \omega [\v{\omega}, \overline{M_jM_i}] = \v{v}_{M_j},~~ \forall M_i, M_j: \overline{M_iM_j} \perp \pi \Rightarrow \v{w}_{M_i} = \v{w}_{M_j} $$
   Качение:
-  $$ \vec{r}_S = x_S \vec{e}_x + y_S \vec{e}_y $$
-  $$ \dot{\vec{e}}_{\xi} = \dot{\varphi}\vec{e}_{\eta},~~ \dot{\vec{e}}_{\eta} = \dot{\varphi}\vec{e}_{\zeta},~~ \dot{\vec{e}}_{\zeta} = 0$$
-  $$ \vec{\omega} = \dot{\varphi} \vec{e}_z,~~ \vec{\varepsilon} = \ddot{\varphi} \vec{e}_z \parallel \vec{\omega}$$
-  $$ \vec{v}_M = \vec{v}_S + [\vec{\omega}, \overline{SM}] $$
-  $$ \vec{w}_M = \vec{w}_S + [\vec{\varepsilon}, \overline{SM}] + [\vec{\omega}, [\vec{\omega}, \overline{SM}]] = \vec{w}_s + [\vec{\varepsilon}, \overline{SM}] - \omega^2 \overline{SM} $$ 
+  $$ \v{r}_S = x_S \v{e}_x + y_S \v{e}_y $$
+  $$ \dot{\v{e}}_{\xi} = \dot{\varphi}\v{e}_{\eta},~~ \dot{\v{e}}_{\eta} = \dot{\varphi}\v{e}_{\zeta},~~ \dot{\v{e}}_{\zeta} = 0$$
+  $$ \v{\omega} = \dot{\varphi} \v{e}_z,~~ \v{\varepsilon} = \ddot{\varphi} \v{e}_z \parallel \v{\omega}$$
+  $$ \v{v}_M = \v{v}_S + [\v{\omega}, \overline{SM}] $$
+  $$ \v{w}_M = \v{w}_S + [\v{\varepsilon}, \overline{SM}] + [\v{\omega}, [\v{\omega}, \overline{SM}]] = \v{w}_s + [\v{\varepsilon}, \overline{SM}] - \omega^2 \overline{SM} $$ 
 
   \begin{teo}
   Если при плоскопараллельном движении угловая скорость твердого тела отлична от нуля, то существует точка, скорость которой равна нулю в данный момент времени.
@@ -88,8 +88,8 @@
   $$ \v{v}_{C_1} = \v{v}_C + [\v{\omega}, \v{CC_1}] = \v{v}_C,~~ \forall C_1 \in l$$ 
 
   \end{proof}
-  $$\v{v}_C = \v{v}_S + \left[ \v{\omega}, \frac{[\v{\omega}, \v{v}_C]}{\omega^2} \right] = \vec{v}_S + \frac{1}{\omega^2}\left(\vec{\omega}(\vec{\omega}, \vec{v}_S) - \omega^2\vec{v}_S \right) = \underbrace{\frac{(\vec{\omega}, \vec{v}_S)}{\omega^2}}_{\lambda} \vec{\omega}$$
-  $$\lambda = \frac{(\vec{\omega}, \vec{v}_S)}{\omega^2} \text{ - параметр (шаг винта).}$$
+  $$\v{v}_C = \v{v}_S + \left[ \v{\omega}, \frac{[\v{\omega}, \v{v}_C]}{\omega^2} \right] = \v{v}_S + \frac{1}{\omega^2}\left(\v{\omega}(\v{\omega}, \v{v}_S) - \omega^2\v{v}_S \right) = \underbrace{\frac{(\v{\omega}, \v{v}_S)}{\omega^2}}_{\lambda} \v{\omega}$$
+  $$\lambda = \frac{(\v{\omega}, \v{v}_S)}{\omega^2} \text{ - параметр (шаг винта).}$$
 
   \begin{cor}
   Любое движение твердого тела является в каждый момент времени либо мгновенно-поступательным ($\omega = 0$, $\lambda \rightarrow +\infty$), либо мгновенно-вращательным ($\omega \neq 0$, $\lambda = 0$) , либо мгновенно-винтовым ($\omega \neq 0$, $\lambda \neq 0$).
@@ -114,9 +114,9 @@
   $\frac{d\v{u}}{dt} = \dot{\v{u}} + [\v{\omega}, \v{u}]$, где $\v{\omega}$ - угловая скорость $O_1\xi\eta\zeta$ относительно $OXYZ$
   \end{teo}
   \begin{proof}
-  $$ \frac{du}{dt} = \dot{u}_{\xi}\vec{e}_{\xi} + \dot{u}_{\eta}\vec{e}_{\eta} + \dot{u}_{\zeta}\vec{e}_{\zeta} + u_{\xi}\frac{d\vec{e}_{\xi}}{dt} + u_{\eta}\frac{d\vec{e}_{\eta}}{dt} + u_{\zeta}\frac{d\vec{e}_{\zeta}}{dt} = $$
-  $$ = \dot{\vec{u}} + u_{\xi}[\vec{\omega}, \vec{e}_{\xi}] + u_{\eta}[\vec{\omega}, \vec{e}_{\eta}] + u_{\zeta}[\vec{\omega}, \vec{e}_{\zeta}] = \dot{\vec{u}} + [\vec{\omega}, \vec{u}] $$
-  $$ \left(\frac{d\vec{e}_i}{dt} = [\vec{\omega}, \vec{e}_i] - \text{ - формула Пуассона},~~ \dot{\vec{e}}_i = 0\right) $$
+  $$ \frac{du}{dt} = \dot{u}_{\xi}\v{e}_{\xi} + \dot{u}_{\eta}\v{e}_{\eta} + \dot{u}_{\zeta}\v{e}_{\zeta} + u_{\xi}\frac{d\v{e}_{\xi}}{dt} + u_{\eta}\frac{d\v{e}_{\eta}}{dt} + u_{\zeta}\frac{d\v{e}_{\zeta}}{dt} = $$
+  $$ = \dot{\v{u}} + u_{\xi}[\v{\omega}, \v{e}_{\xi}] + u_{\eta}[\v{\omega}, \v{e}_{\eta}] + u_{\zeta}[\v{\omega}, \v{e}_{\zeta}] = \dot{\v{u}} + [\v{\omega}, \v{u}] $$
+  $$ \left(\frac{d\v{e}_i}{dt} = [\v{\omega}, \v{e}_i] - \text{ - формула Пуассона},~~ \dot{\v{e}}_i = 0\right) $$
   \end{proof}
   \subsection{Сложное движение материальной точки}
   \begin{df}
@@ -142,17 +142,17 @@
   Относительным ускорением материальной точки называется ее ускорение относительно подвижной системы отсчета. $\v{w}_{\text{отн}} = \dot{\v{v}_{\text{отн}}}$
   \end{df}
   \begin{df}
-  $ \vec{\omega}_{\text{пер}} = \vec{\omega}_{O_1} + [\vec{\varepsilon}, \vec{\rho}] + [\vec{\omega}, [\vec{\omega}, \vec{\rho}]] $
+  $ \v{w}_{\text{пер}} = \v{\omega}_{O_1} + [\v{\varepsilon}, \v{\rho}] + [\v{\omega}, [\v{\omega}, \v{\rho}]] $
   \end{df}
   \begin{df}
-  $ \vec{\omega}_{\text{кор}} = 2[\vec{\omega}, \vec{v}_\text{отн}] $
+  $ \v{w}_{\text{кор}} = 2[\v{\omega}, \v{v}_\text{отн}] $
   \end{df}
   \begin{teo}
   [Формула сложения ускорений] $\v{w}_{\text{абс}} = \v{w}_{\text{отн}} + \v{w}_{\text{пер}} + \v{w}_{\text{кор}}$
   \end{teo}
 
   \begin{proof}
-  $$ \vec{w}_{\text{абс}} = \frac{d}{dt}(\vec{v}_{\text{отн}} + \vec{v}_{\text{пер}}) = \frac{d}{dt} (\vec{v}_{\text{отн}} + \vec{v}_{O_1} + [\vec{\omega}, \vec{\rho}]) = $$ 
-  $$ = \dot{\vec{v}}_{\text{отн}} + [\vec{\omega}, \vec{v}_{\text{отн}}] + \frac{d}{dt}\vec{v}_{O_1} + \left[\frac{d\vec{\omega}}{dt}, \vec{\rho}\right] + [\vec{\omega}, \vec{\rho} + [\vec{\omega}, \vec{\rho}]] = $$ 
-  $$ = \dot{\vec{v}}_{\text{отн}} + \dot{\vec{v}}_{O_1} + [\vec{\varepsilon}, \vec{\rho}] + 2[\vec{\omega}, \vec{v}_{\text{отн}}] + [\vec{\omega}, [\vec{\omega}, \vec{\rho}]] $$
+  $$ \v{w}_{\text{абс}} = \frac{d}{dt}(\v{v}_{\text{отн}} + \v{v}_{\text{пер}}) = \frac{d}{dt} (\v{v}_{\text{отн}} + \v{v}_{O_1} + [\v{\omega}, \v{\rho}]) = $$ 
+  $$ = \dot{\v{v}}_{\text{отн}} + [\v{\omega}, \v{v}_{\text{отн}}] + \frac{d}{dt}\v{v}_{O_1} + \left[\frac{d\v{\omega}}{dt}, \v{\rho}\right] + [\v{\omega}, \v{\rho} + [\v{\omega}, \v{\rho}]] = $$ 
+  $$ = \dot{\v{v}}_{\text{отн}} + \dot{\v{v}}_{O_1} + [\v{\varepsilon}, \v{\rho}] + 2[\v{\omega}, \v{v}_{\text{отн}}] + [\v{\omega}, [\v{\omega}, \v{\rho}]] $$
   \end{proof}

@@ -4,30 +4,30 @@
   \begin{df} Абсолютная угловая скорость - угловая скорость $S\xi\eta\zeta$ относительно $OXYZ$\end{df}
   \begin{df} Относительная угловая скорость - угловая скорость $S\xi\eta\zeta$ относительно $O_1xyz$\end{df}
   \begin{df} Переносная угловая скорость - угловая скорость $Oxyz$ относительно $OXYZ$\end{df}  
-  \begin{teo}[О сложении угловых скоростей] $\vec{\omega}_{\text{абс}} = \vec{\omega}_{\text{отн}} + \vec{\omega}_{\text{пер}}$ \end{teo}
+  \begin{teo}[О сложении угловых скоростей] $\v{\omega}_{\text{абс}} = \v{\omega}_{\text{отн}} + \v{\omega}_{\text{пер}}$ \end{teo}
   \begin{proof}
-  $$ \vec{v}_A^{\text{абс}} = \vec{v}_A^{\text{отн}} + \vec{v}_A^{\text{пер}} $$
-  $$ \vec{v}_B^{\text{абс}} = \vec{v}_B^{\text{отн}} + \vec{v}_B^{\text{пер}} $$
-  $$ \vec{v}_B^{\text{абс}} = \vec{v}_A^\text{абс} + [\vec{\omega}_{\text{абс}}, \overline{AB}] $$
+  $$ \v{v}_A^{\text{абс}} = \v{v}_A^{\text{отн}} + \v{v}_A^{\text{пер}} $$
+  $$ \v{v}_B^{\text{абс}} = \v{v}_B^{\text{отн}} + \v{v}_B^{\text{пер}} $$
+  $$ \v{v}_B^{\text{абс}} = \v{v}_A^\text{абс} + [\v{\omega}_{\text{абс}}, \overline{AB}] $$
 
-  $$ \vec{v}_B^{\text{отн}} = \vec{v}_A^\text{отн} + [\vec{\omega}_{\text{отн}}, \overline{AB}] $$
+  $$ \v{v}_B^{\text{отн}} = \v{v}_A^\text{отн} + [\v{\omega}_{\text{отн}}, \overline{AB}] $$
 
-  $$ \vec{v}_B^{\text{пер}} = \vec{v}_A^\text{пер} + [\vec{\omega}_{\text{пер}}, \overline{AB}] $$
-  $$ \Rightarrow 0 = 0 + [\vec{\omega}_{\text{абс}} - \vec{\omega}_{\text{отн}} - \vec{\omega}_{\text{пер}}, \overline{AB}] = 0,~~ \forall \overline{AB} \Leftrightarrow \vec{\omega}_{\text{абс}} = \vec{\omega}_{\text{отн}} + \vec{\omega}_{\text{пер}} $$
+  $$ \v{v}_B^{\text{пер}} = \v{v}_A^\text{пер} + [\v{\omega}_{\text{пер}}, \overline{AB}] $$
+  $$ \Rightarrow 0 = 0 + [\v{\omega}_{\text{абс}} - \v{\omega}_{\text{отн}} - \v{\omega}_{\text{пер}}, \overline{AB}] = 0,~~ \forall \overline{AB} \Leftrightarrow \v{\omega}_{\text{абс}} = \v{\omega}_{\text{отн}} + \v{\omega}_{\text{пер}} $$
   \end{proof}
 
   \begin{ntc}
-  $\frac{d\vec{\omega}_{\text{пер}}}{dt} = \dot{\vec{\omega}}_\text{пер} + [\vec{\omega}_\text{пер}, \vec{\omega}_\text{пер}] = \dot{\vec{\omega}}_\text{пер} $
+  $\frac{d\v{\omega}_{\text{пер}}}{dt} = \dot{\v{\omega}}_\text{пер} + [\v{\omega}_\text{пер}, \v{\omega}_\text{пер}] = \dot{\v{\omega}}_\text{пер} $
   \end{ntc}
 
   \begin{teo}[О сложении угловых ускорений] 
-  $\vec{\varepsilon}_{\text{абс}} = \vec{\varepsilon}_{\text{отн}} + \vec{\varepsilon}_{\text{пер}} + [\vec{\omega}_{\text{пер}}, \vec{\omega}_\text{отн}]$, где $\vec{\varepsilon}_{\text{абс}} = \frac{d}{dt}\vec{\omega}_{\text{абс}}$, $\vec{\varepsilon}_{\text{отн}} = \dot{\vec{\omega}}_{\text{отн}}$, $\vec{\varepsilon}_{\text{пер}} = \frac{d}{dt}\vec{\omega}_{\text{пер}} = \dot{\vec{\omega}}_{\text{пер}}$
+  $\v{\varepsilon}_{\text{абс}} = \v{\varepsilon}_{\text{отн}} + \v{\varepsilon}_{\text{пер}} + [\v{\omega}_{\text{пер}}, \v{\omega}_\text{отн}]$, где $\v{\varepsilon}_{\text{абс}} = \frac{d}{dt}\v{\omega}_{\text{абс}}$, $\v{\varepsilon}_{\text{отн}} = \dot{\v{\omega}}_{\text{отн}}$, $\v{\varepsilon}_{\text{пер}} = \frac{d}{dt}\v{\omega}_{\text{пер}} = \dot{\v{\omega}}_{\text{пер}}$
   \end{teo}
 
   \begin{proof}
-  $$ \vec{\varepsilon}_{\text{абс}} = \frac{d}{dt}(\vec{\omega}_{\text{отн}} + \vec{\omega}_{\text{пер}}) = $$ 
-  $$ = \dot{\vec{\omega}}_{\text{отн}} + [\vec{\omega}_{\text{пер}}, \vec{\omega}_{\text{отн}}] + \frac{d}{dt}\vec{\omega}_{\text{пер}} =
-  \vec{\varepsilon}_{\text{отн}} + [\vec{\omega}_{\text{пер}}, \vec{\omega}_{\text{отн}}] + \vec{\varepsilon}_{\text{пер}} $$ 
+  $$ \v{\varepsilon}_{\text{абс}} = \frac{d}{dt}(\v{\omega}_{\text{отн}} + \v{\omega}_{\text{пер}}) = $$ 
+  $$ = \dot{\v{\omega}}_{\text{отн}} + [\v{\omega}_{\text{пер}}, \v{\omega}_{\text{отн}}] + \frac{d}{dt}\v{\omega}_{\text{пер}} =
+  \v{\varepsilon}_{\text{отн}} + [\v{\omega}_{\text{пер}}, \v{\omega}_{\text{отн}}] + \v{\varepsilon}_{\text{пер}} $$ 
 
   \end{proof}
 
@@ -39,9 +39,9 @@
   
   $S\xi\eta\zeta$ - связана с телом
   
-  $\vec{\omega}$ - угловая скорость $S\xi\eta\zeta$ относительно $OXYZ$
+  $\v{\omega}$ - угловая скорость $S\xi\eta\zeta$ относительно $OXYZ$
 
-  Тогда: $\vec{\omega} = \sum\limits_{i = 1}^{n} \vec{\omega_i}$
+  Тогда: $\v{\omega} = \sum\limits_{i = 1}^{n} \v{\omega_i}$
   
   \subsection{Кинематические формулы Эйлера} 
   \begin{df} $ Ox = (OXY)\cap(O\xi\eta) $ - линия узлов \end{df}
@@ -53,21 +53,21 @@
   Повороты:
   $ OXYZ \xrightarrow{\psi, OZ} OxyZ \xrightarrow{\Theta, Ox} Oxy\zeta \xrightarrow{\varphi, O\zeta} O\xi\eta\zeta $
 
-  $\vec{\omega} = \dot{\psi}\vec{e}_z + \dot{\Theta}\vec{e}_x + \dot{\varphi}\vec{e}_{\zeta}$
+  $\v{\omega} = \dot{\psi}\v{e}_z + \dot{\Theta}\v{e}_x + \dot{\varphi}\v{e}_{\zeta}$
 
-  $\vec{e}_x = \cos \varphi \vec{e}_{\xi} + \sin \varphi \vec{e}_{\eta}$
+  $\v{e}_x = \cos \varphi \v{e}_{\xi} + \sin \varphi \v{e}_{\eta}$
   
-  $\vec{e}_z = \cos \Theta \vec{e}_{\zeta} + \sin \Theta ( \sin \varphi \vec{e}_{\xi} + \cos \varphi \vec{e}_{\eta} )$
-  $$\begin{array}{rcl}\vec{\omega} & = & \dot\psi(\sin \Theta \sin \varphi \vec{e}_{\xi} + \sin \Theta \cos \varphi \vec{e}_{\eta} + \cos \Theta \vec{e}_{\zeta}) \\
-  & + & \dot \Theta (\cos \varphi \vec{e}_{\xi} - \sin \vec{e}_{\eta}) \\
-  & + & \dot{\varphi}\vec{e}_{\zeta} = \omega_{\xi}\vec{e}_{\xi} + \omega_{\eta}\vec{e}_{\eta} + \omega_{\zeta}\vec{e}_{\zeta} \\
+  $\v{e}_z = \cos \Theta \v{e}_{\zeta} + \sin \Theta ( \sin \varphi \v{e}_{\xi} + \cos \varphi \v{e}_{\eta} )$
+  $$\begin{array}{rcl}\v{\omega} & = & \dot\psi(\sin \Theta \sin \varphi \v{e}_{\xi} + \sin \Theta \cos \varphi \v{e}_{\eta} + \cos \Theta \v{e}_{\zeta}) \\
+  & + & \dot \Theta (\cos \varphi \v{e}_{\xi} - \sin \v{e}_{\eta}) \\
+  & + & \dot{\varphi}\v{e}_{\zeta} = \omega_{\xi}\v{e}_{\xi} + \omega_{\eta}\v{e}_{\eta} + \omega_{\zeta}\v{e}_{\zeta} \\
   \end{array}$$
 
   $$
   \begin{cases}
-  \vec{\omega}_{\xi} = \dot{\psi}\sin\Theta \sin\varphi + \dot{\Theta}\cos\varphi \\
-  \vec{\omega}_{\eta} = \dot{\psi}\sin\Theta \cos\varphi + \dot{\Theta}\sin\varphi \\
-  \vec{\omega}_{\zeta} = \dot{\psi}\cos\Theta + \dot{\varphi} \\
+  \v{\omega}_{\xi} = \dot{\psi}\sin\Theta \sin\varphi + \dot{\Theta}\cos\varphi \\
+  \v{\omega}_{\eta} = \dot{\psi}\sin\Theta \cos\varphi + \dot{\Theta}\sin\varphi \\
+  \v{\omega}_{\zeta} = \dot{\psi}\cos\Theta + \dot{\varphi} \\
   \end{cases}
   \text{ - кинематические формулы Эйлера}
   $$
@@ -88,14 +88,14 @@
   $\underline{n=4}$(\textit{Алгебра кватернионов})
 
   \begin{flalign*}
-  & \Lambda = \lambda_0 \vec{i}_0 + \lambda_1 \vec{i}_1 + \lambda_2 \vec{i}_2 + \lambda_3 \vec{i}_3 \in \mathbb{H} &\\
-  & \{\vec{i}_0, \vec{i}_1, \vec{i}_2, \vec{i}_3\} \text{ - базис} &\\ 
+  & \Lambda = \lambda_0 \v{i}_0 + \lambda_1 \v{i}_1 + \lambda_2 \v{i}_2 + \lambda_3 \v{i}_3 \in \mathbb{H} &\\
+  & \{\v{i}_0, \v{i}_1, \v{i}_2, \v{i}_3\} \text{ - базис} &\\ 
   & \Lambda = \lambda_0 + \overline{\lambda} &\\
   & i_0 \circ i_k = i_k k = \overline{1, 3},~ i_0 \circ i_0 = 1 &\\
   \end{flalign*}
   \begin{flalign*}
   & i_k \circ i_m = -(i_k, i_m) + [i_k, i_m] k, m \in \{1,2,3\} &\\
-  & \overline{\lambda} \circ \overline{\mu} = (\lambda_1 \vec{i}_1 + \lambda_2 \vec{i}_2 + \lambda_3 \vec{i}_3) \circ (\mu_1 \vec{i}_1 + \mu_2 \vec{i}_2 + \mu_3 \vec{i}_3) = -(\overline{\lambda}, \overline{\mu}) + [\overline{\lambda}, \overline{\mu}] &\\
+  & \overline{\lambda} \circ \overline{\mu} = (\lambda_1 \v{i}_1 + \lambda_2 \v{i}_2 + \lambda_3 \v{i}_3) \circ (\mu_1 \v{i}_1 + \mu_2 \v{i}_2 + \mu_3 \v{i}_3) = -(\overline{\lambda}, \overline{\mu}) + [\overline{\lambda}, \overline{\mu}] &\\
   & \Lambda \circ M = (\lambda + \overline{\lambda}) \circ (\mu + \overline{\mu}) = \lambda_0 \mu_0 + \lambda_0\overline{\mu} + \overline{\lambda}\mu_0 - (\overline{\lambda}, \overline{\mu}) + [\overline{\lambda}, \overline{\mu}] &\\
   \end{flalign*}
   \paragraph{Свойства:}
