@@ -1,7 +1,0 @@
-PWD /home/valentiay/Documents/lectures/3sem/analmech
-INPUT /usr/share/texmf-dist/web2c/texmf.cnf
-INPUT /home/valentiay/.texlive/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT 2017-10-18.tex
-OUTPUT 2017-10-18.log
-INPUT /usr/share/texmf-dist/fonts/map/fontname/texfonts.map
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm

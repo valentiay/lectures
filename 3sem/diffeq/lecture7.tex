@@ -1,0 +1,132 @@
+Coming soon...
+
+\section{Лекция 7}
+% \subsection{Линейные уравнения с постоянными коэффициетами}
+% Однородны уравнения
+% \[ L[y] \equiv y^{(n)} + a_1y^{(n - 1)} + \ldots + a_{n - 1}y' + a_ny = 0 \]
+% $y + e^{\lambda t}$, $\lambda = const$. $L[e^{\lambda t} = e^{\lambda t}F(\lambda)$
+% \[ F(\lambda) = \lambda^n + \a_1 \lambda^{n - 1} + \ldots + \a_{n - 1}\lambda + a_n = 0 (3)\]
+
+% Случай 1:
+% Уравнение (3) имеет $$
+
+% \paragraph{Случай 2}
+\subsection{Комплексные функции действительного переменного}
+Рассматириваем функции вида 
+\[ h(t) = u(t) + iv(t) \]
+где $t \in T$, $T \int \mathbb{R}$ - интервал, $u(t)$, $v(t)$ --- вещественны.
+\begin{df} 
+$h(t)$ непрерывна, если $u(t)$, $v(t)$ непрерывны. 
+\end{df}
+\begin{df}
+$h(t)$ дифференцируема ($n$ раз), если $u(t)$, $v(t)$ дифференцируемы ($n$ раз), при этом
+\[ h^{(n)}(t) = u^{(n)}(t) + iv^{(n)}(t)\]
+\end{df}
+
+\begin{lem}
+Функция $h(t)$ является решением уравнения (1) тогда и только тогда, когда $u(t)$, $v(t)$ являются его решениями.
+\end{lem}
+\begin{proof}
+\[ L[h(t)] = L[u(t) + iv(t)] = L[u(t)] + iL[v(t)] \Rightarrow \]
+\[ \Rightarrow L[h(t)] \Leftrightarrow \begin{cases}
+L[u(t)] = 0 \\
+L[v(t)] = 0 \\
+\end{cases}\]
+\end{proof}
+
+\begin{df}
+Модуль $|h(t)| = \sqrt{(u(t))^2 + (v(t))^2}$
+\end{df}
+
+Рассмотрим функцию $e^{\lambda t}$, $\lambda = \alpha + i \beta$, $\beta \neq 0$. По определению
+\[ e^{\lambda t} = e^{\alpha t}(\cos \beta t + i\sin \beta t) \]
+Свойства:
+\begin{enumerate}
+	\item $|e^{\lambda t}| = e^{\alpha t} \neq 0$
+	\item $e^{\lambda_1 t} \cdot e^{\lambda_2 t} = e^{(\lambda_1 + \lambda_2)t}$
+	\item $e^{\lambda t} \cdot e^{-\lambda t} = 1 $
+	\item $\frac{d}{dt} e^{\lambda t}= \lambda e^{\lambda t}$
+\end{enumerate}
+
+\paragraph{Случай 2}
+Уравнение (3) имеет $n$ различных корней, среди которых есть комплексные. Аналогично случаю 1 заключаем, что решения
+\[ y_s = e^{\lambda_s t},~~ s = 1 \ldots n \]
+линейно независимы над $\mathbb{C}$, т.к. иначе их бронскиан был бы равен нулю.
+
+Т.к. (3) - уравнение с действительными коэффициентами, то вместе с каждым комплексным корнем $\lambda_1 = \alpha + i\beta$, $\beta \neq 0$ оно обладает сопряженным корнем $\lambda_2 = \overline{\lambda_1} = \alpha - i\beta$.
+\[ \overline{F(\lambda)} = 0  \Rightarrow F(\overline{\lambda}) \]
+
+Им соответсвуют комплексные сопряженные решения
+\[ y_1 = e^{(\alpha_1 + i \beta_1)t} = e^{\alpha_1t}(\cos (\beta_1t) + i\sin{\beta_1t}) = u_1 + iu_2 \]
+\[ y_2 = e^{(\alpha_1 - i \beta_1)t} = e^{\alpha_1t}(\cos (\beta_1t) - i\sin{\beta_1t}) = u_1 - iu_2 \]
+где $u_1 = e^{\alpha_1 t}\cos\beta_1t$, $u_2 = e^{\alpha_1 t}\sin\beta_1t$.
+
+В силу леммы имеем:
+\[ u_1 = \frac{y_1 + y_2}{2},~~~ u_2 = \frac{y_1 - y_2}{2i} = -\frac{1}{2}i(y_1 - y_2) \]
+является решениями уравнения (1).
+
+Докажем, что решения $u_1, u_2, y_3, \ldots y_n$ линейно независимы. В самом деле, если для некоторых $C_1, \ldots, C_n$ (действительных или комплексных) выполняется
+\[ C_1u_1 + C_2u_2 + C_3y_3 + \ldots + C_ny_n = 0\]
+то
+\[ \frac{C_1 - i C_2}{2}y_1 + \frac{C_1 + i C_2}{2}y_2 + C_3y_3 + \ldots + C_ny_n = 0 \]
+Т.к. $y_1, \ldots, y_n$ линейно независимы, то
+\[ 
+\begin{cases}
+C_1 - iC_2 = 0 \\
+C_1 + iC_2 = 0 \\
+\end{cases}
+\Rightarrow
+C_1 = C_2 = 0 = C_3 = \ldots = C_n = 0
+\]
+% Заменив аналогично ... комплексные сопряженные решений
+% \[ y_i = e^{\lambda_it},~~ y_{j + 1} = e^{\lambda_{i + 1}t},~~ \lambda_{j + 1} = \overline{\lambda_j}0 \]
+% парой действительных решений уравнения (1), соответсвующих его ФСР.
+
+% Общее решение уравнения (1) имеет вид
+% \[ y = \sum\limits_{j = 0} e^{\alpha_j t}(C_{2j - 1}\cos\beta_j t + C_{2j}\sin \beta_j t) \]
+\paragraph{Случай кратных корней}
+Ниже будем использовать формулы из ТФКП:
+\[ \frac{d}{d\lambda}(e^{\lambda t}) = t e^{\lambda t},~~ \frac{d}{d\lambda}(\lambda^m) = m\lambda^{m - 1},~ m \in \mathbb{N} \]
+где $\lambda$ --- комплексное.
+
+Оператор $\frac{d}{d \lambda}$ обладает свойством линейности и др.
+\begin{ass}
+Для любого целого $ s \geqslant 0 $ справедлива формула
+\[ L[t^se^{\lambda t}] = e^{\lambda t}\sum\limits_{j = 0}^s C_s^j t^{s - j} F^{(j)}(\lambda) (4)\]
+где $F(\lambda)$ --- характеристический многочлен.
+\end{ass}
+\begin{proof}
+Имеем тождество
+\[ L[e^{\lambda t}] \equiv e^{\lambda t}F(\lambda) \]
+Дифференцируем $s$ раз по $\lambda$, получаем по формуле Лейбница
+\[ L[t^s e^{\lambda t}] = \sum\limits_{j = 0}^s C_s^j (e^{\lambda t})^(s - j)_\lambda \]
+\[ F^{(j)}(\lambda) = e^{\lambda t} \sum \ldots \]
+\end{proof}
+\begin{df}
+$\lambda_0$ --- корень характеристического уравнения (3) кратности $k$, $k = 1, \ldots, n$, если
+\[ F(\lambda) = (\lambda - \lambda_0)^kG(\lambda) \]
+где $G(\lambda)$ --- многочлен степени $n - k$, $G(\lambda) \neq 0$.
+\end{df}
+
+В этом случае
+\[ F(\lambda_0) = F'(\lambda) = \ldots = F^{(k - 1)} (\lambda_0),~~ F^{(k)}(\lambda_0) \neq 0 \]
+
+\begin{lem}
+Пусть $\lambda_0$ --- корень характеристического уравнения (3) кратности $k$. Тогда функции
+\[ t^s e^{\lambda_0 t},~~ s = 0, \ldots, k _ 1 \]
+являются решениями уравнения (1).
+\end{lem}
+\begin{proof}
+$\forall s = 0, \ldots, k - 1$ имеем по формуле (4)
+\[ L[t^se^{\lambda t}] = e^{\lambda t}(C_0^st^s F(\lambda) + C_1^st^{s - 1} F(\lambda) + \ldots + C_s^s F^{(s)}(\lambda)) \]
+При $\lambda = \lambda_0$ выполняется $F(\lambda_0) = F'(\lambda_0) = \ldots = F^{(s)}(\lambda 0) = 0,~~ s \leqslant k - 1$.
+
+Поэтому $L[t^se^{\lambda t}] = 0$
+\end{proof}
+\paragraph{Случай 3}
+Уравнение (3) имеет $m < n$ различных корней $\lambda_1, \ldots, \lambda_m$ кратности $k_1, \ldots, k_n$ ($\sum k_i = n$). Тогда в силу леммы уравнение (1) имеет $n$(комплексных решений)
+\[ e^{\lambda_1t}, te^{\lambda_1t}, \ldots, t^{k_1 - 1}e^{\lambda_1t} \]
+\[ \vdots \]
+\[ e^{\lambda_mt}, te^{\lambda_mt}, \ldots, t^{k_m - 1}e^{\lambda_mt} \]
+
+Покажем, что эти решения линейно независимы над $\mathbb{C}$ на $\mathbb{R}$
