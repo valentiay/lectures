@@ -1,6 +1,6 @@
 \documentclass{article}
 
-%\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -11,12 +11,21 @@
 \usepackage{graphics}
 \usepackage{amsthm}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
+
 \hypersetup{
 colorlinks,
 citecolor=black,
 filecolor=black,
 linkcolor=black,
 urlcolor=black
+}
+
+\geometry{
+a4paper,
+total={140mm,242mm},
+left=35mm,
+top=35mm,
 }
 
 \renewcommand{\v}[1]{{\overline{#1}}}
@@ -29,6 +38,8 @@ urlcolor=black
 \newcommand{\ek}{\v{e}_k}
 \newcommand{\el}{\v{e}_l}
 \newcommand{\re}[1]{(\ref{#1})}
+
+\allowdisplaybreaks
 
 \newtheorem*{df}{Определение}
 \newtheorem{teo}{Теорема}
@@ -47,11 +58,14 @@ urlcolor=black
 
 
 \setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
 
 \author{Муницина Мария Александровна}
 \title{Аналитическая механика}
 
 \begin{document}
+  \label{title}
+  
   \begin{titlepage}
   \maketitle
   \begin{center}
@@ -62,6 +76,11 @@ urlcolor=black
   \tableofcontents
   \vfill
   \end{titlepage}
+  \pagestyle{fancy}
+  \fancyhead{}
+  \fancyhead[L,R]{\thepage}
+  \fancyhead[L]{\hyperref[title]{Аналитическая механика. М.А. Муницина}} 
+  \fancyfoot{}
 
   \input{2017-09-06}
   \input{2017-09-13}
@@ -70,6 +89,6 @@ urlcolor=black
   \input{2017-10-11}
   \input{2017-10-18}
   \input{2017-10-25}
-  %TODO
+  \input{2017-11-01}
   \input{2017-11-08}
 \end{document}
