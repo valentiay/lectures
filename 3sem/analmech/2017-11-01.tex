@@ -126,5 +126,34 @@ $\varphi_0 = 0 \quad (\varphi' = \varphi - \varphi_0)$
 \end{enumerate}
 \end{teo}
 \begin{proof}
-TODO
+\begin{flalign*}
+& \dot s = \frac{c}{2} &\\
+& T = \frac{2\pi ab}{c} &\\
+& a =\;? &\\
+& r = \frac{p}{1 + e \cos \varphi}, \quad b^2 = (1 - e^2)a^2 &\\
+& a = \frac{1}{2} \left( \frac{p}{1 + e} + \frac{p}{1 - e} \right)= \frac{p}{1 - e^2} = \frac{pa^2}{b^2} \Rightarrow b^2 = pa &\\
+& \text{Тогда } T^2 = \frac{4\pi^2a^2b^2}{c^2} = \frac{4\pi^2a^2pa}{c^2} = \frac{4\pi^2a^3c^2}{c^2 \gamma M} = \frac{4 \pi^2a^3}{\gamma M} \Rightarrow &\\
+& \frac{T^2}{a^3} = \frac{4\pi^2}{\gamma M} = const &\\
+\end{flalign*}
 \end{proof}
+
+\subsection{Задача двух тел}
+\begin{flalign*}
+& \v F_{12} = - \frac{\gamma m_1 m_2}{|\v r_1 - \v r_2|^3}(\v r_1 - \v r_2) &\\
+& \v F_{21} = - \frac{\gamma m_1 m_2}{|\v r_1 - \v r_2|^3}(\v r_2 - \v r_1) &\\
+& \text{Теорема о движении центра масс: } (m_1 + m_2)\ddot{\v r}_S = 0 \Rightarrow &\\
+& \Rightarrow \text{Система Кенига --- инерциальная система отсчета} (\v F^{(e)} = 0) &\\
+& \v \rho_1 = \v r_1 - \v r_S = \v r_1 - \frac{m_1\v r_1 + m_2\v r_2}{m_1 + m_2} = \frac{m_2}{m}(\v r_1 - \v r_2) &\\
+& \v \rho_2 = \frac{m_1}{m}(\v r_2 - \v r_1) &\\
+& \text{Тогда второй закон Ньютона в системе Кенига имеет вид:} &\\
+& m_1 \ddot{\v \rho}_1 = - \frac{\gamma m_1 m_2}{m^3 \rho_1^3 / m_2^3} \frac{m \v \rho_1}{m_2} = -\frac{\gamma m_1 m_2^3}{m^2 \rho_1^3} \v \rho_1 = -\gamma_1 \frac{m_1m}{\rho_1^3} \v \rho_1 \text{, где } \gamma_1 = \frac{\gamma m_2^3}{m^3} &\\
+& m_2 \ddot{\v \rho}_2 = - \gamma_2\frac{m_2 m}{\rho_2^3} \v \rho_2 \text{, где } \gamma_2 = \frac{\gamma m_1^3}{m^3} &\\
+\end{flalign*}
+
+\paragraph*{Уточнение законов Кепплера}
+\begin{enumerate}
+\item Планеты движутся по эллипсам, в одном из фокусов которого находится центр масс системы.
+\item Сохраняется.
+\item $ \frac{T^2}{a^3} = \frac{4\pi}{\gamma_{1,2} m}$ --- зависит от $m_1$ ($m_2$).
+Т.е. $ \frac{T_1^2}{a_1^3} \neq \frac{T_2^2}{a_2^3}$ при $m_1 \neq m_2$, но если $m_1 \gg m_2$, тогда $\frac{m_2}{m_1 + m_2} \ll 1 \Rightarrow |\v \rho_1| \ll 1$, значит $\gamma_1 \ll \gamma$, $\gamma_2 \approx \gamma$
+\end{enumerate}

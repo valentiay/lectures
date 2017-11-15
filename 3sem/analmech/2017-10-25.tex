@@ -2,7 +2,7 @@
 \subsection{Основные динамические величины}
 \begin{df}
 $ \v P = \sum\limits_{i = 1}^N m_i\v v_i $ --- импульс.
-$ \v K_O = \sum\limits_{i = 1}^N[[\v r_i, m_i\v v_i] $ --- кинематический момент онисительно точки $O$.
+$ \v K_O = \sum\limits_{i = 1}^N[\v r_i, m_i\v v_i] $ --- кинематический момент относительно точки $O$.
 $ K_l = (\v K_0, \v e_l)$ --- кинематический момент относительно оси $l$.
 \end{df}
 \begin{ntc}
@@ -32,7 +32,7 @@ $S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m
 \begin{proof}
 \begin{flalign*}
 & \v K_0 = \sum[\v R + \v \rho, m_i \dot{\v R} + m_i \dot{\v \rho}_i] = \left[\v R,  \left(\sum m_i\right)\dot{\v R}\right] + \left[\v R, \sum m_i\dot{\v \rho_i}\right] + &\\
-& + \left[\sum m_i\v \rho_i, \dot {\v \rho}_i, \v R\right] + \sum[\v \rho_i m_i \dot{\v \rho}_i] = [\v r_S, m \v v_S] + \v K_{\text{кен}} &\\
+& + \left[\sum m_i\v \rho_i, \dot {\v \rho}_i \v R\right] + \sum[\v \rho_i m_i \dot{\v \rho}_i] = [\v r_S, m \v v_S] + \v K_{\text{кен}} &\\
 & T = \frac{1}{2} \sum m_i (\dot{\v R}_i + \dot{\v \rho}_i, \dot{\v R}_i + \dot{\v \rho}_i) = \frac{1}{2} \lb \sum m_i \rb \dot{\v R}^2 + \frac{1}{2}\sum m_i\dot{\v \rho}_i^2 + &\\
 & + \underbrace{\sum m_i (\v R, \v \rho)}_0 = \frac{1}{2}mv_S^2 + T_{\text{кен}} &\\ 
 \end{flalign*}
@@ -139,7 +139,7 @@ $S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m
 \begin{teo}[Закон сохранения полной механической энергии]
 Если все внешние силы, действующие на систему консервативны, то полная энергия системы сохраняется.
 \end{teo}
-\section{Основные теоремы динамики в неинерциальных системах отсчета}
+\subsection{Основные теоремы динамики в неинерциальных системах отсчета}
 \[ m_i \v w_i = \v F_i^{(e)} + \v F_i^{(i)} + \v F_i^{(\text{пер})} + \v F_i^{(\text{кор})} \]
 \[ \dot{\v P} = \v F + \v F^{\text{пер}} + \v F^{\text{кор}} \]
 \[ \v F^{\text{пер}} = \sum \v F^{\text{пер}} = -\sum m_iw_i^{\text{пер}};~~~ \v F^{\text{кор}} = \sum \v F_i^{\text{кор}} = - \sum m_i\cdot 2\cdot [\v w_\text{кор}, \v v_i] \]
