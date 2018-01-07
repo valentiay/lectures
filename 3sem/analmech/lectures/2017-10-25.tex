@@ -17,13 +17,13 @@ $S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m
 \[ \v P = \sum m_i \frac{d \v r_i}{d\tau} = \frac{d}{dt}\lb \sum m_i \v r_i \rb = \frac{d}{dt}(m\v r_S) = m\v v_S \]
 \[ \boxed{\v P = m\v v_S} \]
 \begin{df}
-Осями Кенига называется система отсчета с началом в центра масс системы и осями, параллельными неподвижным. (Движется поступательно вместе с цетром масс)
+Осями Кенига называется система отсчета с началом в центра масс системы и осями, параллельными неподвижным. (Движется поступательно вместе с центром масс)
 \end{df}
 \[ \v r_i = \v R + \v \rho_i \]
 \begin{df}
-\[ \v K_{\text{кин}} = \sum [\v \rho_i, m \dot{\v \rho_i}] \]
+\[ \v K_{\text{кен}} = \sum [\v \rho_i, m \dot{\v \rho_i}] \]
 \end{df}
-\[ T_\text{кин} = \frac{1}{2}\sum m_i \rho_i^2 \]
+\[ T_\text{кен} = \frac{1}{2}\sum m_i \rho_i^2 \]
 
 \begin{teo}[Формулы Кенига]
 \[ \v K_O = [\v r_S, m \v v_S] + \v K_{\text{кен}} \]
@@ -60,7 +60,7 @@ $S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m
 \begin{proof}
 \begin{flalign*}
 & \frac{d}{dt} \v K_O = \frac{d}{dt}\lb\sum [\v r_i, m_i\v v_i] \rb = \sum \left[\frac{d \v r_i}{dt}, m_i\v v_i\right] + \sum [\v r_i, m_i\dot{\v v}_i] = &\\
-& = \sum[\v r_i, \v F_i^{(e)}] + \sum[\v r_i, \v F_i^{(e)}] = \v M_O &\\
+& = \sum[\v r_i, \v F_i^{(e)}] + \sum[\v r_i, \v F_i^{(i)}] = \v M_O &\\
 \end{flalign*}
 \end{proof}
 
@@ -84,7 +84,7 @@ $S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m
 & \v K_B = \sum [\v{BA} + \v \rho_i, m_i\v v_i] = [\v{BA}, m_i\v v_i] + \v K_A = \v K_A + [\v P, \v{AB}] &\\
 \end{flalign*}
 \end{proof}
-\paragraph{Формула преобразовани момента сил при смене полюса}
+\paragraph{Формула преобразования момента сил при смене полюса}
 \[ \v M_B = \v M_A + [\v F, \v{AB}] \]
 \begin{proof}
 Аналогично.

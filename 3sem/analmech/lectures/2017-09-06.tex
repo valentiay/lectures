@@ -69,7 +69,7 @@
   \end{picture}
   \end{center}
   
-  $$ \v{v} = R\dot\varphi(-\sin \varphi \cdot \v{e_x} + \cos \varphi \cdot\v{e_y}) = R \dot\varphi \v{r} $$
+  $$ \v{v} = R\dot\varphi(-\sin \varphi \cdot \v{e_x} + \cos \varphi \cdot\v{e_y}) = R \dot\varphi \v{\tau} $$
   $$ \v{w} = R \ddot\varphi ( - \sin \varphi \cdot \v{e_x} + \cos \varphi \cdot \v{e_y}) + R \dot\varphi^2(-\cos \varphi \cdot \v{e_x} - \sin \varphi \cdot {\v{e_y}}) = R \ddot \varphi \v{\tau} + R \dot \varphi^2 \v{n}  $$
   
   $$ \v{v} = R \dot\varphi \v{\tau} = v \v{\tau}$$
@@ -80,14 +80,14 @@
   \begin{df}
   \begin{equation} 
   \label{tang}
-  \v{\tau} = \frac{d\v{r}}{ds} = \dot{\vec r} \text{ - касательный вектор}
+  \v{\tau} = \frac{d\v{r}}{ds} = \vec r' \text{ - касательный вектор}
   \end{equation}
   \begin{equation}
   \label{normal}
-  \v{n} = \frac{\dot{\vec r}}{|\dot{\vec {\tau}}|} \text{ - вектор главной нормали }
+  \v{n} = \frac{\vec \tau'}{|\vec {\tau}'|} \text{ - вектор главной нормали }
   \end{equation}
   \begin{equation}    
-  \v{b} = [\v{t}; \v{n}] \text{ - вектор бинормали }
+  \v{b} = [\v{\tau}; \v{n}] \text{ - вектор бинормали }
   \end{equation}  
   \end{df}
   
@@ -97,14 +97,14 @@
   \begin{proof}  
   \begin{flalign*}
   & |\v{\tau}| = \frac{|d\v{r}|}{|ds|} = 1 &\\
-  & |\v{n}| = \frac{|\dot{\vec r}|}{|\dot{\v{\tau}}|} = 1 &\\
+  & |\v{n}| = \frac{|\v \tau'|}{|\v{\tau}'|} = 1 &\\
   & |\v{\tau}| = 1 \Rightarrow (\tau, \tau) = 1 &\\
-  & (\dot{\vec {\tau}}, \v{\tau}) + (\v{\tau}, \dot{\vec {\tau}}) = 0 &\\
-  & 2 (\dot{\v{\tau}}, \v{\tau}) = 0 \Rightarrow \dot{\v{\tau}} \perp \v{\tau} \Rightarrow \v{n} \perp \v{\tau} &\\
+  & (\vec {\tau}', \v{\tau}) + (\v{\tau}, \vec {\tau}') = 0 &\\
+  & 2 (\v{\tau}', \v{\tau}) = 0 \Rightarrow \v{\tau}' \perp \v{\tau} \Rightarrow \v{n} \perp \v{\tau} &\\
   \end{flalign*}
   
   \end{proof}
-  Этот трехгранник называют репер Ферне. (Дарбу, сопровождающий трехгранник).
+  Этот трехгранник называют репер Френе. (Дарбу, сопровождающий трехгранник).
   
   \begin{teo} 
   $ \v{v} = v \v{\tau} $, $ \v{w} = \dot v \v{\tau} + \frac{v^2}{\rho} \v{n} $, где $ v = \dot s $.
@@ -119,12 +119,12 @@
   & \dot v \v{\tau} \text{ - касательное ускорение} &\\
   & \frac{v^2}{\rho} \v{n} \text{ - нормальное ускорение } &\\
   & \rho = \frac{1}{|\dot r|} \text{ - радиус кривизны} &\\
-  & k = | \v{\ddot r} | \text{ - кривизна} &\\
-  & \v{\ddot r} \text{ - вектор кривизны} &\\
+  & k = | \v{r}'' | \text{ - кривизна} &\\
+  & \v{r}'' \text{ - вектор кривизны} &\\
   \end{flalign*}
   \end{proof}
   
-  \paragraph{Формулы Френеля:}
+  \paragraph{Формулы Френе:}
   $$ 
   \begin{cases}
   \v{\tau}' = k \v{n} \\
@@ -135,34 +135,39 @@
   где $\varkappa$ - коэффициент кручения.
   
   \begin{proof}
-  $$ | \v{n} | = 1 \Rightarrow (\v{n}, \v{n}) = 0 $$
+  $$ | \v{n} | = 1 \Rightarrow (\v{n}, \v{n}') = 0 $$
   $$ \v{n} \perp \v{\tau} \Rightarrow (\v{n}', \v{\tau}) + (\v{n}, \v{\tau}') = 0 \Rightarrow (\v{n}', \v{\tau}) + k = 0 $$
   
-  $$ \v{b}' = [\v{ \tau}', \v{n}] + [\v{\tau}, \v{n}'] = [k\v{n}, \v{n}] + [\v{\tau}, -k\v{\tau} + \varkappa \v{b}] = 0 + \varkappa[\v{r}, \v{b}] = -\varkappa\v{n} $$
+  $$ \v{b}' = [\v{ \tau}', \v{n}] + [\v{\tau}, \v{n}'] = [k\v{n}, \v{n}] + [\v{\tau}, -k\v{\tau} + \varkappa \v{b}] = 0 + \varkappa[\v{\tau}, \v{b}] = -\varkappa\v{n} $$
   \end{proof}
-  \subsection{Ортогональные векторные координаты}
+  \subsection{Ортогональные криволинейные координаты}
+  
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=5cm]{fig1.png} 
+  \end{figure}  
   
   \begin{gather*}
   \v{r} = \v{r}(q_1(t), q_2(t), q_3(t)) \\
-  \v{v} = \dot{\vec {\tau}}= \sum \limits_{i = 1}^3 \frac{\partial\v{r}}{\partial q_i} \dot q_i\\
+  \v{v} = \dot{\vec {r}}= \sum \limits_{i = 1}^3 \frac{\partial\v{r}}{\partial q_i} \dot q_i\\
   \v{H_i} = \frac{\partial\v{r}}{\partial q_i} = H_i \v{e_i} \text{, где $H_i$ - коэффициенты Ламе.} \\ 
   \end{gather*}
-  \subsubsection{Геометрический смысл}
+  \subsubsection*{Геометрический смысл}
   $$ ds_i = H_i dq_i $$
   $s_i$ - длина дуги $i$-й к-ой линии.
   $$ H_i = \frac{\partial \v{r}}{\partial q_i}  = \sqrt{\left(\frac{\partial x}{\partial q_i}\right) ^2 + \left(\frac{\partial y}{\partial q_i}\right) ^2 + \left(\frac{\partial z}{\partial q_i}\right) ^2} $$
   $$ \v{v} = \sum\limits_{i=1}^3 H_i \dot{q_i} \v{e_i},~~ v^2 = (\v{v}, \v{v}) = \sum H_i^2\dot{q_i^2} $$ 
   \begin{teo}
-  Копоненты вектора ускорения в ортогональном криволинейном базисе определяются равенством:
+  Компоненты вектора ускорения в ортогональном криволинейном базисе определяются равенством:
   $$ w_i = \frac{1}{H_i}\left(\frac{d}{dt} \frac{\partial}{\partial \dot q_i} \left(\frac{v^2}{2}\right) - \frac{\partial}{\partial q_i} \left(\frac{v^2}{2} \right) \right) $$
   \end{teo}
   \begin{proof}
   \begin{gather*}
-(\v{w}, \v{H_i}) = \left(\frac{d\v{v}}{dt}, \frac{\partial \v{r}}{\partial q_i} \right) = \frac{d}{dt} \left(\v{v}, \frac{\v{r}}{\partial q_i}\right) - \left(\v{v}, \frac{d}{dt} \frac{\partial \v{r}}{\partial q_i} \right) \triangleq \\
-1) ~ \frac{\partial \v{r}}{\partial q_i} = \frac{\partial \v{v}}{\partial q_i'} \text{ - из определения скорости} \\
+(\v{w}, \v{H_i}) = \left(\frac{d\v{v}}{dt}, \frac{\partial \v{r}}{\partial q_i} \right) = \frac{d}{dt} \left(\v{v}, \frac{\partial \v{r}}{\partial q_i}\right) - \left(\v{v}, \frac{d}{dt} \frac{\partial \v{r}}{\partial q_i} \right) \triangleq \\
+1) ~ \frac{\partial \v{r}}{\partial q_i} = \frac{\partial \v{v}}{\partial \dot q_i} \text{ - из определения скорости} \\
 2) ~ \frac{d}{dt} \left(\frac{\partial \v{r}}{\partial q_i} \right) = \sum \limits_{j = 1}^3 \frac{\partial^2 \v{r}}{\partial q_j \partial q_i} \dot q_j = \sum \limits_{j = 1}^3 \frac{\partial^2 \v{r}}{\partial q_i \partial q_j} \dot q_j = \\ 
 = \frac{\partial}{\partial q_i} \left( \frac{d\v{r}}{dt} \right) = \frac{\partial \dot{\vec r}}{\partial q_i} = \frac{\partial \v{v}}{\partial q_i} \\
-\triangleq \frac{d}{dt} \left(\v{v}, \frac{\partial \v{v}}{\partial q_i} \right) - \left( \v{v}, \frac{\partial \v{v}}{\partial q_i} \right) = \frac{d}{dt} \frac{1}{2} \frac{\partial}{\partial q_i} (\v{v}, \v{v}) - \frac{1}{2} \frac{\partial}{\partial q_i} (\v{v}, \v{v}) = \\ 
+\triangleq \frac{d}{dt} \left(\v{v}, \frac{\partial \v{v}}{\partial \dot q_i} \right) - \left( \v{v}, \frac{\partial \v{v}}{\partial q_i} \right) = \frac{d}{dt} \frac{1}{2} \frac{\partial}{\partial \dot q_i} (\v{v}, \v{v}) - \frac{1}{2} \frac{\partial}{\partial q_i} (\v{v}, \v{v}) = \\ 
 = \frac{d}{dt} \frac{\partial}{\partial \dot q_i} \left(\frac{v^2}{2} \right) - \frac{\partial}{\partial q_i} \left(\frac{v^2}{2}\right) \\
 w_i = (\v{w}, \v{e_i}) = \frac{1}{H_i}(\v{w}, \v{H_i})
   \end{gather*}

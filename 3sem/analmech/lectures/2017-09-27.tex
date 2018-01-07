@@ -31,7 +31,7 @@
 
   \end{proof}
 
-  \subsubsection{Несколько подвижных сисем отсчета}~
+  \subsubsection{Несколько подвижных систем отсчета}~
   
   \noindent $OXYZ$ - неподвижная СО \\
   $Ox_1y_1z_1$, $Ox_2y_2z_2$ , $\ldots Ox_ny_nz_n$ - подвижные СО \\
@@ -39,19 +39,24 @@
   $\v{\omega}$ - угловая скорость $S\xi\eta\zeta$ относительно $OXYZ$ \\
   Тогда: $\v{\omega} = \sum\limits_{i = 1}^{n} \v{\omega_i}$
   
-  \subsection{Кинематические формулы Эйлера} 
+  \subsection{Кинематические формулы Эйлера}
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=5cm]{fig13.png} 
+  \end{figure}  
+
   \begin{df} $ Ox = (OXY)\cap(O\xi\eta) $ - линия узлов \end{df}
   \begin{df} $\psi = \angle(Ox, OX)$ - угол прецессии \end{df}
   \begin{df} $\Theta = \angle (O\zeta, OZ)$ - угол нутации \end{df}
-  \begin{df} $\varphi = \angle (Ox, O\xi)$ - угол нутации \end{df}
+  \begin{df} $\varphi = \angle (Ox, O\xi)$ - угол собственного вращения \end{df}
   \begin{df} $\{\psi, \Theta, \varphi\}$ - углы Эйлера \end{df}
 
   Повороты:
   $ OXYZ \xrightarrow{\psi, OZ} OxyZ \xrightarrow{\Theta, Ox} Oxy\zeta \xrightarrow{\varphi, O\zeta} O\xi\eta\zeta $
 
-  $\v{\omega} = \dot{\psi}\v{e}_z + \dot{\Theta}\v{e}_x + \dot{\varphi}\v{e}_{\zeta}$
+  $\v{\omega} = \dot{\psi}\v{e}_Z + \dot{\Theta}\v{e}_x + \dot{\varphi}\v{e}_{\zeta}$
 
-  $\v{e}_x = \cos \varphi \v{e}_{\xi} + \sin \varphi \v{e}_{\eta}$
+  $\v{e}_x = \cos \varphi \v{e}_{\xi} - \sin \varphi \v{e}_{\eta}$
   
   $\v{e}_z = \cos \Theta \v{e}_{\zeta} + \sin \Theta ( \sin \varphi \v{e}_{\xi} + \cos \varphi \v{e}_{\eta} )$
   $$\begin{array}{rcl}\v{\omega} & = & \dot\psi(\sin \Theta \sin \varphi \v{e}_{\xi} + \sin \Theta \cos \varphi \v{e}_{\eta} + \cos \Theta \v{e}_{\zeta}) \\
@@ -87,10 +92,8 @@
   & \Lambda = \lambda_0 \v{i}_0 + \lambda_1 \v{i}_1 + \lambda_2 \v{i}_2 + \lambda_3 \v{i}_3 \in \mathbb{H} &\\
   & \{\v{i}_0, \v{i}_1, \v{i}_2, \v{i}_3\} \text{ - базис} &\\ 
   & \Lambda = \lambda_0 + \overline{\lambda} &\\
-  & i_0 \circ i_k = i_k k = \overline{1, 3},~ i_0 \circ i_0 = 1 &\\
-  \end{flalign*}
-  \begin{flalign*}
-  & i_k \circ i_m = -(i_k, i_m) + [i_k, i_m] k, m \in \{1,2,3\} &\\
+  & i_0 \circ i_k = i_k \quad k = \overline{1, 3},~ i_0 \circ i_0 = 1 &\\
+  & i_k \circ i_m = -(i_k, i_m) + [i_k, i_m] \quad k, m \in \{1,2,3\}, \qquad  \text{В частности, $i_k \circ i_k = -1$}&\\
   & \overline{\lambda} \circ \overline{\mu} = (\lambda_1 \v{i}_1 + \lambda_2 \v{i}_2 + \lambda_3 \v{i}_3) \circ (\mu_1 \v{i}_1 + \mu_2 \v{i}_2 + \mu_3 \v{i}_3) = -(\overline{\lambda}, \overline{\mu}) + [\overline{\lambda}, \overline{\mu}] &\\
   & \Lambda \circ M = (\lambda + \overline{\lambda}) \circ (\mu + \overline{\mu}) = \lambda_0 \mu_0 + \lambda_0\overline{\mu} + \overline{\lambda}\mu_0 - (\overline{\lambda}, \overline{\mu}) + [\overline{\lambda}, \overline{\mu}] &\\
   \end{flalign*}
@@ -100,6 +103,8 @@
     \item $(\Lambda + M) \circ N = \Lambda \circ N + M \circ N $
     \item $\Lambda \circ M \neq M \circ \Lambda$
   \end{enumerate}
+
+  \lline
   %2017-10-04
   \begin{df}
   \[ \overline{\Lambda} = \lambda_0 - \overline{\lambda} \]
@@ -130,7 +135,7 @@
   \paragraph*{Формула Муавра}
   \begin{flalign*}
   & \Lambda = \lambda_0 + \overline \lambda =  \abs \Lambda \lb \frac{\lambda_0}{\abs \Lambda} + \frac{\overline \lambda}{\abs \lambda } \frac{\abs {\overline \lambda}}{\abs \Lambda} \rb = \abs \Lambda \lb \cos \nu + \overline e \sin \nu \rb &\\
-  & \overline e = \frac{\overline \lambda}{\abs {\overline \lambda}},~ \cos\nu = \frac{\lambda_0}{\Lambda},~ \sin\nu = \frac{\overline \lambda}{\abs{\Lambda}} &\\
+  & \overline e = \frac{\overline \lambda}{\abs {\overline \lambda}},~ \cos\nu = \frac{\lambda_0}{\abs{\Lambda}},~ \sin\nu = \frac{\abs{\overline \lambda}}{\abs{\Lambda}} &\\
   & \Lambda_1 = \abs{\Lambda_1}(\cos \nu_1 + \overline e \sin \nu_1) &\\
   & \Lambda_2 = \abs{\Lambda_2}(\cos \nu_2 + \overline e \sin \nu_2) &\\
   & \Lambda_1 \circ \Lambda_2 = \abs{\Lambda_1}\cdot\abs{\Lambda_2}(\cos\nu_1 \cos\nu_2 - \sin\nu_1\sin\nu_2(\overline e, \overline e) + \cos\nu_1\sin\nu_2 \overline e + &\\ 
@@ -141,8 +146,8 @@
   $E = \{\ea, \eb, \ec\}$ --- неподвижный базис \\
   $E' = \{\ea', \eb', \ec' \}$ --- связанный с телом
   \begin{teo}
-  Произвольному положению твердого тела с неподвижной точкой соответсвует номированный кватернион, удовлетворяющий равенству:
-  \[ \v{e}_i = \Lambda \circ \v{e}_i \circ \overline \Lambda,~~ i = 1\ldots3  \]
+  Произвольному положению твердого тела с неподвижной точкой соответствует нормированный кватернион, удовлетворяющий равенству:
+  \[ \v{e}_i' = \Lambda \circ \v{e}_i \circ \overline \Lambda,~~ i = 1\ldots3  \]
   \end{teo}
   \begin{ntc}
   $\Lambda$ --- нормирован, если $\norm \Lambda = 1$
@@ -187,7 +192,7 @@
   \begin{flalign*}
   & (\overline r_k, \overline s_k) = (\ek' - \ek, \ek' + \ek) = (\ek', \ek') - (\ek, \ek) = 0 &\\
   & (\overline r_k, \overline s_l) = (\ek' - \ek, \el' + \el) = (\ek', \el') + (\ek', \el) -  (\ek, \el') - (\ek, \el) = &\\
-  & = -(\el' - \el, \ek' + \ek) = -(\overline s_k, \overline r_l),~ k \neq 1 &\\
+  & = -(\el' - \el, \ek' + \ek) = -(\overline s_k, \overline r_l),~ k \neq l &\\
   \end{flalign*}
   \item \label{two.o}
   \begin{flalign*}

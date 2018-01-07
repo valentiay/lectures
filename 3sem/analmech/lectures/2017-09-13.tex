@@ -7,7 +7,11 @@
   $  \{ \v{r_i}, i = \overline{1 \ldots n} ~~:~~|\v{r_i} - \v{r_j} | = C_{ij} = const ,~~ n \geqslant 3 \}$ 
   
   \end{df}
-  
+
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=5cm]{fig2.png} 
+  \end{figure}  
   $OXYZ$ - неподвижная система отсчета.
   
   $S\xi\eta\zeta$ - связаны с телом (движется).
@@ -24,7 +28,7 @@
   (\v{e_{\eta}}, \v{e_{z}}) \\  
   (\v{e_{\zeta}}, \v{e_{x}}) & 
   (\v{e_{\zeta}}, \v{e_{y}}) & 
-  (\v{e_{\xi}}, \v{e_{\zeta}}) \\
+  (\v{e_{\xi}}, \v{e_{z}}) \\
   \end{matrix}
   \right)
   \text{ - матрица направляющих косинусов.}
@@ -164,10 +168,9 @@
   \omega_{\eta} & -\omega_{\xi} & 0 \\
   \end{matrix}
   \right)
-  \text{- Факт, который может быть законспектирован неправильно}
   $$
   \end{cor}
-  
+  --- Факт, который может быть законспектирован неправильно
   \begin{df}
   $ \v{\omega} = \omega_{\xi}\v{e_{\xi}} + \omega_{\eta}\v{e_{\eta}} + \omega_{\zeta}\v{e_{\zeta}} $ - угловая скорость подвижного репера.
   \end{df}
@@ -231,16 +234,21 @@
   \end{xmp}
   
   \begin{df}
-  Угловой скоростью твердого тела называется угловая скорость подвижного репера, с ним свзязанного.
+  Угловой скоростью твердого тела называется угловая скорость подвижного репера, с ним связанного.
   \end{df}
  
-  \subsection{Формула распределения скоростей точек твердого тела}
-  $ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] $
+  \subsection{Формула распределения скоростей точек твердого тела (Формула Эйлера)}
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=5cm]{fig3.png} 
+  \end{figure}  
+  $$ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] $$
+  
   \begin{proof}
   $$ \v{AB} = \xi \v{e_{\xi}} + \eta \v{e_{\eta}} + \zeta \v{e_{\zeta}} $$
   $$ \dot{\v{AB}} = \xi \dot{\v{e_{\xi}}} + \eta \dot{\v{e_{\eta}}} + \zeta \dot{\v{e_{\zeta}}},~~ \dot{\xi} = \dot{\eta} = \dot{\zeta} = 0 $$
   $$ \dot{\left(\v{r_B} - \v{r_A}\right)}~~ = \xi[\v{\omega}, \v{e_{\xi}}] + \eta[\v{\omega}, \v{e_{\eta}}] + \zeta[\v{\omega}, \v{e_{\zeta}}] $$ 
-  $$ \dot{\v{r_1}} - \dot{\v{r_2}} = [\v{\omega}, \xi \v{e_{\xi}} + \eta \v{e_{\eta}} + \zeta \v{e_{\zeta}}] $$
+  $$ \dot{\v{r_B}} - \dot{\v{r_A}} = [\v{\omega}, \xi \v{e_{\xi}} + \eta \v{e_{\eta}} + \zeta \v{e_{\zeta}}] $$
   $$ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] $$  
   \end{proof}
   
@@ -267,13 +275,21 @@
   $$ [\v{\varepsilon}, \v{AB}] \text{ - вращательное ускорение,~~} [\v{\omega}, [\v{\omega}, \v{AB}]] \text{ - осестремительное ускорение} $$ 
   \end{proof}
   
-  \subsubsection{Геометрический смысл}
+  \subsubsection*{Геометрический смысл $\v w_{OC}$}
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=5cm]{fig4.png} 
+  \end{figure}
   $ \v{w} = [\v{\omega}, [\v{\omega}, \v{AB}]] = \v{\omega} (\v{\omega}, \v{AB}) - \v{AB} \omega^2 = \omega^2 ( \v{e_{\omega}}(\v{AB}, \v{e_{\omega}}) - \v{AB}) $
   
   $ | \v{w_{\textbf{ос}}} |= \omega^2 \rho(B, l) $
   
   \begin{ass}
   Проекции скоростей двух точек твердого тела на прямую, их соединяющую, равны.
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=5cm]{fig5.png} 
+  \end{figure}
   \end{ass}
   \begin{proof}
   $$ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}] $$
@@ -286,32 +302,34 @@
   
   \section{Классификация движения твердого тела}
   
-  \subsection{Поступательное}
+  \subsection{Поступательное движение}
   \begin{df}
   Такое движение твердого тела, при котором угловая скорость равна нулю.
   \end{df}
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=5cm]{img/fig6.png} 
+  \end{figure}
   $$ \v{v_B} \equiv \v{v_A} $$
-  $$ \v{w_B} \equiv \v{v_A} $$
+  $$ \v{w_B} \equiv \v{w_A} $$
   \paragraph{Мгновенное поступательное движение:}
   $ \exists t : \v{\omega}(t) = 0,~~ \v{\varepsilon}(t) \neq 0 $
   
   \subsection{Вращательное движение (вращение вокруг неподвижной оси)}
   ~
-
-  $ \exists A, B : \v{v_A} = \v{v_B} = 0 $
-  
-  $ \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}], \v{v_A} = \v{v_B} = 0 \Rightarrow [\omega, \v{AB}] = 0 \Rightarrow \omega \parallel \v{AB} $
-  
-  $\forall M \in l : \v{v_M} = 0 \text{, $l$ - ось вращения} $
-  
-  $\dot{\vec{e}}_{\xi} = \dot{\varphi} \vec{e}_{\eta},~ \dot{\vec{e}}_{\eta} = -\dot{\varphi} \vec{e}_{\xi},~ \dot{\vec{e}}_{\zeta} = 0 $
-
-  $\vec{\omega} = \vec{e}_{\xi}(-\dot{\varphi}\vec{e}_{\xi}, \vec{e}_{\zeta}) + \vec{e}_{\eta}(0, \vec{e}_{\xi}) + \vec{e}_{\zeta}(\dot{\varphi} \vec{e}_{\eta}, \vec{e}_{\eta}) = \dot{\varphi} \vec{e}_{\zeta} = \dot{\varphi}\vec{e}_{z} $
-
-  $ \vec{\varepsilon} = \dot{\vec{\omega}} = \ddot{\varphi}\vec{e}_z $
-
-  $ \vec{v}_p = \vec{v}_{p'} + [\vec{\omega}, \overline{pp'}] = 0 + [\dot{\varphi}\vec{e}_z, \xi\vec{e}_{\xi} + \eta\vec{e}_{\eta}] = \dot{\varphi}(x\vec{e}_{\eta} - y\vec{e}_{\xi}) $
-
-  $ | \vec{v}_p | = | \vec{\omega} | \cdot | \overline{p'p} | $
-
-  $ \vec{w}_p = \vec{w}_{p'} + [\vec{\varepsilon}, \overline{p'p}] + [\vec{\omega}, [\vec{\omega}, \overline{p'p}]] = 0 + [\vec{\varepsilon}, \overline{p'p}] - \omega^2 \overline{p'p} $
+  $$ \exists A, B : \v{v_A} = \v{v_B} = 0 $$
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=5cm]{img/fig7.png} 
+  \end{figure}
+  \begin{flalign*}
+  & \v{v_B} = \v{v_A} + [\v{\omega}, \v{AB}], \v{v_A} = \v{v_B} = 0 \Rightarrow [\omega, \v{AB}] = 0 \Rightarrow \omega \parallel \v{AB} &\\
+  & \forall M \in l : \v{v_M} = 0 \text{, $l$ - ось вращения} &\\
+  & \dot{\vec{e}}_{\xi} = \dot{\varphi} \vec{e}_{\eta},~ \dot{\vec{e}}_{\eta} = -\dot{\varphi} \vec{e}_{\xi},~ \dot{\vec{e}}_{\zeta} = 0  &\\
+  & \vec{\omega} = \vec{e}_{\xi}(-\dot{\varphi}\vec{e}_{\xi}, \vec{e}_{\zeta}) + \vec{e}_{\eta}(0, \vec{e}_{\xi}) + \vec{e}_{\zeta}(\dot{\varphi} \vec{e}_{\eta}, \vec{e}_{\eta}) = \dot{\varphi} \vec{e}_{\zeta} = \dot{\varphi}\vec{e}_{z} &\\
+  & \vec{\varepsilon} = \dot{\vec{\omega}} = \ddot{\varphi}\vec{e}_z &\\
+  & \vec{v}_p = \vec{v}_{p'} + [\vec{\omega}, \overline{pp'}] = 0 + [\dot{\varphi}\vec{e}_z, \xi\vec{e}_{\xi} + \eta\vec{e}_{\eta}] = \dot{\varphi}(x\vec{e}_{\eta} - y\vec{e}_{\xi}) &\\
+  & | \vec{v}_p | = | \vec{\omega} | \cdot | \overline{p'p} | &\\
+  & \vec{w}_p = \vec{w}_{p'} + [\vec{\varepsilon}, \overline{p'p}] + [\vec{\omega}, [\vec{\omega}, \overline{p'p}]] = 0 + [\vec{\varepsilon}, \overline{p'p}] - \omega^2 \overline{p'p} &\\
+  \end{flalign*}
+ 

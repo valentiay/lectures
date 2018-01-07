@@ -7,10 +7,10 @@
   \item 
   \begin{flalign*}
   & \Lambda = \lambda_0 + \v \lambda &\\
-  & \v \lambda' f(\v \lambda) = \Lambda \circ \v \lambda \circ \v \Lambda = (\lambda_0 + \v \lambda) \circ \v \Lambda \circ (\lambda_0 - \v \lambda) = &\\
+  & \v \lambda' = f(\v \lambda) = \Lambda \circ \v \lambda \circ \v \Lambda = (\lambda_0 + \v \lambda) \circ \v \lambda \circ (\lambda_0 - \v \lambda) = &\\
   \end{flalign*}
   \begin{flalign*}
-  & (\lambda_0 + \v \lambda) \circ (- \lambda^2 + \lambda_0 \v \lambda) = -\lambda_0\v \lambda ^2 - \lambda_0\v \lambda ^2 + \lambda_0^2 + \lambda^2 \v \lambda = &\\
+  & (\lambda_0 + \v \lambda) \circ (- \lambda^2 + \lambda_0 \v \lambda) = -\lambda_0\v \lambda ^2 - \lambda_0\v \lambda ^2 + \lambda_0^2 + \lambda_0^2 \v \lambda = &\\
   & = \v \lambda(\lambda_0^2 + \v \lambda^2) \Rightarrow \v \lambda \text{ --- неподвижная ось} \Rightarrow &\\
   & \Rightarrow \v e = \frac{\v \lambda}{\sin \nu} \text{ --- ось поворота} &\\
   & \v a \in \pi \perp \v e &\\
@@ -29,17 +29,17 @@
   \end{enumerate}
   \end{proof}  
   \begin{cor}
-  \[ \Lambda = \lambda_0 + \lambda_1\ea, + \lambda_2\eb + \lambda_3\ec = \lambda_0 + \lambda_1\ea' + \lambda_2\eb' + \lambda_3\ec' \]
+  \[ \Lambda = \lambda_0 + \lambda_1\ea + \lambda_2\eb + \lambda_3\ec = \lambda_0 + \lambda_1\ea' + \lambda_2\eb' + \lambda_3\ec' \]
   \end{cor}
   \begin{df}
   \[\lambda_0,~ \lambda_1,~ \lambda_2,~ \lambda_3 \text{ --- Параметры Родрига-Гамильтона}\]
   \end{df}
   \begin{cor}[Теорема Эйлера о конечном повороте]
-  Любые два положения твердого тела с неподвижной точкой могут быть получены одно из другого одним поворотом вокруг некторой оси, проходящей через неподвижную точку на некоторый угол
+  Любые два положения твердого тела с неподвижной точкой могут быть получены одно из другого одним поворотом вокруг некоторой оси, проходящей через неподвижную точку на некоторый угол
   \end{cor}
   \begin{proof}~
   \begin{enumerate}
-  \item \[ \forall E, E'~~ \exists \Lambda E \rightarrow E'\]
+  \item \[ \forall E, E'~~ \exists \Lambda:\; E \rightarrow E'\]
   \item \[ \forall \Lambda \overline r \rightarrow \overline r' \Leftrightarrow \text{Поворот вокруг $e$ на $\varphi$} \]
   \end{enumerate}
   \end{proof}
@@ -73,8 +73,8 @@
   \item 
   \begin{flalign*}
   & B = \dot{\Lambda} \circ \overline \Lambda &\\
-  & B + \overline B = \dot \Lambda \circ \overline \Lambda + \overline {\left( \dot \Lambda \circ \overline \Lambda \right)} = \dot \Lambda \circ \overline \Lambda + \Lambda \circ \overline \Lambda = &\\ 
-  & = \frac{d}{dt}(\Lambda \circ \overline \Lambda) = \frac{d}{dt}(\norm \Lambda) = 0 \Rightarrow B = \overline B &\\
+  & B + \overline B = \dot \Lambda \circ \overline \Lambda + \overline {\left( \dot \Lambda \circ \overline \Lambda \right)} = \dot \Lambda \circ \overline \Lambda + \Lambda \circ \dot {\overline \Lambda} = &\\ 
+  & = \frac{d}{dt}(\Lambda \circ \overline \Lambda) = \frac{d}{dt}(\norm \Lambda) = 0 \Rightarrow B = -\overline B &\\
   \end{flalign*}
   \item 
   \begin{flalign*}
@@ -130,7 +130,7 @@
   где $\overline x(t)$ --- решение системы \re{upper_system}
   \end{df}
   \begin{ass}
-  Система \re{c.1} имеет первый интерграл вида
+  Система \re{c.1} имеет первый интеграл вида
   \[\norm \Lambda = const \]
   \end{ass}
   \begin{proof}
