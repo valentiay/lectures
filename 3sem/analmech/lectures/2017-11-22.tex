@@ -21,7 +21,7 @@ $A(\dot \psi^2 \sin^2 \Theta + \dot \Theta^2) + 2mg l \cos \Theta = h^*, \quad h
 & \varphi = \int\limits_0^t f_2(\tau)d\tau &\\
 \end{flalign*}
 
-\subsubsection{Геометрическая интерпретация}
+\subsubsection*{Геометрическая интерпретация}
 \begin{flalign*}
 & \cos \Theta = x &\\
 & Ah^* - 2Amg l x - \frac{(Cr_0 x - k)^2}{1 - x^2} = A^2 f(\Theta) = A^2\dot \Theta^2 &\\
@@ -32,13 +32,33 @@ $A(\dot \psi^2 \sin^2 \Theta + \dot \Theta^2) + 2mg l \cos \Theta = h^*, \quad h
 & F'_x(x) = 2Am g l + \frac{1}{2} \left( \frac{(Cr_0 - k)^2}{(1 - x)^2} - \frac{(Cr_0 + k)^2}{(1 + x)^2}\right) &\\
 & F''_x(x) = 0 + \frac{(Cr_0 - k)^2}{(1 - x)^3} + \frac{(Cr_0 + k)^2}{(1 + x)^3} \geqslant 0, \quad \forall x \in (-1, 1) &\\
 \end{flalign*}
-
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=5cm]{fig14.png} 
+\end{figure}  
 \begin{enumerate}
 \item $h^* = \frac{F(x_0)}{A} \Rightarrow x = x_0,\;\; \Theta = \arccos x_0 = const$
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=4cm]{fig15.png} 
+\end{figure}
 \item $h^* > \frac{F(x_0)}{A}$: $\Theta_{min} = \arccos x_2$,~~ $\Theta_{max} = \arccos x_1$
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=6cm]{fig16.png} 
+\end{figure}
 \end{enumerate}
 
-$\dot \psi = \frac{Cr_0x - k}{A(1 - x^2)} = 0 \Leftrightarrow x = x_* = \frac{k}{Cr_0}$
+\begin{flalign*}
+& \dot \psi = \frac{Cr_0x - k}{A(1 - x^2)} = 0 \Leftrightarrow x = x_* = \frac{k}{Cr_0} &\\
+& F'_*(x_*) = 2Amgl > 0 &\\
+\end{flalign*}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=14cm]{fig17.png} 
+\end{figure}
+
 
 \begin{ntc}
 Если угловая скорость собственного вращения много больше скорости прецессии, т.е. $\dot \varphi \gg \dot \psi$, тело совершает псевдорегулярную пресессию.

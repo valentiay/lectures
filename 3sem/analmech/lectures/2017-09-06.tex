@@ -118,7 +118,7 @@
   \begin{flalign*}
   & \dot v \v{\tau} \text{ - касательное ускорение} &\\
   & \frac{v^2}{\rho} \v{n} \text{ - нормальное ускорение } &\\
-  & \rho = \frac{1}{|\dot r|} \text{ - радиус кривизны} &\\
+  & \rho = \frac{1}{|\v r''|} \text{ - радиус кривизны} &\\
   & k = | \v{r}'' | \text{ - кривизна} &\\
   & \v{r}'' \text{ - вектор кривизны} &\\
   \end{flalign*}
@@ -154,8 +154,8 @@
   \end{gather*}
   \subsubsection*{Геометрический смысл}
   $$ ds_i = H_i dq_i $$
-  $s_i$ - длина дуги $i$-й к-ой линии.
-  $$ H_i = \frac{\partial \v{r}}{\partial q_i}  = \sqrt{\left(\frac{\partial x}{\partial q_i}\right) ^2 + \left(\frac{\partial y}{\partial q_i}\right) ^2 + \left(\frac{\partial z}{\partial q_i}\right) ^2} $$
+  $s_i$ - длина дуги $i$-й координатной линии.
+  $$ H_i = \abs{\frac{\partial \v{r}}{\partial q_i}}  = \sqrt{\left(\frac{\partial x}{\partial q_i}\right) ^2 + \left(\frac{\partial y}{\partial q_i}\right) ^2 + \left(\frac{\partial z}{\partial q_i}\right) ^2} $$
   $$ \v{v} = \sum\limits_{i=1}^3 H_i \dot{q_i} \v{e_i},~~ v^2 = (\v{v}, \v{v}) = \sum H_i^2\dot{q_i^2} $$ 
   \begin{teo}
   Компоненты вектора ускорения в ортогональном криволинейном базисе определяются равенством:

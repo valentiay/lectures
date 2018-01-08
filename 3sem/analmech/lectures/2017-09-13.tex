@@ -80,14 +80,14 @@
   $$ XX^T = X^TX = 
   \left(
   \begin{matrix}
-  (\v{e_{\xi}}, \v{\xi}) & 
-  (\v{e_{\xi}}, \v{\eta}) & 
-  (\v{e_{\xi}}, \v{\zeta}) \\
+  (\v{e_{\xi}}, \v{e_\xi}) & 
+  (\v{e_{\xi}}, \v{e_\eta}) & 
+  (\v{e_{\xi}}, \v{e_\zeta}) \\
   \vdots & \ddots & \vdots \\
    & \ldots &
   \end{matrix} 
   \right)
-  = 0 $$
+  = E $$
   Т.к. базис ортогональный.
   \end{proof} 
   
@@ -155,7 +155,7 @@
   $\Omega$ - кососимметрична.
   \end{ass}
   \begin{proof}
-  $$ \Omega \Omega^2 = \dot X X^T + (\dot X X^T)T = \dot X X^T + X \dot {X^T} = \frac{d}{dt}(XX^T) = 
+  $$ \Omega - \Omega^T = \dot X X^T + (\dot X X^T)^T = \dot X X^T + X \dot {X^T} = \frac{d}{dt}(XX^T) = 
   \frac{d}{dt}(E) = 0 $$
   \end{proof}
   
@@ -213,7 +213,7 @@
   \end{proof}
   
   \begin{xmp}
-  Угловая скорость репера Френеля.
+  Угловая скорость репера Френе.
   $$ 
   \begin{cases}
   \v{\tau}' = k \v{n} \\
@@ -328,7 +328,7 @@
   & \dot{\vec{e}}_{\xi} = \dot{\varphi} \vec{e}_{\eta},~ \dot{\vec{e}}_{\eta} = -\dot{\varphi} \vec{e}_{\xi},~ \dot{\vec{e}}_{\zeta} = 0  &\\
   & \vec{\omega} = \vec{e}_{\xi}(-\dot{\varphi}\vec{e}_{\xi}, \vec{e}_{\zeta}) + \vec{e}_{\eta}(0, \vec{e}_{\xi}) + \vec{e}_{\zeta}(\dot{\varphi} \vec{e}_{\eta}, \vec{e}_{\eta}) = \dot{\varphi} \vec{e}_{\zeta} = \dot{\varphi}\vec{e}_{z} &\\
   & \vec{\varepsilon} = \dot{\vec{\omega}} = \ddot{\varphi}\vec{e}_z &\\
-  & \vec{v}_p = \vec{v}_{p'} + [\vec{\omega}, \overline{pp'}] = 0 + [\dot{\varphi}\vec{e}_z, \xi\vec{e}_{\xi} + \eta\vec{e}_{\eta}] = \dot{\varphi}(x\vec{e}_{\eta} - y\vec{e}_{\xi}) &\\
+  & \vec{v}_p = \vec{v}_{p'} + [\vec{\omega}, \overline{pp'}] = 0 + [\dot{\varphi}\vec{e}_z, \xi\vec{e}_{\xi} + \eta\vec{e}_{\eta}] = \dot{\varphi}(\xi\vec{e}_{\eta} - \eta\vec{e}_{\xi}) &\\
   & | \vec{v}_p | = | \vec{\omega} | \cdot | \overline{p'p} | &\\
   & \vec{w}_p = \vec{w}_{p'} + [\vec{\varepsilon}, \overline{p'p}] + [\vec{\omega}, [\vec{\omega}, \overline{p'p}]] = 0 + [\vec{\varepsilon}, \overline{p'p}] - \omega^2 \overline{p'p} &\\
   \end{flalign*}

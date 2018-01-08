@@ -53,15 +53,15 @@ p = \pm f_2(r(t)) = p(t) \\
 \end{flalign*}
 \end{proof}
 
-\subsubsection{Геометрическая интерпретация Мак-Гуллока}
+\subsubsection*{Геометрическая интерпретация Мак-Куллока}
 \begin{flalign*}
 & Ap^2 + Bq^2 + Cr^2 = 2h &\\
 & A^2p^2 + B^2q^2 + C^2r^2 = k^2 &\\
 & k_\xi = Ap, \quad k_\eta = Bq, \quad k_\zeta = Cr &\\
 & S = \eta \v k:\;\; k_\xi^2 + k_\eta^2 + k_\zeta^2 = k^2 &\\
-& \Phi = \left\{ \v k:  \frac{k_\xi^2}{A} + \frac{k_\eta^2}{B} + \frac{k_\zeta^2}{C} = 2h \right\} \text{ --- эллипсоид Мак-Гуллока} &\\
+& \Phi = \left\{ \v k:  \frac{k_\xi^2}{A} + \frac{k_\eta^2}{B} + \frac{k_\zeta^2}{C} = 2h \right\} \text{ --- эллипсоид Мак-Куллока} &\\
 \end{flalign*}
-При движении волчка Эйлера\footnote{Твердое тело с неподвижной точкой, для которого выполняется случай Эйлера.} эллипсоид Мак-Гуллока обкатывает неподвижный конец вектора кинетического момента по линии пересечения со сферой соответсвующего радиуса. При этом проекция угловой скорости эллипсоида на ось кинетического момента постоянна.
+При движении волчка Эйлера\footnote{Твердое тело с неподвижной точкой, для которого выполняется случай Эйлера.} эллипсоид Мак-Куллока обкатывает неподвижный конец вектора кинетического момента по линии пересечения со сферой соответсвующего радиуса. При этом проекция угловой скорости эллипсоида на ось кинетического момента постоянна.
 \[
 	(\v k, \v \omega) = (J_0 \v \omega, \v \omega) = 2T = const.
 \]
@@ -78,7 +78,7 @@ p = \pm f_2(r(t)) = p(t) \\
 & k_\xi^2 \left( 1 - \frac{B}{A} \right) + K_\eta^2\left( 1 - \frac{B}{C} \right) = 0&\\
 \end{flalign*}
 
-\subsubsection{Геометрическая интерпретация Пуансо}
+\subsubsection*{Геометрическая интерпретация Пуансо}
 При движении волчка Эйлера его эллипсоид инерции катится без скольжения по неподвижной плоскости, ортогональной вектору кинетического момента.
 
 $P$ --- точка пересечения эллипсоида инерции с мгновенной осью вращения.
@@ -146,11 +146,11 @@ r = \dot \psi \cos \Theta + \dot \varphi = const \\
 0 & \dot \psi \sin \Theta & \dot \psi \cos \Theta \\
 0 & A \dot \psi \sin \Theta & C\dot \psi \cos \Theta + C\dot \varphi \\
 \end{vmatrix}
-= \v e_{x'} \dot \psi \sin \Theta \cdot (C\dot \varphi + C \dot \psi \cos Theta - A \dot \psi \cos \Theta) = &\\
-& = \v e_{x'} \dot \psi \dot \varphi \sin \Theta \cdot C \left( 1 + \frac{C - A}{C} \frac{\dot \psi}{\dot \varphi} \right) \Rightarrow &\\
+= \v e_{x'} \dot \psi \sin \Theta \cdot (C\dot \varphi + C \dot \psi \cos \Theta - A \dot \psi \cos \Theta) = &\\
+& = \v e_{x'} \dot \psi \dot \varphi \sin \Theta \cdot C \left( 1 + \frac{C - A}{C} \frac{\dot \psi}{\dot \varphi} \cos \Theta\right) \Rightarrow &\\
 \end{flalign*}
 \[
-	\v M_0 = C [\v \omega_1, \v \omega_2] \left(1 + \frac{C - A}{C}\frac{\dot \psi}{\dot \varphi}\right) \text{ --- точная формула гироскопии.}
+	\v M_0 = C [\v \omega_1, \v \omega_2] \left(1 + \frac{C - A}{C}\frac{\dot \psi}{\dot \varphi}\cos \Theta \right) \text{ --- точная формула гироскопии.}
 \]
 \begin{flalign*}
 & \v \omega_1 = \dot \psi \v e_z &\\

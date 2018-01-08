@@ -23,7 +23,7 @@ $S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m
 \begin{df}
 \[ \v K_{\text{кен}} = \sum [\v \rho_i, m \dot{\v \rho_i}] \]
 \end{df}
-\[ T_\text{кен} = \frac{1}{2}\sum m_i \rho_i^2 \]
+\[ T_\text{кен} = \frac{1}{2}\sum m_i \dot \rho_i^2 \]
 
 \begin{teo}[Формулы Кенига]
 \[ \v K_O = [\v r_S, m \v v_S] + \v K_{\text{кен}} \]
@@ -55,7 +55,7 @@ $S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m
 \[ (\v F, \v e_x) = 0 \Rightarrow (\dot {\v P}, \v e_x) = 0 \Rightarrow \v v_x = const \]
 \end{cor}
 \begin{teo}[Теорема об изменении кинетического момента относительно неподвижного полюса]
-\[ \v K_O = \sum [\v r_i, \v F_i^{(e)}] = \v M_O \]
+\[ \dot{\v K}_O = \sum [\v r_i, \v F_i^{(e)}] = \v M_O \]
 \end{teo}
 \begin{proof}
 \begin{flalign*}
@@ -122,13 +122,13 @@ $S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m
 \[ dT = \sum (\v F_i^{(e)}, d\v r_i) + \sum (\v F_i^{(i)}, d\v r_i) \]
 
 \begin{ass}[Вторая теорема Кенига]
-\[ \v T_{\text{кин}} = \sum (\v F_i, \dot{\v \rho}_i) \]
+\[ \v T_{\text{кен}} = \sum (\v F_i, \dot{\v \rho}_i) \]
 \end{ass}
 \begin{proof}
 \begin{flalign*}
-& \dot T_{\text{кин}} = \dot T - (m\dot{\v v}_S, \v v_S) = \sum (\v F_i, \v v_i) - \sum (\v F_i, \v v_S) &\\
+& \dot T_{\text{кен}} = \dot T - (m\dot{\v v}_S, \v v_S) = \sum (\v F_i, \v v_i) - \sum (\v F_i, \v v_S) &\\
 & \dot {\v \rho}_i = \v v_i^{\text{отн}} = \v v_i^{\text{абс}} - \v v_i^{\text{пер}} = \v v_i - \v v_S &\\
-& \dot T_{\text{кин}} = \lb 2 \v F_i, \v v_i - \v v_S \rb = \sum (\v F_i, \dot{\v \rho}_i) &\\
+& \dot T_{\text{кен}} = \lb \v F_i, \v v_i - \v v_S \rb = \sum (\v F_i, \dot{\v \rho}_i) &\\
 \end{flalign*}
 \end{proof}
 
